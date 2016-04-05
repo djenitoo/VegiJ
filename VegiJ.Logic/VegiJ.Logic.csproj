@@ -44,9 +44,9 @@
     <Compile Include="UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VegiJ.Data\VegiJ.Data.csproj">
+    <ProjectReference Include="..\VegiJ.DataAccess\VegiJ.DataAccess.csproj">
       <Project>{7f5d1a50-5c6c-4f2e-81a1-4d21b156392f}</Project>
-      <Name>VegiJ.Data</Name>
+      <Name>VegiJ.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
