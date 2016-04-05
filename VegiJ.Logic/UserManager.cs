@@ -3,40 +3,44 @@
     using System;
     using System.Linq;
     using VegiJ.DataAccess;
+    using VegiJ.DataAccess.Contracts;
 
     public class UserManager : IUserProvider
     {
-        private User user;
+        private IRepository<User> userRepository;
+
+        public UserManager(IRepository<User> userRepository)
+        {
+            this.userRepository = userRepository;
+        }
 
         public void AddUser(User user)
         {
-            throw new NotImplementedException();
+            userRepository.Create(user);
         }
 
         public void DeleteUser(User user)
         {
-            throw new NotImplementedException();
+            userRepository.Delete(user.ID);
         }
 
         public User GetUser(Guid id)
         {
-            throw new NotImplementedException();
+            return userRepository.GetByID(id);
         }
 
         public IQueryable<User> GetUsers()
         {
-            throw new NotImplementedException();
+            return userRepository.Table;
         }
 
         public void UpdateUser(User user)
         {
-            throw new NotImplementedException();
+            userRepository.Update(user);
         }
 
 
-        // TODO: GetUser(), AddUser(), DeleteUser(), UpdateUser(), GetLastLoginDate(), GetRegistrationDate(),
+        // TODO: ? GetLastLoginDate(), GetRegistrationDate(),
         // SecredQuestion & Answer, Email Veritification() also some privilegies/roles?
-        // implement UserStore??
-
     }
 }
