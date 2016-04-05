@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
 
-namespace VegiJ.Data
+namespace VegiJ.DataAccess
 {
     class Repository<T> : IRepository<T> where T : BaseEntity
     {
         
-        // TODO: Implement cruds, also dbConn
+        // TODO: Implement cruds, also dbConn?
         public void Create(T obj)
         {
             throw new NotImplementedException();

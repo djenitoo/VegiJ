@@ -1,4 +1,4 @@
-﻿namespace VegiJ.Data.Contracts
+﻿namespace VegiJ.DataAccess.Contracts
 {
     interface ISecurityProvider
     {

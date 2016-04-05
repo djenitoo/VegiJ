@@ -1,8 +1,8 @@
-﻿namespace VegiJ.Business
+﻿namespace VegiJ.Logic
 {
     using System;
     using System.Linq;
-    using VegiJ.Data;
+    using VegiJ.DataAccess;
 
     public class UserManager : IUserProvider
     {

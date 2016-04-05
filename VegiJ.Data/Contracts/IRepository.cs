@@ -1,4 +1,4 @@
-﻿namespace VegiJ.Data
+﻿namespace VegiJ.DataAccess
 {
     using System;
     using System.Linq;

@@ -1,9 +1,9 @@
-﻿namespace VegiJ.Data
+﻿namespace VegiJ.DataAccess
 {
     using System;
     using Microsoft.AspNet.Identity;
 
-    public class User : BaseEntity, IUser
+    public class User : BaseEntity
     {
         // privileges?
         public string UserName { get; set; }
@@ -12,16 +12,6 @@
         public DateTime LastLoginDate { get; set; }
         public bool IsAdmin { get; set; }
 
-        public string Id
-        {
-            get
-            {
-                return this.Id.ToString();
-            }
-        }
-
-        
-        
         public User(string username, string password)
         {
             this.UserName = username;

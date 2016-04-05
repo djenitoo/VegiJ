@@ -7,8 +7,8 @@
     <ProjectGuid>{B86654B8-6EB3-4F6E-BCC8-104417EC5250}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VegiJ.Business</RootNamespace>
-    <AssemblyName>VegiJ.Business</AssemblyName>
+    <RootNamespace>VegiJ.Logic</RootNamespace>
+    <AssemblyName>VegiJ.Logic</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
