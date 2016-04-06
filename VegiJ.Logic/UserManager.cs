@@ -3,7 +3,6 @@
     using System;
     using System.Linq;
     using VegiJ.DataAccess;
-    using VegiJ.DataAccess.Contracts;
 
     public class UserManager : IUserProvider
     {
@@ -42,5 +41,7 @@
 
         // TODO: ? GetLastLoginDate(), GetRegistrationDate(),
         // SecredQuestion & Answer, Email Veritification() also some privilegies/roles?
+
+        // TODO: Create NInject class
     }
 }
