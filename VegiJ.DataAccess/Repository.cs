@@ -17,7 +17,7 @@
             this._dbcontext = context;
         }
 
-        public T GetByID(Guid key)
+        public T GetById(Guid key)
         {
             return this.Entities.Find(key);
         }

@@ -7,7 +7,7 @@
     {
         // TODO: implement delete by id/object?
         void Create(T obj);
-        T GetByID(Guid key);
+        T GetById(Guid key);
         void Update(T obj);
         void Delete(Guid key);
         IQueryable<T> Table { get; }

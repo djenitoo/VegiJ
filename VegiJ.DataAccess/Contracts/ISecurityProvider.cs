@@ -1,6 +1,10 @@
 ﻿namespace VegiJ.DataAccess.Contracts
 {
-    interface ISecurityProvider
+    public interface ISecurityProvider
     {
+        // TODO: Login()[Authenticate], LogOut(), Authorize()?
+        
+        bool LogIn(string username, string password);
+        void LogOut();
     }
 }

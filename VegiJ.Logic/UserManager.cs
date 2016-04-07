@@ -25,7 +25,7 @@
 
         public User GetUser(Guid id)
         {
-            return userRepository.GetByID(id);
+            return userRepository.GetById(id);
         }
 
         public IQueryable<User> GetUsers()
@@ -37,7 +37,6 @@
         {
             userRepository.Update(user);
         }
-
 
         // TODO: ? GetLastLoginDate(), GetRegistrationDate(),
         // SecredQuestion & Answer, Email Veritification() also some privilegies/roles?
