@@ -11,6 +11,6 @@
         void Update(T obj);
         void Delete(Guid key);
         IQueryable<T> Table { get; }
-        //void Save();
+        // that? void Save();        
     }
 }

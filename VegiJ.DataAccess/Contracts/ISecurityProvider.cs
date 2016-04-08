@@ -2,9 +2,8 @@
 {
     public interface ISecurityProvider
     {
-        // TODO: Login()[Authenticate], LogOut(), Authorize()?
-        
         bool LogIn(string username, string password);
+        User GetCurrentUser();
         void LogOut();
     }
 }

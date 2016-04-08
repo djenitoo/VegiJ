@@ -8,6 +8,8 @@
     {
         private IRepository<User> userRepository;
 
+        // TODO: make db's with dictionary and keys
+        // Dictionaty(<TKey><TDictionary>) - TKey like User, TDictionary - another dictionary;
         public UserManager(IRepository<User> userRepository)
         {
             this.userRepository = userRepository;

@@ -8,7 +8,6 @@
 
     public class Repository<T> : IRepository<T> where T : BaseEntity
     {
-        // TODO: Implement cruds, also dbConn?
         private readonly IDbContext _dbcontext;
         private IDbSet<T> _entities;
 

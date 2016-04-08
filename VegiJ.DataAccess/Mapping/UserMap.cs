@@ -4,6 +4,7 @@
 
     public class UserMap : EntityTypeConfiguration<User>
     {
+        // TODO: Make generic!
         public UserMap()
         {
             //key

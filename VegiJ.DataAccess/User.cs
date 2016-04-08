@@ -1,7 +1,6 @@
 ﻿namespace VegiJ.DataAccess
 {
     using System;
-    using Microsoft.AspNet.Identity;
 
     public class User : BaseEntity
     {
