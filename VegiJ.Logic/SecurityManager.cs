@@ -4,7 +4,6 @@
     using System.Web.Security;
     using VegiJ.DataAccess;
     using VegiJ.DataAccess.Contracts;
-    // TODO: ! put validations
     // TODO: make static
     public class SecurityManager : ISecurityProvider
     {
@@ -18,19 +17,28 @@
         
         public bool LogIn(string username, string password)
         {
-            var searchResult = this.userManager.GetUsers()
-                .Where(u => string.Equals(u.UserName, username, System.StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
-            if (searchResult != null)
+            // TODO: here implement the new user repository (start it from another method or here)
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
-                var hashedPassword = new PasswordHash(password).ToString();
+                // TODO: Convert it to invalid input exception
+                // maybe add to UI lenght restriction
+                // add trim
+                return false;
+            }
 
-                if (string.Equals(searchResult.Password, hashedPassword, System.StringComparison.InvariantCulture))
+            var foundUser = this.userManager.GetUsers()
+                .Where(u => string.Equals(u.UserName, username, System.StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+            if (foundUser != null)
+            {
+                var hashedPassword = PasswordHash.EncryptPassword(password, foundUser.Salt);
+                var areEqualPasswords = PasswordHash.ComparePasswords(hashedPassword, foundUser.Salt, foundUser.Password);
+                if (areEqualPasswords)
                 {
-                    // TODO: also implement persistent cookie and make secure cookies
+                    // TODO: also implement persistent cookie and make secure cookies                    
                     FormsAuthentication.SetAuthCookie(username, false);
-                    this.currentUser = searchResult;
+                    this.currentUser = foundUser;
                     return true;
-                }              
+                }
             }
             return false;
         }

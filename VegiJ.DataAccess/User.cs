@@ -8,21 +8,22 @@
         public string Email { get; set; }
         public string Password { get; set; }
         public DateTime LastLoginDate { get; set; }
-        public byte[] Salt { get; set; }
+        public string Salt { get; set; }
         public bool IsAdmin { get; set; }
 
+        // TODO: Make the constructors etc. !!
         public User(string username, string password)
         {
             this.UserName = username;
-            var hash = new PasswordHash(password);
-            this.Password = hash.ToString();
+            this.Salt = PasswordHash.GenerateSalt();
+            this.Password = PasswordHash.EncryptPassword(password, this.Salt);
         }
 
         public User(string username, string password, string email)
         {
             this.UserName = username;
-            var hash = new PasswordHash(password);
-            this.Password = hash.ToString();
+            this.Salt = PasswordHash.GenerateSalt();
+            this.Password = PasswordHash.EncryptPassword(password, this.Salt);
             this.Email = email;
         }        
     }
