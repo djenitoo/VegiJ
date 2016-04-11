@@ -14,6 +14,7 @@
             Property(t => t.Password);
             Property(t => t.Email);
             Property(t => t.CreatedDate);
+            Property(t => t.Salt);
             Property(t => t.IsAdmin);
             Property(t => t.LastLoginDate);
             Property(t => t.ModifiedDate);

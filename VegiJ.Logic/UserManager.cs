@@ -41,8 +41,6 @@
         }
 
         // TODO: ? GetLastLoginDate(), GetRegistrationDate(),
-        // SecredQuestion & Answer, Email Veritification() also some privilegies/roles?
-
-        // TODO: Create NInject class
+        // SecredQuestion & Answer, Email Veritification() also some privilegies/roles?        
     }
 }

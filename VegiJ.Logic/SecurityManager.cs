@@ -19,18 +19,22 @@
         public bool LogIn(string username, string password)
         {
             var searchResult = this.userManager.GetUsers()
-                .Where(u => u.UserName == username && u.Password == password).FirstOrDefault();
+                .Where(u => string.Equals(u.UserName, username, System.StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
             if (searchResult != null)
             {
-                // TODO: also implement persistent cookie and make secure cookies
-                FormsAuthentication.SetAuthCookie(username, false);
-                this.currentUser = searchResult;
-                return true;
-            }
+                var hashedPassword = new PasswordHash(password).ToString();
 
+                if (string.Equals(searchResult.Password, hashedPassword, System.StringComparison.InvariantCulture))
+                {
+                    // TODO: also implement persistent cookie and make secure cookies
+                    FormsAuthentication.SetAuthCookie(username, false);
+                    this.currentUser = searchResult;
+                    return true;
+                }              
+            }
             return false;
         }
-        // Make method(?) that returns current user object for UI; maybe save current user in http session contex
+        // TODO: maybe save current user in http session contex in UI
         public User GetCurrentUser()
         {
             return this.currentUser;
@@ -39,9 +43,8 @@
         public void LogOut()
         {
             FormsAuthentication.SignOut();
-            this.currentUser = null;
-            // TODO: Hash passwords with md5
-            // TODO: Null sesion
+            this.currentUser = null;            
+            // TODO: Null sesion and everything
         }
     }
 }

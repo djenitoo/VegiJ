@@ -4,7 +4,7 @@
     {
         public override void Load()
         {
-            // TODO: Make binds here, and start needed methods for injection in the UI
+            // TODO: Make binds here, and start them from the UI
         }
     }
 }
