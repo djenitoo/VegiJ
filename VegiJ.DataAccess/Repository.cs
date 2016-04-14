@@ -5,7 +5,7 @@
     using Contracts;
     using System.Data.Entity;
     using System.Data.Entity.Validation;
-
+    // TODO: make _entities into a dictionary with data types as keys?
     public class Repository<T> : IRepository<T> where T : BaseEntity
     {
         private readonly IDbContext _dbcontext;
@@ -59,7 +59,6 @@
                     throw new ArgumentNullException("entity");
                 }
                 // TODO: learn about SaveChanges()
-                
                 this._dbcontext.SaveChanges();
             }
             catch (DbEntityValidationException dbExp)
@@ -118,6 +117,8 @@
             }
         }
 
+        // TODO: Merge with Table method?
+        // leave like that for now
         private IDbSet<T> Entities
         {
             get

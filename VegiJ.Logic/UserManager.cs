@@ -40,7 +40,6 @@
             userRepository.Update(user);
         }
 
-        // TODO: ? GetLastLoginDate(), GetRegistrationDate(),
-        // SecredQuestion & Answer, Email Veritification() also some privilegies/roles?        
+        // TODO: ? GetLastLoginDate(), GetRegistrationDate() etc. SecredQuestion & Answer, Email Veritification() also some privilegies/roles?        
     }
 }

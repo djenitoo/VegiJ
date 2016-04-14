@@ -2,29 +2,12 @@
 {
     using System;
     using System.Security.Cryptography;
-
+    // TODO: Optimize later
     public static class PasswordHash
     {
-        //private const int SaltSize = 16, HashSize = 20, HashIter = 1000;
-        //private readonly byte[] _salt, _hash;
-
-        //public PasswordHash(string password)
-        //{
-        //    new RNGCryptoServiceProvider().GetBytes(_salt = new byte[SaltSize]);
-        //    _hash = new Rfc2898DeriveBytes(password, _salt, HashIter).GetBytes(HashSize);
-        //}
-
-        //public override string ToString()
-        //{
-        //    byte[] hashBytes = new byte[SaltSize + HashSize];
-        //    Array.Copy(_salt, 0, hashBytes, 0, SaltSize);
-        //    Array.Copy(_hash, 0, hashBytes, SaltSize, HashSize);
-        //    return hashBytes.ToString();
-        //}
-
         private const int SaltSize = 24;
         private const int HashSize = 24;
-        private const int HashIter = 10101; //6969
+        private const int HashIter = 10101; //or 696969
 
         public static string EncryptPassword(string password, string salt, int iterations = HashIter)
         {

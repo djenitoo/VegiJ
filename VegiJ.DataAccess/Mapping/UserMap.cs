@@ -13,11 +13,11 @@
             Property(t => t.UserName);
             Property(t => t.Password);
             Property(t => t.Email);
-            Property(t => t.CreatedDate);
+            Property(t => t.CreatedDate).IsOptional();
             Property(t => t.Salt);
-            Property(t => t.IsAdmin);
-            Property(t => t.LastLoginDate);
-            Property(t => t.ModifiedDate);
+            Property(t => t.IsAdmin).IsOptional();
+            Property(t => t.LastLoginDate).IsOptional();
+            Property(t => t.ModifiedDate).IsOptional();
             // table
             ToTable("Users"); // primerno
         }

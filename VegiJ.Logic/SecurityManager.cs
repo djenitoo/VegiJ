@@ -3,30 +3,30 @@
     using System.Linq;
     using System.Web.Security;
     using VegiJ.DataAccess;
-    using VegiJ.DataAccess.Contracts;
-    // TODO: make static
-    public class SecurityManager : ISecurityProvider
+
+    public static class SecurityManager //: ISecurityProvider
     {
-        private UserManager userManager;
-        private User currentUser;
-        // TODO: userRepository move out of constructor
-        public SecurityManager(IRepository<User> userRepository)
+        private static UserManager userManager;
+        private static User currentUser;
+
+        public static void LoadUserRepository(IRepository<User> userRepository)
         {
-            this.userManager = new UserManager(userRepository);
+            userManager = new UserManager(userRepository);
         }
-        
-        public bool LogIn(string username, string password)
+
+        // TODO: here implement the new user repository (start it from another method or here)
+        public static bool LogIn(string username, string password)
         {
-            // TODO: here implement the new user repository (start it from another method or here)
+            username = username.Trim();
+            password = password.Trim();
+            
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
-                // TODO: Convert it to invalid input exception
-                // maybe add to UI lenght restriction
-                // add trim
+                // TODO: Convert it to invalid input exception;  maybe add to UI lenght restriction
                 return false;
             }
 
-            var foundUser = this.userManager.GetUsers()
+            var foundUser = userManager.GetUsers()
                 .Where(u => string.Equals(u.UserName, username, System.StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
             if (foundUser != null)
             {
@@ -36,22 +36,23 @@
                 {
                     // TODO: also implement persistent cookie and make secure cookies                    
                     FormsAuthentication.SetAuthCookie(username, false);
-                    this.currentUser = foundUser;
+                    currentUser = foundUser;
                     return true;
                 }
             }
             return false;
         }
-        // TODO: maybe save current user in http session contex in UI
-        public User GetCurrentUser()
+        // TODO: save somehow current user in http session contex in UI
+        public static User GetCurrentUser()
         {
-            return this.currentUser;
+            return currentUser;
         }
 
-        public void LogOut()
+        public static void LogOut()
         {
             FormsAuthentication.SignOut();
-            this.currentUser = null;            
+            currentUser = null;
+            userManager = null;
             // TODO: Null sesion and everything
         }
     }

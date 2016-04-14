@@ -12,6 +12,10 @@
         public bool IsAdmin { get; set; }
 
         // TODO: Make the constructors etc. !!
+        [Obsolete("Only needed for serialization and materialization", true)]
+        public User()
+        {
+        }
         public User(string username, string password)
         {
             this.UserName = username;
@@ -21,10 +25,14 @@
 
         public User(string username, string password, string email)
         {
+            this.ID = Guid.NewGuid();
             this.UserName = username;
             this.Salt = PasswordHash.GenerateSalt();
             this.Password = PasswordHash.EncryptPassword(password, this.Salt);
             this.Email = email;
+            this.CreatedDate = DateTime.Now;
+            this.ModifiedDate = DateTime.Now;
+            this.LastLoginDate = DateTime.Now;
         }        
     }
 }
