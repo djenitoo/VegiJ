@@ -1,5 +1,6 @@
 ﻿namespace VegiJ.Logic
 {
+    using System;
     using System.Linq;
     using System.Web.Security;
     using VegiJ.DataAccess;
@@ -13,8 +14,7 @@
         {
             userManager = new UserManager(userRepository);
         }
-
-        // TODO: here implement the new user repository (start it from another method or here)
+        
         public static bool LogIn(string username, string password)
         {
             username = username.Trim();
@@ -26,8 +26,8 @@
                 return false;
             }
 
-            var foundUser = userManager.GetUsers()
-                .Where(u => string.Equals(u.UserName, username, System.StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+            var foundUser = userManager.GetUsers().AsEnumerable()
+                .Where(u => string.Equals((u.UserName as string), username, System.StringComparison.InvariantCultureIgnoreCase) == true).FirstOrDefault();
             if (foundUser != null)
             {
                 var hashedPassword = PasswordHash.EncryptPassword(password, foundUser.Salt);
@@ -36,13 +36,15 @@
                 {
                     // TODO: also implement persistent cookie and make secure cookies                    
                     FormsAuthentication.SetAuthCookie(username, false);
+                    foundUser.LastLoginDate = DateTime.Now;
+                    userManager.UpdateUser(foundUser);
                     currentUser = foundUser;
                     return true;
                 }
             }
             return false;
         }
-        // TODO: save somehow current user in http session contex in UI
+
         public static User GetCurrentUser()
         {
             return currentUser;
@@ -53,7 +55,6 @@
             FormsAuthentication.SignOut();
             currentUser = null;
             userManager = null;
-            // TODO: Null sesion and everything
         }
     }
 }

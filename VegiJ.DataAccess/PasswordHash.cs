@@ -27,10 +27,10 @@
             return ConvertToString(salt);
         }
 
-        public static bool ComparePasswords(string password, string passwordSalt, string passwordHash)
+        public static bool ComparePasswords(string inputPassword, string passwordSalt, string userPassword)
         {
-            byte[] computedPasswordHash = ConvertToByteArray(EncryptPassword(password, passwordSalt));
-            byte[] userPasswordHash = ConvertToByteArray(passwordHash);
+            byte[] computedPasswordHash = ConvertToByteArray(inputPassword);
+            byte[] userPasswordHash = ConvertToByteArray(userPassword);
             return AreHashesEqual(computedPasswordHash, userPasswordHash);
         }
 

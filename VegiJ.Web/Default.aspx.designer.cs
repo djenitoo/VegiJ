@@ -13,6 +13,42 @@ namespace VegiJ.Web {
     public partial class _Default {
         
         /// <summary>
+        /// LogInButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button LogInButton;
+        
+        /// <summary>
+        /// AuthenticatedMessagePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel AuthenticatedMessagePanel;
+        
+        /// <summary>
+        /// WelcomeBackMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label WelcomeBackMessage;
+        
+        /// <summary>
+        /// logOutButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button logOutButton;
+        
+        /// <summary>
         /// usersGridView control.
         /// </summary>
         /// <remarks>

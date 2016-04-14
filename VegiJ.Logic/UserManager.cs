@@ -17,11 +17,23 @@
 
         public void AddUser(User user)
         {
+            if (this.UserExist(user.UserName))
+            {
+                // TODO: throw exception
+                return;
+            }
+
             userRepository.Create(user);
         }
 
         public void DeleteUser(User user)
         {
+            if (!this.UserExist(user.UserName))
+            {
+                // TODO: throw exception
+                return;
+            }
+
             userRepository.Delete(user.ID);
         }
 
@@ -37,9 +49,20 @@
 
         public void UpdateUser(User user)
         {
+            if (!this.UserExist(user.UserName))
+            {
+                // TODO: throw exception
+                return;
+            }
+            user.ModifiedDate = DateTime.Now;
             userRepository.Update(user);
         }
 
-        // TODO: ? GetLastLoginDate(), GetRegistrationDate() etc. SecredQuestion & Answer, Email Veritification() also some privilegies/roles?        
+        // TODO: ? GetLastLoginDate(), GetRegistrationDate() etc. SecredQuestion & Answer, Email Veritification() also some privilegies/roles?
+
+        private bool UserExist(string username)
+        {
+            return userRepository.Table.Any(u => u.UserName.Equals(username, StringComparison.InvariantCultureIgnoreCase));
+        }
     }
 }
