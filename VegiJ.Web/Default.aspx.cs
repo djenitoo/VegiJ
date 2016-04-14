@@ -17,7 +17,7 @@ namespace VegiJ.Web
         //[Inject]
         //IUserProvider userManager { get; set; }
 
-        private IUserProvider userManager;
+        private IUserManager userManager;
         private User currentUser;
         [Inject]
         public void Setup(IRepository<User> userRepository)

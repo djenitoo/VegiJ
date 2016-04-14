@@ -3,7 +3,7 @@
     using System;
     using System.Linq;
 
-    public interface IUserProvider
+    public interface IUserManager
     {
         // TODO: expand?
         IQueryable<User> GetUsers();

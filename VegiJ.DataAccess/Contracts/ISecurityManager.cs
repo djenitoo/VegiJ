@@ -1,6 +1,6 @@
 ﻿namespace VegiJ.DataAccess.Contracts
 {
-    public interface ISecurityProvider
+    public interface ISecurityManager
     {
         bool LogIn(string username, string password);
         User GetCurrentUser();

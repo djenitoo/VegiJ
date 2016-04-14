@@ -4,7 +4,7 @@
     using System.Linq;
     using VegiJ.DataAccess;
 
-    public class UserManager : IUserProvider
+    public class UserManager : IUserManager
     {
         private IRepository<User> userRepository;
 
