@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
+    <Compile Include="Category.cs" />
     <Compile Include="Contracts\IDbContext.cs" />
     <Compile Include="Contracts\IRecipeManager.cs" />
     <Compile Include="Contracts\ISecurityManager.cs" />
