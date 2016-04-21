@@ -7,9 +7,7 @@
     public class UserManager : IUserManager
     {
         private IRepository<User> userRepository;
-
-        // TODO: make db's with dictionary and keys
-        // Dictionaty(<TKey><TDictionary>) - TKey like User, TDictionary - another dictionary;
+        
         public UserManager(IRepository<User> userRepository)
         {
             this.userRepository = userRepository;
@@ -19,7 +17,7 @@
         {
             if (this.UserExist(user.UserName))
             {
-                // TODO: throw exception
+                // TODO: throw apporitate exception in crud
                 return;
             }
 
@@ -30,7 +28,7 @@
         {
             if (!this.UserExist(user.UserName))
             {
-                // TODO: throw exception
+                // TODO: throw apporitate exception in crud
                 return;
             }
 
@@ -51,14 +49,13 @@
         {
             if (!this.UserExist(user.UserName))
             {
-                // TODO: throw exception
+                // TODO: throw apporitate exception in crud
                 return;
             }
-            user.ModifiedDate = DateTime.Now;
             userRepository.Update(user);
         }
 
-        // TODO: ? GetLastLoginDate(), GetRegistrationDate() etc. SecredQuestion & Answer, Email Veritification() also some privilegies/roles?
+        // TODO: GetLastLoginDate(), GetRegistrationDate() etc. SecredQuestion & Answer, Email Veritification() also some privilegies/roles?
 
         private bool UserExist(string username)
         {

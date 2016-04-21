@@ -2,14 +2,25 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    public class Category
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    public class Category : BaseEntity
     {
-        [Key]
-        public Guid Id { get; private set; }
-        public string Name { get; private set; }
-        public Guid? ParentCategoryId { get; private set; }
-        public virtual Category ParentCategory { get; private set; }
-        public virtual ICollection<Category> SubCategories { get; private set; }
+        public string Name { get; set; }
+        public Guid? ParentCategoryId { get; set; }
+        [ForeignKey("ParentCategoryId")]
+        public virtual Category ParentCategory { get; set; }
+        public virtual ICollection<Category> SubCategories { get; set; }
+        public virtual ICollection<Recipe> Recipes { get; set; }
+
+        [Obsolete("Only needed for serialization and materialization", true)]
+        public Category()
+        {
+        }
+
+        public Category(string name)
+        {
+            this.Name = name;
+        }
     }
 }

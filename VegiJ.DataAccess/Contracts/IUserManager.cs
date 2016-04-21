@@ -5,7 +5,7 @@
 
     public interface IUserManager
     {
-        // TODO: expand?
+        // TODO: expand user CRUD
         IQueryable<User> GetUsers();
         User GetUser(Guid id);
         void AddUser(User user);

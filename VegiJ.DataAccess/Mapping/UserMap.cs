@@ -4,7 +4,6 @@
 
     public class UserMap : EntityTypeConfiguration<User>
     {
-        // TODO: Make generic!
         public UserMap()
         {
             //key
@@ -13,12 +12,16 @@
             Property(t => t.UserName);
             Property(t => t.Password);
             Property(t => t.Email);
-            Property(t => t.CreatedDate).IsOptional();
+            Property(t => t.CreatedDate);
             Property(t => t.Salt);
             Property(t => t.IsAdmin).IsOptional();
             Property(t => t.LastLoginDate).IsOptional();
-            Property(t => t.ModifiedDate).IsOptional();
-            // table
+            Property(t => t.LastModifiedDate);
+            // TODO: is this even real?!
+            HasMany(t => t.Recipes)
+                .WithRequired(t => t.Author)
+                .HasForeignKey(t => t.AuthorId);
+            
             ToTable("Users"); // primerno
         }
     }

@@ -30,6 +30,7 @@
                 .Where(u => string.Equals((u.UserName as string), username, System.StringComparison.InvariantCultureIgnoreCase) == true).FirstOrDefault();
             if (foundUser != null)
             {
+                // TODO: Reverse the password compare for better priglednost?
                 var hashedPassword = PasswordHash.EncryptPassword(password, foundUser.Salt);
                 var areEqualPasswords = PasswordHash.ComparePasswords(hashedPassword, foundUser.Salt, foundUser.Password);
                 if (areEqualPasswords)

@@ -68,6 +68,8 @@ namespace VegiJ.Web.App_Start
             kernel.Bind<IDbContext>().To<DataContext>().InRequestScope();
             kernel.Bind(typeof(IRepository<>)).To(typeof(Repository<>)).InRequestScope();
             kernel.Bind<IUserManager>().To<UserManager>();
+            kernel.Bind<IRecipeManager>().To<RecipeManager>();
+            kernel.Bind<ICategoryManager>().To<CategoryManager>();
         }        
     }
 }

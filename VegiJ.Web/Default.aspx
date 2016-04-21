@@ -8,6 +8,7 @@
         <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
     </div>
     <asp:Button ID="LogInButton" runat="server" Text="LogIn" OnClick="LogInButton_Click" />
+    <asp:Button ID="CreateRecipeBtn" runat="server" Text="Create recipe" OnClick="CreateRecipeBtn_Click" />
     <asp:Panel ID="AuthenticatedMessagePanel" runat="server" Visible="False">
         <asp:Label ID="WelcomeBackMessage" runat="server" Text="Label"></asp:Label><asp:Button ID="logOutButton" runat="server" Text="LogOut" OnClick="logOutButton_Click" Visible="False" />
     </asp:Panel>

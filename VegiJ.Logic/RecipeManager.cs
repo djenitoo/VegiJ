@@ -13,7 +13,7 @@
             this._recipeRepository = recipeRepository;
         }
 
-        // TODO: Add recipe exist method, mapping of recipe obj;
+        // TODO: Add recipe exist method
         public void AddRecipe(Recipe recipe)
         {
             this._recipeRepository.Create(recipe);
