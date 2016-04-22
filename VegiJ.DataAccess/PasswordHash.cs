@@ -2,12 +2,12 @@
 {
     using System;
     using System.Security.Cryptography;
-    // TODO: Optimize later
+
     public static class PasswordHash
     {
         private const int SaltSize = 24;
         private const int HashSize = 24;
-        private const int HashIter = 10101; //or 696969
+        private const int HashIter = 10101; //or 696969 kekeke~
 
         public static string EncryptPassword(string password, string salt, int iterations = HashIter)
         {
@@ -19,7 +19,6 @@
 
         public static string GenerateSalt(int saltSize = SaltSize)
         {
-            // matbe make another method that return the salt as string and this as byte?
             RNGCryptoServiceProvider saltGenerator = new RNGCryptoServiceProvider();
             byte[] salt = new byte[saltSize];
             saltGenerator.GetBytes(salt);
@@ -29,9 +28,9 @@
 
         public static bool ComparePasswords(string inputPassword, string passwordSalt, string userPassword)
         {
-            byte[] computedPasswordHash = ConvertToByteArray(inputPassword);
+            byte[] inputPasswordHash = ConvertToByteArray(EncryptPassword(inputPassword,passwordSalt));
             byte[] userPasswordHash = ConvertToByteArray(userPassword);
-            return AreHashesEqual(computedPasswordHash, userPasswordHash);
+            return AreHashesEqual(inputPasswordHash, userPasswordHash);
         }
 
         private static bool AreHashesEqual(byte[] firstHash, byte[] secondHash)

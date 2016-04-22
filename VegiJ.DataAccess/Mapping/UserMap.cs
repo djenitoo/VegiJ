@@ -17,7 +17,7 @@
             Property(t => t.IsAdmin).IsOptional();
             Property(t => t.LastLoginDate).IsOptional();
             Property(t => t.LastModifiedDate);
-            // TODO: is this even real?!
+            // TODO: is this even real
             HasMany(t => t.Recipes)
                 .WithRequired(t => t.Author)
                 .HasForeignKey(t => t.AuthorId);

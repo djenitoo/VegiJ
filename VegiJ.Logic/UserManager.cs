@@ -3,7 +3,7 @@
     using System;
     using System.Linq;
     using VegiJ.DataAccess;
-
+    // TODO: throw apporitate exception in cruds
     public class UserManager : IUserManager
     {
         private IRepository<User> userRepository;
@@ -17,7 +17,6 @@
         {
             if (this.UserExist(user.UserName))
             {
-                // TODO: throw apporitate exception in crud
                 return;
             }
 
@@ -28,7 +27,6 @@
         {
             if (!this.UserExist(user.UserName))
             {
-                // TODO: throw apporitate exception in crud
                 return;
             }
 
@@ -49,13 +47,12 @@
         {
             if (!this.UserExist(user.UserName))
             {
-                // TODO: throw apporitate exception in crud
                 return;
             }
             userRepository.Update(user);
         }
 
-        // TODO: GetLastLoginDate(), GetRegistrationDate() etc. SecredQuestion & Answer, Email Veritification() also some privilegies/roles?
+        // TODO: SecredQuestion & Answer, Email Veritification()? Also some privilegies/roles?
 
         private bool UserExist(string username)
         {

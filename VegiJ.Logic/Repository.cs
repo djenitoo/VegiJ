@@ -1,10 +1,11 @@
-﻿namespace VegiJ.DataAccess
+﻿namespace VegiJ.Logic
 {
     using System;
     using System.Linq;
     using VegiJ.DataAccess.Contracts;
     using System.Data.Entity;
     using System.Data.Entity.Validation;
+    using DataAccess;
 
     public class Repository<T> : IRepository<T> where T : BaseEntity
     {

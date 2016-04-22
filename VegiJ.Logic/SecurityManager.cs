@@ -30,12 +30,12 @@
                 .Where(u => string.Equals((u.UserName as string), username, System.StringComparison.InvariantCultureIgnoreCase) == true).FirstOrDefault();
             if (foundUser != null)
             {
-                // TODO: Reverse the password compare for better priglednost?
-                var hashedPassword = PasswordHash.EncryptPassword(password, foundUser.Salt);
-                var areEqualPasswords = PasswordHash.ComparePasswords(hashedPassword, foundUser.Salt, foundUser.Password);
+                //var hashedPassword = PasswordHash.EncryptPassword(password, foundUser.Salt);
+                var areEqualPasswords = PasswordHash.ComparePasswords(password, foundUser.Salt, foundUser.Password);
                 if (areEqualPasswords)
                 {
-                    // TODO: also implement persistent cookie and make secure cookies                    
+                    // TODO: also implement persistent cookie
+                    // TODO: move to the UI or include persistent value here                   
                     FormsAuthentication.SetAuthCookie(username, false);
                     foundUser.LastLoginDate = DateTime.Now;
                     userManager.UpdateUser(foundUser);
