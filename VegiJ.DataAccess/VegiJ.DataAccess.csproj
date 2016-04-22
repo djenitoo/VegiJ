@@ -59,9 +59,12 @@
     <Compile Include="Contracts\IUserManager.cs" />
     <Compile Include="Contracts\IRepository.cs" />
     <Compile Include="DataContext.cs" />
+    <Compile Include="Event.cs" />
     <Compile Include="Mapping\CategoryMap.cs" />
+    <Compile Include="Mapping\EventMap.cs" />
     <Compile Include="Mapping\RecipeMap.cs" />
     <Compile Include="Mapping\TagMap.cs" />
+    <Compile Include="Mapping\TipMap.cs" />
     <Compile Include="Mapping\UserMap.cs" />
     <Compile Include="PasswordHash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

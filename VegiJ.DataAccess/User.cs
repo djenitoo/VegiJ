@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.Security.Principal;
 
     public class User : BaseEntity, IPrincipal
@@ -13,7 +14,27 @@
         public DateTime? LastLoginDate { get; set; }
         public string Salt { get; set; }
         public bool IsAdmin { get; set; }
-        public virtual ICollection<Recipe> Recipes { get; set; }
+        private ICollection<Recipe> _recipes;
+        private ICollection<Tip> _tips;
+        private ICollection<Event> _events;
+
+        public virtual ICollection<Recipe> Recipes
+        {
+            get { return this._recipes ?? (this._recipes = new Collection<Recipe>()); }
+            set { this._recipes = value; }
+        }
+
+        public virtual ICollection<Tip> Tips
+        {
+            get { return this._tips ?? (this._tips = new Collection<Tip>()); }
+            set { this._tips = value; }
+        }
+
+        public virtual ICollection<Event> Events
+        {
+            get { return this._events ?? (this._events = new Collection<Event>()); }
+            set { this._events = value; }
+        }
 
         public IIdentity Identity
         {
@@ -40,7 +61,7 @@
 
         public bool IsInRole(string role)
         {
-            return role.Equals("admin", StringComparison.InvariantCultureIgnoreCase) ? this.IsAdmin : false;
+            return role.Equals("admin", StringComparison.InvariantCultureIgnoreCase) && this.IsAdmin;
         }
     }
 }

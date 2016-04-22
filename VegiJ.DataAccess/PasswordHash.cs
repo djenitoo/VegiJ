@@ -7,9 +7,9 @@
     {
         private const int SaltSize = 24;
         private const int HashSize = 24;
-        private const int HashIter = 10101; //or 696969 kekeke~
+        private const int HashIterations = 10101; //or 696969 kekeke~
 
-        public static string EncryptPassword(string password, string salt, int iterations = HashIter)
+        public static string EncryptPassword(string password, string salt, int iterations = HashIterations)
         {
             byte[] saltArray = ConvertToByteArray(salt);
             Rfc2898DeriveBytes hashGenerator = new Rfc2898DeriveBytes(password, saltArray);

@@ -10,6 +10,8 @@
             Property(t => t.Name);
             Property(t => t.CreatedDate);
             Property(t => t.LastModifiedDate);
+            HasMany(t => t.Recipes)
+                .WithMany(t => t.Tags);
             ToTable("Tags");
         }
     }

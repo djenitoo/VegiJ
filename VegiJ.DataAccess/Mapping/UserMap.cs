@@ -21,7 +21,12 @@
             HasMany(t => t.Recipes)
                 .WithRequired(t => t.Author)
                 .HasForeignKey(t => t.AuthorId);
-            
+            HasMany(t => t.Tips)
+                .WithRequired(t => t.Author)
+                .HasForeignKey(t => t.AuthorId);
+            HasMany(t => t.Events)
+                .WithRequired(t => t.Author)
+                .HasForeignKey(t => t.AuthorId);
             ToTable("Users"); // primerno
         }
     }
