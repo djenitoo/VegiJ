@@ -10,6 +10,8 @@
             HasKey(t => t.ID);
             // properties
             Property(t => t.UserName);
+            Property(t => t.FirstName);
+            Property(t => t.LastName);
             Property(t => t.Password);
             Property(t => t.Email);
             Property(t => t.CreatedDate);

@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Net;
 
     public class Tip : BaseEntity
     {
@@ -11,5 +10,16 @@
         public Guid AuthorId { get; set; }
         [ForeignKey("AuthorId")]
         public virtual User Author { get; set; }
+
+        [Obsolete("Only needed for serialization and materialization", true)]
+        public Tip()
+        {
+        }
+
+        public Tip(string title, string content)
+        {
+            this.Title = title;
+            this.Content = content;
+        }
     }
 }

@@ -8,7 +8,7 @@
         {
             HasKey(t => t.ID);
             Property(t => t.Title);
-            Property(t => t.Content);
+            Property(t => t.Content).HasColumnType("nvarchar(MAX)");
             Property(t => t.CreatedDate);
             Property(t => t.LastModifiedDate);
             HasRequired(t => t.Author)

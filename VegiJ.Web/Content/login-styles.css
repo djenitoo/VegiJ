@@ -1,0 +1,123 @@
+﻿body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #3cb371;
+    background: url("../images/vegetable-set-4.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+    border: 2px solid #228b22;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #eee;
+    background-color: rgba(238,238,238,.8);
+}
+
+.form-reg {
+    width: 450px !important;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 15px;
+    margin: 0 auto;
+    border: 2px solid #228b22;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #eee;
+    background-color: rgba(238,238,238,.8);
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+
+.form-signin .checkbox {
+    font-weight: normal;
+    margin: 10px;
+}
+
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#registerForm .input-group {
+    margin: 5px;
+}
+
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin input[type="text"], #user-gly, #email-gly {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"], #psw-gly {
+    margin-bottom: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+#user-gly, #psw-gly, #email-gly {
+    top: 0;
+}
+
+#user-gly {
+    border-bottom: 0;
+}
+
+.form-signin #BtnSubmit, .form-singin #BtnContinueToLogIn {
+    float: right;
+}
+
+.validator {
+    float: right;
+    position: absolute;
+    color: red;
+}
+
+#registerForm #user-gly, #registerForm #email-gly {
+    border-bottom: 1px solid #ccc;
+    border-bottom-left-radius: 4px;
+}
+
+#registerForm input {
+    margin-bottom: 0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+#registerForm .col-md-6 input {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+
+}
+
+#registerForm .row > div, #registerForm .input-group {
+    padding-right: 0;
+    padding-left: 0;
+}
+#registerForm .reg-btn {
+    float: right;
+}
+#registerForm .form-footer {
+    margin-top: 15px;
+}
+#registerForm .footer-text h6 {
+    margin-bottom: 0;
+}

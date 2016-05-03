@@ -2,6 +2,7 @@
 {
     using System;
     using System.Linq;
+    using System.Text.RegularExpressions;
     using System.Web.Security;
     using VegiJ.DataAccess;
 
@@ -15,33 +16,42 @@
             userManager = new UserManager(userRepository);
         }
         
-        public static bool LogIn(string username, string password)
+        public static bool LogIn(string username, string password, bool rememberMe = false)
         {
-            username = username.Trim();
+            username = Regex.Replace(username, "\\s+", " ");
             password = password.Trim();
+            if (password.Contains(" "))
+            {
+                throw new ArgumentException("Invalid password! Password cannot contain spaces!");
+            }
+            username = username.Trim();
             
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
-                // TODO: Convert it to invalid input exception;  maybe add to UI lenght restriction
-                return false;
+                throw new ArgumentException("Username and password cannot be empty!");
             }
-
-            var foundUser = userManager.GetUsers().AsEnumerable()
-                .Where(u => string.Equals((u.UserName as string), username, System.StringComparison.InvariantCultureIgnoreCase) == true).FirstOrDefault();
-            if (foundUser != null)
+            // TODO: add global const strings
+            if (username.Length < 5)
             {
-                //var hashedPassword = PasswordHash.EncryptPassword(password, foundUser.Salt);
-                var areEqualPasswords = PasswordHash.ComparePasswords(password, foundUser.Salt, foundUser.Password);
-                if (areEqualPasswords)
-                {
-                    // TODO: also implement persistent cookie
-                    // TODO: move to the UI or include persistent value here                   
-                    FormsAuthentication.SetAuthCookie(username, false);
-                    foundUser.LastLoginDate = DateTime.Now;
-                    userManager.UpdateUser(foundUser);
-                    currentUser = foundUser;
-                    return true;
-                }
+                throw new ArgumentException("Incorrect length of username!");
+            }
+            if (password.Length < 6)
+            {
+                throw new ArgumentException("Incorrect length of password!");
+            }
+            var foundUser = userManager.GetUsers().AsEnumerable()
+                .Where(u => string.Equals((u.UserName as string), username, StringComparison.InvariantCultureIgnoreCase) == true)
+                .FirstOrDefault();
+            if (foundUser == null) return false;
+            //var hashedPassword = PasswordHash.EncryptPassword(password, foundUser.Salt);
+            var areEqualPasswords = PasswordHash.ComparePasswords(password, foundUser.Salt, foundUser.Password);
+            if (areEqualPasswords)
+            {                  
+                //FormsAuthentication.SetAuthCookie(username, rememberMe);
+                foundUser.LastLoginDate = DateTime.Now;
+                userManager.UpdateUser(foundUser);
+                currentUser = foundUser;
+                return true;
             }
             return false;
         }

@@ -13,5 +13,16 @@
         public virtual User Author { get; set; }
 
         // TODO: Add Event constuctors
+
+        [Obsolete("Only needed for serialization and materialization", true)]
+        public Event()
+        {
+        }
+
+        public Event(string name, string place)
+        {
+            this.Name = name;
+            this.Place = place;
+        }
     }
 }

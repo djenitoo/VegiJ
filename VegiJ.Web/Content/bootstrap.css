@@ -1719,7 +1719,6 @@ input[type="number"]::-webkit-inner-spin-button {
 .form-control {
   display: block;
   width: 100%;
-  height: 34px;
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.428571429;
@@ -3381,7 +3380,7 @@ input[type="button"].btn-block {
   border-bottom-color: #fff;
 }
 
-.btn-group,
+.ltn-group,
 .btn-group-vertical {
   position: relative;
   display: inline-block;
