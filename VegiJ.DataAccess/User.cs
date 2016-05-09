@@ -3,11 +3,12 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Data;
     using System.Net.Mail;
     using System.Security.Principal;
     using System.Text.RegularExpressions;
-
-    public class User : BaseEntity, IPrincipal
+    using System.Web.Security;
+    public class User : BaseEntity , IPrincipal
     { 
         // TODO: Add user profile image
         public string UserName { get; set; }
@@ -21,6 +22,7 @@
         private ICollection<Recipe> _recipes;
         private ICollection<Tip> _tips;
         private ICollection<Event> _events;
+        private IIdentity _identity;
 
         public virtual ICollection<Recipe> Recipes
         {
@@ -44,8 +46,9 @@
         {
             get
             {
-                return new GenericIdentity(this.UserName);
+                return this._identity ?? (this._identity = new GenericIdentity(this.UserName, "Forms"));
             }
+            set { this._identity = value; }
         }
 
         // TODO: Extend the constructors for User etc. !!
@@ -68,7 +71,7 @@
 
         public bool IsInRole(string role)
         {
-            return role.Equals("admin", StringComparison.InvariantCultureIgnoreCase) && this.IsAdmin;
+            return Roles.Provider.IsUserInRole(this.UserName, role);
         }
 
         private void ValidateUser(string username, 

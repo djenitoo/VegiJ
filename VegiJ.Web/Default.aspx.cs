@@ -1,15 +1,15 @@
-﻿using System;
-using System.Linq;
-using System.Web;
-using Ninject;
-using VegiJ.DataAccess;
-using VegiJ.DataAccess.Contracts;
-using VegiJ.Logic;
+﻿
 
 namespace VegiJ.Web
 {
+    using System;
+    using System.Linq;
+    using System.Web;
+    using Ninject;
+    using VegiJ.DataAccess;
+    using VegiJ.DataAccess.Contracts;
+    using VegiJ.Logic;
     using System.Web.Security;
-    using Microsoft.Ajax.Utilities;
 
     public partial class _Default : Ninject.Web.PageBase
     {
@@ -18,11 +18,12 @@ namespace VegiJ.Web
 
         private IUserManager userManager;
         private IRecipeManager recipeManager;
-        private ICategoryManager categoryManager;
-        private IRepository<Tag> tagRepository;
+        //private ICategoryManager categoryManager;
+        //private IRepository<Tag> tagRepository;
         private IRepository<Event> eventRepository;
         private IRepository<Tip> tipRepository;
         private User currentUser;
+
         [Inject]
         public void Setup(IDbContext context)
         {
@@ -30,8 +31,8 @@ namespace VegiJ.Web
             // load every repo
             this.userManager = new UserManager(new Repository<User>(context));
             SecurityManager.LoadUserRepository(new Repository<User>(context));
-            this.categoryManager = new CategoryManager(new Repository<Category>(context));
-            this.tagRepository = new Repository<Tag>(context);
+            //this.categoryManager = new CategoryManager(new Repository<Category>(context));
+            //this.tagRepository = new Repository<Tag>(context);
             this.eventRepository = new Repository<Event>(context);
             this.tipRepository = new Repository<Tip>(context);
             this.recipeManager = new RecipeManager(new Repository<Recipe>(context));
@@ -43,6 +44,7 @@ namespace VegiJ.Web
             //userManager.AddUser(exmplUser);
             usersGridView.DataSource = userManager.GetUsers().ToList();
             usersGridView.DataBind();
+            var frms = User.Identity.AuthenticationType;
             if (Request.IsAuthenticated)
             {
                 LogInButton.Visible = false;
@@ -61,7 +63,7 @@ namespace VegiJ.Web
             SecurityManager.LogOut();
             LogInButton.Visible = true;
             logOutButton.Visible = false;
-            Response.Redirect(Request.RawUrl);
+            Response.Redirect("~/Default.aspx");
         }
 
         protected void LogInButton_Click(object sender, EventArgs e)

@@ -1,7 +1,10 @@
 ﻿namespace VegiJ.Web
 {
     using System;
+    using System.Security.Claims;
+    using System.Security.Principal;
     using System.Web;
+    using System.Web.Configuration;
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.UI.WebControls;
@@ -35,24 +38,31 @@
 
             ClearTextBoxes(Page);
         }
-
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
             
-            try
-            {
+            //try
+            //{
                 SecurityManager.LoadUserRepository(userRepository);
                 if (SecurityManager.LogIn(TxtboxUsername.Text, TxtBoxPassword.Text, CheckBoxRememberMe.Checked))
                 {
                     var currentUser = SecurityManager.GetCurrentUser();
-                    HttpContext.Current.User = currentUser;
-                    FormsAuthentication.RedirectFromLoginPage(currentUser.UserName, CheckBoxRememberMe.Checked);
+                    //string[] roles = { currentUser.IsAdmin ? "admin" : ""};
+                    //var userIdentity = new GenericIdentity(currentUser.UserName, "Forms");
+                    
+                    //HttpContext.Current.User = currentUser;
+                    //HttpContext.Current.User = currentUser;
+                    
+                    //FormsAuthentication.RedirectFromLoginPage(currentUser.UserName, CheckBoxRememberMe.Checked);
+                    var url = Request.QueryString["ReturnUrl"] ?? "~/Default.aspx";
+                    HttpContext.Current.Response.Redirect(url);
+
                 }
-            }
-            catch (Exception ex)
-            {
-                this.Page.Validators.Add(new ValidationError(ex.Message));
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    this.Page.Validators.Add(new ValidationError(ex.Message));
+            //}
         }
 
         protected void ClearTextBoxes(Control p1)

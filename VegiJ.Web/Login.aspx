@@ -1,19 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="VegiJ.Web.Login" %>
+﻿<%@ Page Language="C#" Title="Log In" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="VegiJ.Web.Login" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>VegiJ: Log In</title>
-    <link href="Content/bootstrap.css" type="text/css" rel="stylesheet" />
+<asp:Content runat="server" ID="head" ContentPlaceHolderID="head">
     <link href="Content/login-styles.css" type="text/css" rel="stylesheet" />
-</head>
-<body>
-    <form id="loginForm" runat="server" class="form-group form-signin" style="width: 300px">
-        <div class="container">
-            <h2 class=".form-signin-heading">Please sing in</h2>
+</asp:Content>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div id="loginForm" class=" form-signin">
+        <div class="form-container form-group">
+            <h2 class="form-signin-heading">Please sing in</h2>
             <h5>
-                <asp:ValidationSummary ID="LogInValidationSummary" runat="server" ForeColor="#CC0000"  HeaderText="The following errors occured:" />
+                <asp:ValidationSummary ID="LogInValidationSummary" runat="server" ForeColor="#CC0000" HeaderText="The following errors occured:" />
             </h5>
             <div class="input-group">
                 <span class="input-group-addon glyphicon glyphicon-user" id="user-gly"></span>
@@ -32,22 +27,18 @@
             <div class="checkbox">
                 <asp:CheckBox ID="CheckBoxRememberMe" runat="server" />&nbsp;<asp:Label ID="LblRememberMe" runat="server" Text="Remember me?" AssociatedControlID="CheckBoxRememberMe"></asp:Label>
             </div>
-            <div class="row" role="group">
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <div class="form-group">
-                        <asp:Button ID="BtnReset" CssClass="btn btn-primary btn-warning form-control" runat="server" Text="Reset" OnClick="BtnReset_Click" />
-                    </div>
+            <div class="row form-footer" role="group">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <asp:Button ID="BtnReset" CssClass="btn btn-primary btn-warning form-control" runat="server" Text="Reset" OnClick="BtnReset_Click" />
+
                 </div>
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <div class="form-group">
-                        <asp:Button ID="BtnSubmit" role="button" CssClass="btn btn-primary btn-success form-control" runat="server" Text="Log In" OnClick="BtnSubmit_Click" />
-                    </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 reg-btn">
+                    <asp:Button ID="BtnSubmit" CssClass="btn btn-primary btn-success form-control" runat="server" Text="Log In" OnClick="BtnSubmit_Click" />
                 </div>
             </div>
         </div>
         <h6>Not a member?
             <asp:HyperLink ID="LinkRegister" runat="server" NavigateUrl="~/Register.aspx">Register here.</asp:HyperLink>
         </h6>
-    </form>
-</body>
-</html>
+    </div>
+</asp:Content>

@@ -13,13 +13,13 @@ namespace VegiJ.Web {
     public partial class Login {
         
         /// <summary>
-        /// loginForm control.
+        /// LogInValidationSummary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm loginForm;
+        protected global::System.Web.UI.WebControls.ValidationSummary LogInValidationSummary;
         
         /// <summary>
         /// LblUsername control.
@@ -137,14 +137,5 @@ namespace VegiJ.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink LinkRegister;
-        
-        /// <summary>
-        /// LogInValidationSummary control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary LogInValidationSummary;
     }
 }

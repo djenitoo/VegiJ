@@ -1,9 +1,14 @@
 ﻿namespace VegiJ.Logic
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
+    using System.Security.Claims;
+    using System.Security.Principal;
     using System.Text.RegularExpressions;
-    using System.Web.Security;
+    using System.Web;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.Owin.Security;
     using VegiJ.DataAccess;
 
     public static class SecurityManager //: ISecurityProvider
@@ -40,17 +45,31 @@
                 throw new ArgumentException("Incorrect length of password!");
             }
             var foundUser = userManager.GetUsers().AsEnumerable()
-                .Where(u => string.Equals((u.UserName as string), username, StringComparison.InvariantCultureIgnoreCase) == true)
+                .Where(u => 
+                string.Equals((u.UserName as string), username, StringComparison.InvariantCultureIgnoreCase) == true)
                 .FirstOrDefault();
             if (foundUser == null) return false;
             //var hashedPassword = PasswordHash.EncryptPassword(password, foundUser.Salt);
             var areEqualPasswords = PasswordHash.ComparePasswords(password, foundUser.Salt, foundUser.Password);
             if (areEqualPasswords)
-            {                  
-                //FormsAuthentication.SetAuthCookie(username, rememberMe);
+            {
                 foundUser.LastLoginDate = DateTime.Now;
                 userManager.UpdateUser(foundUser);
                 currentUser = foundUser;
+                var roles = new List<string> { "user"};
+                if (currentUser.IsAdmin)
+                {
+                    roles.Add("admin");
+                }
+                // TODO: Add more properties to the cookie
+                var authMan = HttpContext.Current.GetOwinContext().Authentication;
+                var userIdentity = new GenericIdentity(currentUser.UserName, DefaultAuthenticationTypes.ApplicationCookie);
+                foreach (var role in roles)
+                {
+                    userIdentity.AddClaim(new Claim(ClaimTypes.Role, role));
+                }
+                authMan.SignIn(new AuthenticationProperties() {IsPersistent = rememberMe}, userIdentity);
+                
                 return true;
             }
             return false;
@@ -63,7 +82,9 @@
 
         public static void LogOut()
         {
-            FormsAuthentication.SignOut();
+            var authMan = HttpContext.Current.GetOwinContext().Authentication;
+            authMan.SignOut();
+            //FormsAuthentication.SignOut();
             currentUser = null;
             userManager = null;
         }
