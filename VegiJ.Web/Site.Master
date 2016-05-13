@@ -6,14 +6,14 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - VegiJ</title>
-    
-    
+    <title>VegiJ: <%: Page.Title %></title>
+
+
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -53,21 +53,38 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li><a runat="server" href="~/Login.aspx">Log in</a></li>
-                        <li><a runat="server" href="~/Register.aspx">Register</a></li>
+                        <li><a runat="server" href="~/Default.aspx">Home</a></li>
+                        <li><a runat="server" href="About.aspx">About</a></li>
+                        <li><a runat="server" href="Contact.aspx">Contact</a></li>
+                        <% if (HttpContext.Current.User.Identity.IsAuthenticated)
+                            { %>
+                        <li><a runat="server" href="~/Users/Default.aspx">Simple user page</a></li>
+                        <asp:FormView ID="userDetail" runat="server" SelectMethod="GetUser" ItemType="VegiJ.DataAccess.User" RenderOuterTable="False">
+                            <ItemTemplate>
+                                <li><a href="<%#: GetRouteUrl("UserByNameRoute", new {username = Item.UserName}) %>">Profile</a></li>
+                            </ItemTemplate>
+                        </asp:FormView>
+                        <% if (HttpContext.Current.User.IsInRole("admin"))
+                            { %>
+                        <li><a runat="server" href="~/Users/Administration/Default.aspx">Simple admin page</a></li>
+                        <% } %>
+                        <% } %>
+                        <%
+                            else
+                            { %>
+                        <li><a runat="server" href="~/Users/Auth/Login.aspx">Log in</a></li>
+                        <li><a runat="server" href="~/Users/Auth/Register.aspx">Register</a></li>
+                        <% } %>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="container body-content">
             <div class="main-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
             </div>
-            
+
             <footer id="master-page-footer">
                 <hr />
                 <p>&copy; <%: DateTime.Now.Year %> - VegiJ</p>

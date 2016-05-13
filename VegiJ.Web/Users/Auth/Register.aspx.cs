@@ -1,28 +1,24 @@
-﻿
-
-namespace VegiJ.Web
+﻿namespace VegiJ.Web.Users.Auth
 {
     using System;
     using System.Web.UI;
     using System.Web.UI.WebControls;
     using DataAccess;
     using Helpers;
-    using Logic;
     using Ninject;
-
-
+    
     public partial class Register : Ninject.Web.PageBase
     {
-        private IUserManager userManager { get; set; }
-
         [Inject]
-        public void Setup(IRepository<User> repository)
-        {
-            this.userManager = new UserManager(repository);
-        }
-
+        public IUserManager UserManager { get; set; }
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("~/Default.aspx");
+            }
+
             this.PanelRegister.Visible = true;
             this.PanelSuccessfulRegister.Visible = false;
         }
@@ -32,13 +28,17 @@ namespace VegiJ.Web
             string username = TxtboxUsername.Text.Trim();
             string password = TxtboxPassword.Text.Trim();
             string email = TxtboxEmail.Text.Trim();
-            
+            string firstName = TxtboxFirstName.Text.Trim();
+            string lastName = TxtboxLastName.Text.Trim();
+
             try
             {
-                var userToRegister = new User(username, password, email);
-                userToRegister.FirstName = TxtboxFirstName.Text.Trim();
-                userToRegister.LastName = TxtboxLastName.Text.Trim();
-                this.userManager.AddUser(userToRegister);
+                var userToRegister = new User(username, password, email)
+                {
+                    FirstName = firstName,
+                    LastName = lastName
+                };
+                this.UserManager.CreateUser(userToRegister);
             }
             catch (Exception ex)
             {
@@ -46,7 +46,7 @@ namespace VegiJ.Web
                 return;
             }
 
-            // TODO: Here successful continue after registration
+            // Here successful continue after registration
             this.PanelRegister.Visible = false;
             this.PanelSuccessfulRegister.Visible = true;
         }

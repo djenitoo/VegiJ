@@ -14,6 +14,18 @@ namespace VegiJ.Web
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            // Add routes
+            RegisterCustomRoutes(RouteTable.Routes);
+        }
+
+        void RegisterCustomRoutes(RouteCollection routes)
+        {
+            routes.MapPageRoute(
+                "UserByNameRoute",
+                "Users/{username}",
+                "~/Users/Profile.aspx"
+                );
         }
     }
 }

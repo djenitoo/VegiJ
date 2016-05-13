@@ -18,7 +18,6 @@ namespace VegiJ.DataAccess
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                LoginPath = new PathString("/Login.aspx"),
                 CookieSecure = CookieSecureOption.SameAsRequest
             });
         }

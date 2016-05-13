@@ -1,7 +1,7 @@
-﻿<%@ Page Language="C#" Title="Log In" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="VegiJ.Web.Login" %>
+﻿<%@ Page Language="C#" Title="Log In" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="VegiJ.Web.Users.Auth.Login" %>
 
 <asp:Content runat="server" ID="head" ContentPlaceHolderID="head">
-    <link href="Content/login-styles.css" type="text/css" rel="stylesheet" />
+    <link href="../../Content/login-styles.css" type="text/css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div id="loginForm" class=" form-signin">
@@ -15,7 +15,7 @@
                 <asp:Label ID="LblUsername" CssClass="sr-only" runat="server" Text="Username"></asp:Label>
                 <asp:TextBox ID="TxtboxUsername" CssClass="form-control" aria-describedby="user-gly" placeholder="Username" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredUsernameValidator" CssClass="validator" runat="server" ErrorMessage="Username is required." ControlToValidate="TxtboxUsername" Font-Size="Large">*</asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="UsernameLengthValidator" CssClass="validator" runat="server" ErrorMessage="Username length should be between 5 and 20 characters!" Text="*" ControlToValidate="TxtBoxUsername" ValidationExpression="^[\s\S]{5,20}$"></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="UsernameLengthValidator" CssClass="validator" runat="server" ErrorMessage="Username length should be between 5 and 20 characters!" Text="*" ControlToValidate="TxtBoxUsername" ValidationExpression="^[\s\S]{4,20}$"></asp:RegularExpressionValidator>
             </div>
             <div class="input-group">
                 <span class="input-group-addon glyphicon glyphicon-pencil" id="psw-gly"></span>
@@ -38,7 +38,7 @@
             </div>
         </div>
         <h6>Not a member?
-            <asp:HyperLink ID="LinkRegister" runat="server" NavigateUrl="~/Register.aspx">Register here.</asp:HyperLink>
+            <asp:HyperLink ID="LinkRegister" runat="server" NavigateUrl="Register.aspx">Register here.</asp:HyperLink>
         </h6>
     </div>
 </asp:Content>

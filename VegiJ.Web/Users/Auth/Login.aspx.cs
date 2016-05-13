@@ -1,33 +1,25 @@
-﻿namespace VegiJ.Web
+﻿namespace VegiJ.Web.Users.Auth
 {
     using System;
-    using System.Security.Claims;
-    using System.Security.Principal;
     using System.Web;
-    using System.Web.Configuration;
-    using System.Web.Security;
     using System.Web.UI;
     using System.Web.UI.WebControls;
     using DataAccess;
-    using DataAccess.Contracts;
     using Helpers;
     using Logic;
     using Ninject;
 
     public partial class Login : Ninject.Web.PageBase
     {
-
-        private IRepository<User> userRepository { get; set; }
-
         [Inject]
-        public void Setup(IDbContext context)
-        {
-            this.userRepository = new Repository<User>(context);
-        }
+        public IRepository<User> userRepository { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("~/Default.aspx");
+            }
         }
 
         protected void BtnReset_Click(object sender, EventArgs e)
@@ -41,28 +33,26 @@
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
             
-            //try
-            //{
+            try
+            {
                 SecurityManager.LoadUserRepository(userRepository);
                 if (SecurityManager.LogIn(TxtboxUsername.Text, TxtBoxPassword.Text, CheckBoxRememberMe.Checked))
                 {
                     var currentUser = SecurityManager.GetCurrentUser();
                     //string[] roles = { currentUser.IsAdmin ? "admin" : ""};
                     //var userIdentity = new GenericIdentity(currentUser.UserName, "Forms");
-                    
                     //HttpContext.Current.User = currentUser;
-                    //HttpContext.Current.User = currentUser;
-                    
                     //FormsAuthentication.RedirectFromLoginPage(currentUser.UserName, CheckBoxRememberMe.Checked);
+
                     var url = Request.QueryString["ReturnUrl"] ?? "~/Default.aspx";
                     HttpContext.Current.Response.Redirect(url);
 
                 }
-            //}
-            //catch (Exception ex)
-            //{
-            //    this.Page.Validators.Add(new ValidationError(ex.Message));
-            //}
+            }
+            catch (Exception ex)
+            {
+                this.Page.Validators.Add(new ValidationError(ex.Message));
+            }
         }
 
         protected void ClearTextBoxes(Control p1)

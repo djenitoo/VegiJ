@@ -1,8 +1,8 @@
-﻿<%@ Page Title="Register" Language="C#" ValidateRequest="true" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="VegiJ.Web.Register" %>
+﻿<%@ Page Title="Register" Language="C#" ValidateRequest="true" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="VegiJ.Web.Users.Auth.Register" %>
 
 
 <asp:Content runat="server" ID="head" ContentPlaceHolderID="head">
-    <link href="Content/login-styles.css" type="text/css" rel="stylesheet" />
+    <link href="../../Content/login-styles.css" type="text/css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div id="registerForm" class="form-group form-reg">
@@ -17,7 +17,7 @@
                     <asp:Label ID="LblUsername" CssClass="sr-only" runat="server" Text="Username"></asp:Label>
                     <asp:TextBox ID="TxtboxUsername" CssClass="form-control" aria-describedby="user-gly" placeholder="Username" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredUsernameValidator" CssClass="validator" runat="server" ErrorMessage="Username is required." ControlToValidate="TxtboxUsername" Font-Size="Large">*</asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="UsernameLengthValidator" CssClass="validator" runat="server" ErrorMessage="Username length should be between 5 and 20 characters!" Text="*" ControlToValidate="TxtBoxUsername" ValidationExpression="^[\s\S]{5,20}$"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="UsernameLengthValidator" CssClass="validator" runat="server" ErrorMessage="Username length should be between 5 and 20 characters!" Text="*" ControlToValidate="TxtBoxUsername" ValidationExpression="^[\s\S]{4,20}$"></asp:RegularExpressionValidator>
                 </div>
             </div>
             <div class="row">
@@ -73,7 +73,7 @@
             </div>
             <div class="row footer-text">
                 <h6>Already a member?
-                    <asp:HyperLink ID="HyperLinkLogin" runat="server" NavigateUrl="~/Login.aspx">Log in.</asp:HyperLink></h6>
+                    <asp:HyperLink ID="HyperLinkLogin" runat="server" NavigateUrl="Login.aspx">Log in.</asp:HyperLink></h6>
             </div>
         </asp:Panel>
         <asp:Panel ID="PanelSuccessfulRegister" runat="server" Visible="False">
@@ -82,7 +82,7 @@
                 <h5>Continue to login page?</h5>
                 <div class="row form-footer">
                     <div class="col-xs-4 col-sm-4 col-md-4 reg-btn">
-                        <asp:Button ID="BtnContinueToLogIn" CssClass="btn btn-primary btn-success form-control" runat="server" Text="Log In" PostBackUrl="~/Login.aspx" />
+                        <asp:Button ID="BtnContinueToLogIn" CssClass="btn btn-primary btn-success form-control" runat="server" Text="Log In" PostBackUrl="Login.aspx" />
                     </div>
                 </div>
             </div>

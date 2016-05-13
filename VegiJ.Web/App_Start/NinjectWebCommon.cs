@@ -1,20 +1,20 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(VegiJ.Web.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(VegiJ.Web.App_Start.NinjectWebCommon), "Stop")]
+using VegiJ.Web;
 
-namespace VegiJ.Web.App_Start
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(NinjectWebCommon), "Stop")]
+
+namespace VegiJ.Web
 {
     using System;
     using System.Web;
     using System.Web.Security;
+    using DataAccess;
+    using DataAccess.Contracts;
     using Helpers;
+    using Logic;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-
     using Ninject;
     using Ninject.Web.Common;
-
-    using VegiJ.DataAccess;
-    using VegiJ.DataAccess.Contracts;
-    using VegiJ.Logic;
 
     public static class NinjectWebCommon 
     {
@@ -72,8 +72,6 @@ namespace VegiJ.Web.App_Start
             kernel.Bind<IRecipeManager>().To<RecipeManager>();
             kernel.Bind<ICategoryManager>().To<CategoryManager>();
             kernel.Bind<RoleProvider>().To<CustomRoleProvider>();
-            //kernel.Inject(Roles.Provider);
-
         }
     }
 }

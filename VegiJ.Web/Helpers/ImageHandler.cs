@@ -1,8 +1,7 @@
-﻿using System;
-using System.Web;
-
-namespace VegiJ.Web
+﻿namespace VegiJ.Web.Helpers
 {
+    using System.Web;
+
     public class ImageHandler : IHttpHandler
     {
         /// <summary>

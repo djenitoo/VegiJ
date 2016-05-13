@@ -3,8 +3,7 @@
     using System;
     using System.Linq;
     using VegiJ.DataAccess;
-    // TODO: throw apporitate exception in cruds
-    // TODO: validate for existing username/email and response for successful/unsusecessful operation
+    
     public class UserManager : IUserManager
     {
         private IRepository<User> userRepository;
@@ -14,7 +13,7 @@
             this.userRepository = userRepository;
         }
 
-        public void AddUser(User user)
+        public void CreateUser(User user)
         {
             if (this.UsernameExist(user.UserName))
             {
@@ -63,9 +62,9 @@
 
             userRepository.Update(user);
         }
-
+        
         // TODO: add method for admin to make admins
-        // TODO: SecredQuestion & Answer, Email Veritification()? Also some privilegies/roles?
+        // TODO: SecredQuestion & Answer, Email Veritification()
 
         private bool UsernameExist(string username)
         {

@@ -1,6 +1,4 @@
-﻿
-
-namespace VegiJ.Web
+﻿namespace VegiJ.Web
 {
     using System;
     using System.Linq;
@@ -13,6 +11,7 @@ namespace VegiJ.Web
 
     public partial class _Default : Ninject.Web.PageBase
     {
+        // TODO: Make injections tru properties
         //[Inject]
         //IUserProvider userManager { get; set; }
 
@@ -41,14 +40,14 @@ namespace VegiJ.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             //User exmplUser = new User("arya", "012358", "noOne@abv.bg");
-            //userManager.AddUser(exmplUser);
+            //userManager.CreateUser(exmplUser);
             usersGridView.DataSource = userManager.GetUsers().ToList();
             usersGridView.DataBind();
             var frms = User.Identity.AuthenticationType;
             if (Request.IsAuthenticated)
             {
                 LogInButton.Visible = false;
-                WelcomeBackMessage.Text = "Welcome back, " + HttpContext.Current.User.Identity.Name + "!";
+                WelcomeBackMessage.Text = "Welcome back, " + User.Identity.Name + "!";
                 AuthenticatedMessagePanel.Visible = true;
                 LogInButton.Visible = false;
                 logOutButton.Visible = true;

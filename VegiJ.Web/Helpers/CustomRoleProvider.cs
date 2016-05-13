@@ -7,7 +7,7 @@
     using System.Linq;
     using VegiJ.DataAccess;
     using Ninject;
-
+    // TODO: Maybe remove it, if its not used
     public class CustomRoleProvider : RoleProvider
     {
         private string applicationName;

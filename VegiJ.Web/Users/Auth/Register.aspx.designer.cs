@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VegiJ.Web {
+namespace VegiJ.Web.Users.Auth {
     
     
     public partial class Register {

@@ -3,17 +3,19 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.Data;
+    using System.Dynamic;
     using System.Net.Mail;
     using System.Security.Principal;
     using System.Text.RegularExpressions;
     using System.Web.Security;
+
     public class User : BaseEntity , IPrincipal
     { 
         // TODO: Add user profile image
         public string UserName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string FullName { get { return this.FirstName + " " + this.LastName; } }
         public string Email { get; set; }
         public string Password { get; set; }
         public DateTime? LastLoginDate { get; set; }
@@ -91,14 +93,18 @@
             {
                 throw new ArgumentException("Username and password cannot be empty!");
             }
-            // TODO: add global const strings
-            if (username.Length < 5)
+
+            if (username.Length < GlobalConstants.UsernameMinLength || username.Length > GlobalConstants.UsernameMaxLength)
             {
-                throw new ArgumentException("Incorrect length of username!");
+                throw new ArgumentException(string.Format("Incorrect length of username! Username length should be between {0} and {1} characters!",
+                    GlobalConstants.UsernameMinLength,
+                    GlobalConstants.UsernameMaxLength));
             }
-            if (password.Length < 6)
+            if (password.Length < GlobalConstants.UsernamePasswordMinLength || password.Length > GlobalConstants.UsernamePasswordMaxLength)
             {
-                throw new ArgumentException("Incorrect length of password!");
+                throw new ArgumentException(string.Format("Incorrect length of password! Password length should be between {0} and {1} characters!",
+                    GlobalConstants.UsernamePasswordMinLength,
+                    GlobalConstants.UsernamePasswordMaxLength));
             }
 
             if (!IsValidEmail(email))
