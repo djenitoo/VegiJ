@@ -7,6 +7,8 @@
         public static int UsernamePasswordMinLength = 6;
         public static int UsernamePasswordMaxLength = 20;
         public static string DateTimeFormat = "dd/MM/yyyy H:mm";
+        public static string DateFormat = "dd/MM/yyyy";
         public static string NoLoginDate = "No login date.";
+        public static string UnknownString = "Unknown";
     }
 }

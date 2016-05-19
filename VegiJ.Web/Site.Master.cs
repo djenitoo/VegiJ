@@ -4,7 +4,6 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Web;
-    using System.Web.ModelBinding;
     using DataAccess;
     using Logic;
     using Ninject;
@@ -13,6 +12,8 @@
     {
         [Inject]
         public IUserManager UserManager { get; set; }
+        [Inject]
+        public IRepository<User> userRepository { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,6 +32,16 @@
             }
 
             return user;
+        }
+
+        protected void BtnLogOut_Click(object sender, EventArgs e)
+        {
+            SecurityManager.LoadUserRepository(userRepository);
+            HttpContext.Current.Session.Clear();
+            HttpContext.Current.Session.Abandon();
+            HttpContext.Current.User = null;
+            SecurityManager.LogOut();
+            Response.Redirect("~/Default.aspx");
         }
     }
 }

@@ -47,3 +47,6 @@ textarea {
         padding: 0;
     }
 }
+.navbar-brand {
+    padding: 10px 15px;
+}

@@ -20,5 +20,17 @@ namespace VegiJ.Web.Users {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FormView userDetail;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new VegiJ.Web.SiteMaster Master {
+            get {
+                return ((VegiJ.Web.SiteMaster)(base.Master));
+            }
+        }
     }
 }

@@ -86,9 +86,11 @@
     <Compile Include="Contracts\IRepository.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="Gender.cs" />
     <Compile Include="GlobalConstants.cs" />
     <Compile Include="Mapping\CategoryMap.cs" />
     <Compile Include="Mapping\EventMap.cs" />
+    <Compile Include="Mapping\GenderMap.cs" />
     <Compile Include="Mapping\RecipeMap.cs" />
     <Compile Include="Mapping\TagMap.cs" />
     <Compile Include="Mapping\TipMap.cs" />

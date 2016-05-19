@@ -26,6 +26,11 @@ namespace VegiJ.Web
                 "Users/{username}",
                 "~/Users/Profile.aspx"
                 );
+            routes.MapPageRoute(
+                "SettingsByUserNameRoute",
+                "Users/{username}/Settings",
+                "~/Users/Settings.aspx"
+                );
         }
     }
 }

@@ -14,12 +14,17 @@
             Property(t => t.LastName);
             Property(t => t.Password);
             Property(t => t.Email);
+            Property(t => t.BirthDate);
             Property(t => t.CreatedDate);
             Property(t => t.Salt);
             Property(t => t.IsAdmin).IsOptional();
             Property(t => t.LastLoginDate).IsOptional();
             Property(t => t.LastModifiedDate);
             // TODO: is this even real
+            HasOptional(t => t.Gender)
+                .WithMany(g => g.Users)
+                .HasForeignKey(t => t.GenderID)
+                .WillCascadeOnDelete(false);
             HasMany(t => t.Recipes)
                 .WithRequired(t => t.Author)
                 .HasForeignKey(t => t.AuthorId);

@@ -91,6 +91,8 @@
                 new Claim(ClaimTypes.NameIdentifier, user.ID.ToString()),
                 new Claim(ClaimTypes.GivenName, user.FirstName),
                 new Claim(ClaimTypes.Surname, user.LastName),
+                new Claim(ClaimTypes.DateOfBirth, user.BirthDate.ToString()),
+                new Claim(ClaimTypes.Gender, user.GenderID.ToString()),
                 new Claim(ClaimTypes.Email, user.Email, ClaimValueTypes.Email),
                 new Claim("LastLoginDate", user.LastLoginDate.ToString(), ClaimValueTypes.DateTime),
                 new Claim("LastModifiedDate", user.LastModifiedDate.ToString(CultureInfo.InvariantCulture), ClaimValueTypes.DateTime),

@@ -1,11 +1,14 @@
 ﻿<%@ Page Language="C#" Title="Log In" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="VegiJ.Web.Users.Auth.Login" %>
 
 <asp:Content runat="server" ID="head" ContentPlaceHolderID="head">
-    <link href="../../Content/login-styles.css" type="text/css" rel="stylesheet" />
+    <link href="/Content/login-styles.css" type="text/css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div id="loginForm" class=" form-signin">
         <div class="form-container form-group">
+            <div>
+                <img src="/images/VegiJ-logo-with-space-50x92.png" runat="server" class="logo-reg-form" alt="vegi j logo" />
+            </div>
             <h2 class="form-signin-heading">Please sing in</h2>
             <h5>
                 <asp:ValidationSummary ID="LogInValidationSummary" runat="server" ForeColor="#CC0000" HeaderText="The following errors occured:" />
@@ -24,8 +27,10 @@
                 <asp:RequiredFieldValidator ID="RequiredPasswordValidator" CssClass="validator" runat="server" ControlToValidate="TxtBoxPassword" ErrorMessage="Password is required." Font-Size="Large">*</asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="PasswordLengthValidator" CssClass="validator" runat="server" ErrorMessage="Password length should be between 6 and 20 characters and should not contain spaces!" Text="*" ControlToValidate="TxtBoxPassword" ValidationExpression="^[\S]{6,20}$"></asp:RegularExpressionValidator>
             </div>
-            <div class="checkbox">
-                <asp:CheckBox ID="CheckBoxRememberMe" runat="server" />&nbsp;<asp:Label ID="LblRememberMe" runat="server" Text="Remember me?" AssociatedControlID="CheckBoxRememberMe"></asp:Label>
+            <div class="row">
+                <div class="checkbox">
+                    <asp:CheckBox ID="CheckBoxRememberMe" runat="server" /><asp:Label ID="LblRememberMe" runat="server" Text="Remember me?" AssociatedControlID="CheckBoxRememberMe"></asp:Label>
+                </div>
             </div>
             <div class="row form-footer" role="group">
                 <div class="col-xs-4 col-sm-4 col-md-4">

@@ -22,6 +22,15 @@ namespace VegiJ.Web {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
+        /// _Script control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager _Script;
+        
+        /// <summary>
         /// userDetail control.
         /// </summary>
         /// <remarks>

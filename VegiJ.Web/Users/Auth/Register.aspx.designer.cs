@@ -157,6 +157,51 @@ namespace VegiJ.Web.Users.Auth {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator EmailRegExValidator;
         
         /// <summary>
+        /// LabelBirthday control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelBirthday;
+        
+        /// <summary>
+        /// RadDatePicker control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadDatePicker RadDatePicker;
+        
+        /// <summary>
+        /// RequiredFieldValidatorBirthDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorBirthDate;
+        
+        /// <summary>
+        /// LabelGender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelGender;
+        
+        /// <summary>
+        /// DropDownGender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownGender;
+        
+        /// <summary>
         /// LblPassword control.
         /// </summary>
         /// <remarks>

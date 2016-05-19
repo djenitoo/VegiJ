@@ -3,14 +3,15 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.Dynamic;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Globalization;
     using System.Net.Mail;
     using System.Security.Principal;
     using System.Text.RegularExpressions;
     using System.Web.Security;
 
-    public class User : BaseEntity , IPrincipal
-    { 
+    public class User : BaseEntity, IPrincipal
+    {
         // TODO: Add user profile image
         public string UserName { get; set; }
         public string FirstName { get; set; }
@@ -18,9 +19,13 @@
         public string FullName { get { return this.FirstName + " " + this.LastName; } }
         public string Email { get; set; }
         public string Password { get; set; }
+        public DateTime? BirthDate { get; set; }
         public DateTime? LastLoginDate { get; set; }
         public string Salt { get; set; }
         public bool IsAdmin { get; set; }
+        [ForeignKey("Gender")]
+        public Guid? GenderID { get; set; }        
+        public virtual Gender Gender { get; set; }
         private ICollection<Recipe> _recipes;
         private ICollection<Tip> _tips;
         private ICollection<Event> _events;
@@ -59,9 +64,15 @@
         {
         }
 
-        public User(string username, string password, string email, string firstname = null, string lastname = null)
+        public User(string username,
+                    string password,
+                    string email,
+                    string birthDate,
+                    string genderID,
+                    string firstname = null,
+                    string lastname = null)
         {
-            ValidateUser(username, password, email);
+            ValidateUser(username, password, email, birthDate);
             this.UserName = username;
             this.Salt = PasswordHash.GenerateSalt();
             this.Password = PasswordHash.EncryptPassword(password, this.Salt);
@@ -69,6 +80,7 @@
             this.IsAdmin = false;
             this.FirstName = firstname;
             this.LastName = lastname;
+            this.GenderID = Guid.Parse(genderID);
         }
 
         public bool IsInRole(string role)
@@ -76,9 +88,10 @@
             return Roles.Provider.IsUserInRole(this.UserName, role);
         }
 
-        private void ValidateUser(string username, 
-                                  string password, 
-                                  string email)
+        private void ValidateUser(string username,
+                                  string password,
+                                  string email,
+                                  string birthDate)
         {
             username = Regex.Replace(username, "\\s+", " ");
             password = password.Trim();
@@ -102,6 +115,7 @@
             }
             if (password.Length < GlobalConstants.UsernamePasswordMinLength || password.Length > GlobalConstants.UsernamePasswordMaxLength)
             {
+                // TODO: Make messages global constants
                 throw new ArgumentException(string.Format("Incorrect length of password! Password length should be between {0} and {1} characters!",
                     GlobalConstants.UsernamePasswordMinLength,
                     GlobalConstants.UsernamePasswordMaxLength));
@@ -110,6 +124,16 @@
             if (!IsValidEmail(email))
             {
                 throw new ArgumentException("Invalid email!");
+            }
+
+            try
+            {
+                this.BirthDate = DateTime.Parse(birthDate);
+            }
+            catch (Exception)
+            {
+                
+                throw new ArgumentException("Invalid birth date!");
             }
         }
 

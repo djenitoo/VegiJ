@@ -1,0 +1,101 @@
+﻿body {
+}
+
+.settings-container {
+    width: 600px !important;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 15px;
+}
+
+.form-group {
+    padding: 15px 15px 10px;
+    margin-bottom: 0;
+}
+
+.form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.input-group {
+    margin: 5px;
+}
+
+#ui-datepicker-div {
+    z-index: 2 !important;
+}
+
+.fa {
+    display: table-cell;
+}
+
+.settings-container .row > div, .settings-container .input-group {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.settings-container .RadInput .riTextBox {
+    padding: 10px;
+    font-size: 16px;
+    height: auto;
+}
+
+.validator {
+    float: right;
+    position: absolute;
+    color: red;
+}
+
+#user-gly, #psw-gly, #email-gly, #calendar-gly {
+    top: 0;
+}
+
+#user-gly {
+    border-bottom: 0;
+}
+
+.settings-container .RadInput a {
+    width: 2em;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.settings-container input, .settings-container {
+    margin-bottom: 0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    max-width: inherit;
+    margin: 0 auto;
+}
+.settings-container .col-md-6 .input-group input[type="text"].form-control,
+.settings-container .col-md-6 .input-group input[type="password"].form-control,
+.settings-container .input-group input[type="email"].form-control {
+        border-radius: 4px;
+    }
+    .settings-container .col-md-6 input {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+
+    .settings-container .col-md-6 .input-col-6-gly input, 
+    .settings-container .input-group input[type="email"].form-control {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+.form-control:focus {
+    z-index: 2;
+}
+.form-footer {
+    margin-top: 15px;
+}
+.reg-btn {
+    float: right;
+}

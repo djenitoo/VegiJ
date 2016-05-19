@@ -19,11 +19,18 @@ namespace VegiJ.Web.Users
         {
             if (RouteData.Values["username"] == null && Request.QueryString["UserID"] == null)
             {
-                Response.Redirect(GetRouteUrl("UserByNameRoute", new { username = User.Identity.Name }));
+                if (User.Identity.IsAuthenticated)
+                {
+                    Response.Redirect(GetRouteUrl("UserByNameRoute", new {username = User.Identity.Name}));
+                }
+                else
+                {
+                    Response.Redirect("Auth/Login.aspx");
+                }
             }
             this.Title = "Profile of " + RouteData.Values["username"];
         }
-        
+
         public IEnumerable<User> GetUser(
                         [QueryString("UserID")] Guid? userId,
                         [RouteData] string username)

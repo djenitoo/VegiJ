@@ -1,9 +1,7 @@
-using VegiJ.Web;
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(VegiJ.Web.App_Start.NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(VegiJ.Web.App_Start.NinjectWebCommon), "Stop")]
 
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(NinjectWebCommon), "Stop")]
-
-namespace VegiJ.Web
+namespace VegiJ.Web.App_Start
 {
     using System;
     using System.Web;
@@ -13,6 +11,7 @@ namespace VegiJ.Web
     using Helpers;
     using Logic;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
+
     using Ninject;
     using Ninject.Web.Common;
 
@@ -49,7 +48,7 @@ namespace VegiJ.Web
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
-                
+
                 RegisterServices(kernel);
                 return kernel;
             }
@@ -72,6 +71,6 @@ namespace VegiJ.Web
             kernel.Bind<IRecipeManager>().To<RecipeManager>();
             kernel.Bind<ICategoryManager>().To<CategoryManager>();
             kernel.Bind<RoleProvider>().To<CustomRoleProvider>();
-        }
+        }        
     }
 }

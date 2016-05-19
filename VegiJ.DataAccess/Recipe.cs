@@ -21,7 +21,7 @@
         public Recipe()
         {
         }
-
+        //TODO: Validation for missing foreign IDs
         public Recipe(string name, string content)
         {
             this.Title = name;

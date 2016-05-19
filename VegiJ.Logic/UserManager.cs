@@ -59,7 +59,10 @@
             {
                 throw new ArgumentException("Username do not exist!");
             }
-
+            //if (!PasswordHash.ComparePasswords(user.Password, user.Salt, userRepository.GetById(user.ID).Password))
+            //{
+            //    user.Password = PasswordHash.EncryptPassword(user.Password, user.Salt);
+            //}
             userRepository.Update(user);
         }
         

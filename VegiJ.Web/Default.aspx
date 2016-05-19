@@ -7,10 +7,9 @@
         <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
         <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
     </div>
-    <asp:Button ID="LogInButton" runat="server" Text="LogIn" OnClick="LogInButton_Click" />
     <asp:Button ID="CreateRecipeBtn" runat="server" Text="Create recipe" OnClick="CreateRecipeBtn_Click" />
     <asp:Panel ID="AuthenticatedMessagePanel" runat="server" Visible="False">
-        <asp:Label ID="WelcomeBackMessage" runat="server" Text="Label"></asp:Label><asp:Button ID="logOutButton" runat="server" Text="LogOut" OnClick="logOutButton_Click" Visible="False" />
+        <asp:Label ID="WelcomeBackMessage" runat="server" Text="Label"></asp:Label>
     </asp:Panel>
     <asp:GridView ID="usersGridView" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" BorderColor="#003300" BorderStyle="Solid" BorderWidth="1px">
             <AlternatingRowStyle BackColor="White" />
