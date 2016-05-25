@@ -1,0 +1,77 @@
+.RadRotator_VegiJ {
+  font-size: 1em;
+  /*================== The list ========================*/
+  /* For vertical carousel, not set, width defaults to auto */
+  /* Note if you explicitly set width to auto, this might cause */
+  /* problems with Safari */
+  /* When LoadOnDemand */ }
+  .RadRotator_VegiJ .rrClipRegion {
+    border: 1px solid #dddddd;
+    border-radius: 0.28571em; }
+  .RadRotator_VegiJ a.rrButton {
+    width: 2.42857em;
+    height: 2.42857em;
+    border-color: #eeeeee;
+    color: #333333;
+    background-color: #ffffff;
+    background-image: linear-gradient(); }
+  .RadRotator_VegiJ a.rrButtonUp {
+    top: 0.07143em;
+    border-radius: 0.28571em 0.28571em 0em 0em; }
+  .RadRotator_VegiJ a.rrButtonRight {
+    border-radius: 0em 0.28571em 0.28571em 0em; }
+  .RadRotator_VegiJ a.rrButtonDown {
+    border-radius: 0em 0em 0.28571em 0.28571em; }
+  .RadRotator_VegiJ a.rrButtonLeft {
+    left: 1px;
+    border-radius: 0.28571em 0em 0em 0.28571em; }
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .RadRotator_VegiJ a.rrButtonUp {
+      top: 0; }
+    .RadRotator_VegiJ a.rrButtonRight {
+      right: 0; }
+    .RadRotator_VegiJ a.rrButtonDown {
+      bottom: 0; }
+    .RadRotator_VegiJ a.rrButtonLeft {
+      left: 0; } }
+  .RadRotator_VegiJ a.rrButton:hover,
+  .RadRotator_VegiJ a.rrButton:focus {
+    border-color: #d0d0d0;
+    color: #333333;
+    background-color: #e6e6e6;
+    background-image: linear-gradient();
+    box-shadow: inset 0 0 1px #ffffff; }
+  .RadRotator_VegiJ a.rrButton:focus {
+    outline-width: thin;
+    outline-offset: -2px;
+    outline-color: #d0d0d0; }
+  .RadRotator_VegiJ a.rrButton:active {
+    border-color: #afafaf;
+    color: #333333;
+    background-color: #e6e6e6;
+    background-image: linear-gradient();
+    color: #333333;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset; }
+  .RadRotator_VegiJ a.rrButton:before {
+    font-size: 1.33333em;
+    font-size: .7em\9;
+    line-height: 1;
+    font-family: TelerikWebUI, monospace; }
+  .RadRotator_VegiJ _:-ms-fullscreen, .RadRotator_VegiJ a.rrButton:before {
+    font-size: .5em; }
+  .RadRotator_VegiJ a.rrButton:hover:before {
+    color: #333333; }
+  .RadRotator_VegiJ a.rrButtonRight:before {
+    content: "\E000"; }
+  .RadRotator_VegiJ a.rrButtonLeft:before {
+    content: "\E003"; }
+  .RadRotator_VegiJ a.rrButtonUp:before {
+    content: "\E001"; }
+  .RadRotator_VegiJ a.rrButtonDown:before {
+    content: "\E002"; }
+  .RadRotator_VegiJ .rrLoadingSign {
+    background-image: url('<%=WebResource("Telerik.Web.UI.Skins.Silk.Common.loading_small.gif")%>'); }
+
+/* ThemeBuilder Patch - should me removed after the official fix is merged */
+.RadRotator a.rrButton:before {
+  color: inherit; }

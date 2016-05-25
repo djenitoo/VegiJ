@@ -11,6 +11,7 @@
             Property(t => t.Content).HasColumnType("nvarchar(MAX)");
             Property(t => t.CreatedDate);
             Property(t => t.LastModifiedDate);
+            Property(t => t.IsApproved);
             HasRequired(t => t.Author)
                 .WithMany(c => c.Tips)
                 .HasForeignKey(t => t.AuthorId)

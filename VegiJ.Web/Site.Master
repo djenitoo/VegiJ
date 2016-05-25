@@ -7,7 +7,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VegiJ: <%: Page.Title %></title>
-
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
@@ -26,7 +25,7 @@
                 <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" Path="~/Scripts/jquery-2.2.3.min.js" />
                 <asp:ScriptReference Name="bootstrap" Path="~/Scripts/bootstrap.js" />
-                
+
                 <asp:ScriptReference Name="respond" />
                 <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
                 <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
@@ -55,29 +54,47 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/Default.aspx">Home</a></li>
+                        <li><a runat="server" href="Recipes.aspx">Recipes</a></li>
+                        <li><a runat="server" href="Tags.aspx">Tags</a></li>
                         <li><a runat="server" href="About.aspx">About</a></li>
                         <li><a runat="server" href="Contact.aspx">Contact</a></li>
                         <% if (HttpContext.Current.User.Identity.IsAuthenticated)
                             { %>
-                        <li><a runat="server" href="~/Users/Default.aspx">Simple user page</a></li>
-                        <asp:FormView ID="userDetail" runat="server" SelectMethod="GetUser" ItemType="VegiJ.DataAccess.User" RenderOuterTable="False">
-                            <ItemTemplate>
-                                <li><a href="<%#: GetRouteUrl("UserByNameRoute", new {username = Item.UserName}) %>">Profile</a></li>
-                            </ItemTemplate>
-                        </asp:FormView>
-                        <% if (HttpContext.Current.User.IsInRole("admin"))
-                            { %>
-                        <li><a runat="server" href="~/Users/Administration/Default.aspx">Simple admin page</a></li>
-                        <% } %>
-                        <li><a runat="server" href="Default.aspx" onserverclick="BtnLogOut_Click">Log Out</a></li>
-                        <% } %>
-                        <%
-                            else
-                            { %>
-                        <li><a runat="server" href="~/Users/Auth/Login.aspx">Log in</a></li>
-                        <li><a runat="server" href="~/Users/Auth/Register.aspx">Register</a></li>
+                        <li class="dropdown navbar-inverse">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">User
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu navbar-inverse">
+                                <li><a runat="server" href="~/Users/AddRecipe.aspx">Add Recipe</a></li>
+                                <li><a runat="server" href="~/Users/Default.aspx">Simple user page</a></li>
+                            </ul>
+                            <% if (HttpContext.Current.User.IsInRole("admin"))
+                                { %>
+                        <li class="dropdown navbar-inverse">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Administration
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu navbar-inverse">
+                                <li><a runat="server" href="~/Users/Administration/EditRecipes.aspx">Edit Recipes</a></li>
+                                <li><a runat="server" href="~/Users/Administration/EditUsers.aspx">Edit Users</a></li>
+                                <li><a runat="server" href="~/Users/Administration/Default.aspx">Simple admin page</a></li>
+                            </ul>
+                        </li>
                         <% } %>
                     </ul>
+                    <ul class="nav navbar-nav navbar-right navbar-inverse">
+                                <li><a href="<%= GetRouteUrl("UserByNameRoute", new {username = HttpContext.Current.User.Identity.Name}) %>"><span class="glyphicon glyphicon-user"></span> <%= HttpContext.Current.User.Identity.Name %></a></li>
+                            
+                        <li><a runat="server" href="~/Default.aspx" onserverclick="BtnLogOut_Click"><span class="glyphicon glyphicon-log-out"></span>Log out</a></li>
+                    </ul>
+                    <% } %>
+                    <%
+                        else
+                        { %>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right navbar-inverse">
+                        <li><a runat="server" href="~/Users/Auth/Login.aspx"><span class="glyphicon glyphicon-log-in"></span>Log in</a></li>
+                        <li><a runat="server" href="~/Users/Auth/Register.aspx"><span class="glyphicon glyphicon-user"></span>Register</a></li>
+                    </ul>
+                    <% } %>
                 </div>
             </div>
         </div>

@@ -1,0 +1,66 @@
+.RadImageEditor_VegiJ,
+.RadImageEditor_VegiJ.rieDialogs .riePrintContent,
+.RadImageEditor_VegiJ .rieHighlightVertical,
+.RadImageEditor_VegiJ .rieHighlightHorizontal,
+.RadDock_VegiJ.rieDialogs .rieActiveThumbsLink,
+.RadDock_VegiJ.rieDialogs .rieThumbsLink:hover,
+.RadDock_VegiJ.rieDialogs .riePrintContent,
+.RadDock_VegiJ.rieDialogs .riePrintContent img {
+  border-color: #dddddd;
+  background-color: #fcfcfc; }
+
+.RadImageEditor_VegiJ,
+.RadImageEditor_VegiJ .rieStatusBarInfo .rieLabel,
+.RadDock_VegiJ.rieDialogs .rdContent {
+  color: #333333; }
+
+.RadImageEditor_VegiJ .rieStatusBarInfo span {
+  color: #666666; }
+
+.RadImageEditor_VegiJ .rieContentArea,
+.RadDock_VegiJ.rieDialogs .rieThumbsBottomRow td,
+.RadDock_VegiJ.rieDialogs .rieDialogsThumbsLeft,
+.RadDock_VegiJ.rieDialogs .rieThumbsLink {
+  border-color: #dddddd; }
+
+.rieRotateTable .rbIcon:before,
+.rieResizeButtons .rbIcon:before {
+  color: #333333; }
+
+.rieRotateTable .rbHovered .rbIcon:before,
+.rieResizeButtons .rbHovered .rbIcon:before {
+  color: #006633; }
+
+.rieBottomCell {
+  border-color: #dddddd; }
+
+.rtbLink:before {
+  margin: 0.08333em 0.66667em 0 -1em; }
+
+.RadImageEditor_VegiJ .RadToolBar_VegiJ .rtbItem + .rtbItem {
+  margin-left: -0.07143em; }
+
+.RadImageEditor_VegiJ .RadToolBar_VegiJ .rtbSeparator {
+  margin: 0em 0.21429em;
+  border-color: transparent; }
+
+.RadImageEditor_VegiJ .RadToolBar_VegiJ .rtbLI:first-child .rtbButton {
+  border-radius: 0.28571em 0 0 0.28571em; }
+
+.RadImageEditor_VegiJ .RadToolBar_VegiJ .rtbLI:last-child .rtbButton {
+  border-radius: 0 0.28571em 0.28571em 0; }
+
+.RadImageEditor_VegiJ .RadToolBar_VegiJ .rtbButton {
+  border-radius: 0; }
+
+.RadToolBarDropDown_VegiJ_rtl .rtbLink:before {
+  margin: 0.08333em -1em 0 0.66667em; }
+
+.rieRtl .RadToolBar_VegiJ_rtl .rtbItem + .rtbItem {
+  margin-right: -0.07143em; }
+
+.rieRtl .RadToolBar_VegiJ_rtl .rtbLI:first-child .rtbButton {
+  border-radius: 0 0.28571em 0.28571em 0; }
+
+.rieRtl .RadToolBar_VegiJ_rtl .rtbLI:last-child .rtbButton {
+  border-radius: 0.28571em 0 0 0.28571em; }

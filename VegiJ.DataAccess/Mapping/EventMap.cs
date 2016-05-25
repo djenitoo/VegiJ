@@ -11,6 +11,7 @@
             Property(t => t.CreatedDate);
             Property(t => t.LastModifiedDate);
             Property(t => t.Place);
+            Property(t => t.IsApproved);
             Property(t => t.StartTime).IsOptional();
             HasRequired(t => t.Author)
                 .WithMany(c => c.Events)

@@ -39,10 +39,10 @@ namespace VegiJ.Web.Users
             {
                 if (!IsOwnProfilePage() && !User.IsInRole("admin"))
                 {
-                    Response.Redirect(GetRouteUrl("SettingsByUserNameRoute", new { username = User.Identity.Name }));
+                    Response.Redirect(GetRouteUrl("UserByNameRoute", new { username = User.Identity.Name }));
                 }
             }
-            
+            this.Title = "Profile Settings of " + RouteData.Values["username"];
             if (!IsPostBack)
             {
                 Page.DataBind();

@@ -1,0 +1,48 @@
+.RadProgressBar_VegiJ {
+  font-size: 1em;
+  color: #333333;
+  background-color: #f5f5f5; }
+  .RadProgressBar_VegiJ .rpbChunksWrapper .rpbChunkLast {
+    border: 0; }
+  .RadProgressBar_VegiJ.rpbHorizontal .rpbChunk {
+    border-width: 0 1px 0 0; }
+  .RadProgressBar_VegiJ.rpbVertical .rpbChunk {
+    border-width: 0 0 1px 0; }
+  .RadProgressBar_VegiJ .rpbStateSelected {
+    background-image: none; }
+    .RadProgressBar_VegiJ .rpbStateSelected:hover {
+      background-image: none; }
+  .RadProgressBar_VegiJ.rpbStripped .rpbStateSelected:before {
+    content: "";
+    display: block;
+    height: 100%;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-size: 24px 24px; }
+  .RadProgressBar_VegiJ .rpbLabel {
+    font-size: 0.85714em; }
+  .RadProgressBar_VegiJ > .rpbLabelWrapper {
+    line-height: normal; }
+  .RadProgressBar_VegiJ .rpbStateSelected {
+    border: 0;
+    color: #ffffff;
+    background-color: #006633; }
+  .RadProgressBar_VegiJ .rpbChunk {
+    border-color: #dddddd; }
+    .RadProgressBar_VegiJ .rpbChunk.rpbStateSelected {
+      border: 0; }
+  .RadProgressBar_VegiJ.rpbHorizontal {
+    height: 1.42857em;
+    box-shadow: 0 1px 3px 1px #dddddd inset; }
+    .RadProgressBar_VegiJ.rpbHorizontal .rpbStateSelected {
+      box-shadow: 0 -1px 0 1px #00331a inset; }
+      .RadProgressBar_VegiJ.rpbHorizontal .rpbStateSelected .rpbLabelWrapper {
+        line-height: 1.1em; }
+  .RadProgressBar_VegiJ.rpbVertical {
+    width: 1.42857em;
+    box-shadow: 1px 0 3px 1px #dddddd inset; }
+    .RadProgressBar_VegiJ.rpbVertical .rpbLabel {
+      padding: 0 1em; }
+    .RadProgressBar_VegiJ.rpbVertical .rpbStateSelected {
+      box-shadow: -1px 0 0 1px #00331a inset; }
+  .RadProgressBar_VegiJ.rpbIndeterminate {
+    background-image: url('<%=WebResource("Telerik.Web.UI.Skins.VegiJ.Common.radIndeterminate.gif")%>'); }

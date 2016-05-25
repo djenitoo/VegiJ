@@ -80,6 +80,8 @@
     <Compile Include="RecipeManager.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="SecurityManager.cs" />
+    <Compile Include="TagManager.cs" />
+    <Compile Include="TipManager.cs" />
     <Compile Include="UserManager.cs" />
   </ItemGroup>
   <ItemGroup>

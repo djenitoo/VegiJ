@@ -1,0 +1,47 @@
+.RadToolTip_VegiJ {
+  background-color: #ffffff;
+  color: #333333;
+  border-color: #dddddd; }
+  .RadToolTip_VegiJ .rtTitleWrapper {
+    color: #333333; }
+  .RadToolTip_VegiJ .rtClose {
+    border-color: #eeeeee;
+    color: #333333;
+    background-color: #ffffff;
+    background-image: linear-gradient(); }
+  .RadToolTip_VegiJ .rtClose:hover {
+    border-color: #d0d0d0;
+    color: #333333;
+    background-color: #e6e6e6;
+    background-image: linear-gradient(); }
+  .RadToolTip_VegiJ .rtClose:active {
+    border-color: #afafaf;
+    color: #333333;
+    background-color: #e6e6e6;
+    background-image: linear-gradient(); }
+  .RadToolTip_VegiJ .rtCalloutTopRight,
+  .RadToolTip_VegiJ .rtCalloutTopCenter,
+  .RadToolTip_VegiJ .rtCalloutTopLeft {
+    border-bottom-color: #dddddd; }
+  .RadToolTip_VegiJ .rtCalloutTopRight:before,
+  .RadToolTip_VegiJ .rtCalloutTopCenter:before,
+  .RadToolTip_VegiJ .rtCalloutTopLeft:before {
+    border-bottom-color: #ffffff; }
+  .RadToolTip_VegiJ .rtCalloutMiddleRight {
+    border-left-color: #dddddd; }
+  .RadToolTip_VegiJ .rtCalloutMiddleRight:before {
+    border-left-color: #ffffff; }
+  .RadToolTip_VegiJ .rtCalloutMiddleLeft {
+    border-right-color: #dddddd; }
+  .RadToolTip_VegiJ .rtCalloutMiddleLeft:before {
+    border-right-color: #ffffff; }
+  .RadToolTip_VegiJ .rtCalloutBottomRight,
+  .RadToolTip_VegiJ .rtCalloutBottomCenter,
+  .RadToolTip_VegiJ .rtCalloutBottomLeft {
+    border-top-color: #dddddd; }
+  .RadToolTip_VegiJ .rtCalloutBottomRight:before,
+  .RadToolTip_VegiJ .rtCalloutBottomCenter:before,
+  .RadToolTip_VegiJ .rtCalloutBottomLeft:before {
+    border-top-color: #ffffff; }
+  .RadToolTip_VegiJ.rtLoading {
+    background-image: url("images/Common/loading.gif"); }

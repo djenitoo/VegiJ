@@ -31,6 +31,21 @@ namespace VegiJ.Web
                 "Users/{username}/Settings",
                 "~/Users/Settings.aspx"
                 );
+            routes.MapPageRoute(
+                "RecipeByNameRoute",
+                "AllRecipes/{title}",
+                "~/ViewRecipe.aspx"
+                );
+            routes.MapPageRoute(
+                "CategoryByNameRoute",
+                "Categories/{category}",
+                "~/ViewCategory.aspx"
+                );
+            routes.MapPageRoute(
+                "TagByNameRoute",
+                "AllTags/{tag}",
+                "~/ViewTag.aspx"
+                );
         }
     }
 }

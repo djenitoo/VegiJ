@@ -1,0 +1,241 @@
+.RadForm_VegiJ {
+  background-color: #ffffff; }
+  .RadForm_VegiJ .rfdTextInput,
+  .RadForm_VegiJ.rfdLabel label,
+  .RadForm_VegiJ.rfdLabel .rfdAspLabel,
+  .RadForm_VegiJ.rfdTextbox .rfdTextInput,
+  .RadForm_VegiJ.rfdTextarea textarea,
+  .RadForm_VegiJ.rfdFieldset fieldset,
+  .RadForm_VegiJ.rfdFieldset legend,
+  .RadForm_VegiJ .rfdHeading,
+  .RadForm_VegiJ .riTextBox, .RadForm_VegiJ .rfdValidationSummaryControl,
+  .RadForm_VegiJ .rfdLoginControl {
+    font-size: 1em;
+    color: #333333; }
+  .RadForm_VegiJ.rfdZone {
+    background-color: #ffffff; }
+  .RadForm_VegiJ .rfdHeading {
+    border-bottom-color: #dddddd; }
+  .RadForm_VegiJ.RadForm.rfdFieldset fieldset {
+    border-color: #dddddd;
+    background-color: #fcfcfc; }
+  .RadForm_VegiJ.rfdLabel label,
+  .RadForm_VegiJ.rfdLabel .rfdAspLabel {
+    line-height: 32px; }
+  .RadForm_VegiJ.rfdRadio input[type="radio"] + label,
+  .RadForm_VegiJ.rfdCheckbox input[type="checkbox"] + label,
+  .RadForm_VegiJ legend > label,
+  .RadForm_VegiJ legend > label {
+    line-height: normal; }
+  .RadForm_VegiJ .rfdSkinnedButton {
+    border-color: #eeeeee;
+    color: #333333;
+    background-color: #ffffff;
+    background-image: linear-gradient();
+    padding: 0.53571em 0.85714em;
+    padding: 0.64286em 0.85714em \9;
+    min-height: 2.42857em; }
+  .RadForm_VegiJ _:-ms-fullscreen, .RadForm_VegiJ .rfdSkinnedButton {
+    padding: 0.64286em 0.85714em; }
+  .RadForm_VegiJ .rfdSkinnedButton:hover,
+  .RadForm_VegiJ .rfdSkinnedButton:focus {
+    border-color: #d0d0d0;
+    color: #333333;
+    background-color: #e6e6e6;
+    background-image: linear-gradient();
+    box-shadow: inset 0 0 1px #ffffff; }
+  .RadForm_VegiJ .rfdSkinnedButton:focus {
+    outline-width: thin;
+    outline-offset: -2px;
+    outline-color: #d0d0d0; }
+  .RadForm_VegiJ .rfdSkinnedButton:active,
+  .RadForm_VegiJ .rfdClickedButton,
+  .RadForm_VegiJ .rfdFocusedButton {
+    border-color: #afafaf;
+    color: #333333;
+    background-color: #e6e6e6;
+    background-image: linear-gradient();
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
+    color: #333333; }
+  .RadForm_VegiJ .rfdTextInput {
+    min-height: 2.42857em;
+    padding: 0.42857em 0.85714em; }
+  .RadForm_VegiJ .rfdTextInput,
+  .RadForm_VegiJ.rfdTextarea textarea {
+    background-color: #ffffff;
+    color: #555555;
+    border-color: #dddddd;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset; }
+  .RadForm_VegiJ .rfdTextInput:hover,
+  .RadForm_VegiJ.rfdTextarea textarea:hover {
+    background-color: #ffffff;
+    color: #555555;
+    border-color: #c4c4c4; }
+  .RadForm_VegiJ .rfdTextInput:focus,
+  .RadForm_VegiJ.rfdTextarea textarea:focus {
+    background-color: #ffffff;
+    color: #555555;
+    border-color: #3c87c8;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+    outline: 0 none; }
+  .RadForm_VegiJ .rfdTextInput:active,
+  .RadForm_VegiJ.rfdTextarea textarea:active {
+    background-color: #ffffff;
+    color: #555555;
+    border-color: #dddddd; }
+  .RadForm_VegiJ .rfdCheckboxUnchecked,
+  .RadForm_VegiJ .rfdRadioUnchecked,
+  .RadForm_VegiJ .rfdCheckboxUnchecked .rfdToggleImage,
+  .RadForm_VegiJ .rfdRadioUnchecked .rfdToggleImage {
+    color: #333333; }
+  .RadForm_VegiJ.RadForm .rfdCheckboxChecked,
+  .RadForm_VegiJ.RadForm .rfdRadioChecked,
+  .RadForm_VegiJ .rfdCheckboxUnchecked:hover,
+  .RadForm_VegiJ .rfdRadioUnchecked:hover,
+  .RadForm_VegiJ .rfdCheckboxChecked:hover .rfdToggleImage,
+  .RadForm_VegiJ .rfdRadioChecked:hover .rfdToggleImage,
+  .RadForm_VegiJ .rfdCheckboxUnchecked:hover .rfdToggleImage,
+  .RadForm_VegiJ .rfdRadioUnchecked:hover .rfdToggleImage {
+    color: #006633; }
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .RadForm_VegiJ.rfdRadio input[type="radio"],
+    .RadForm_VegiJ.rfdCheckbox input[type="checkbox"] {
+      color: #333333; }
+    .RadForm_VegiJ.rfdRadio input[type="radio"]:hover + label,
+    .RadForm_VegiJ.rfdCheckbox input[type="checkbox"]:hover + label,
+    .RadForm_VegiJ.rfdRadio input[type="radio"]:hover,
+    .RadForm_VegiJ.rfdCheckbox input[type="checkbox"]:hover,
+    .RadForm_VegiJ.rfdRadio input[type="radio"]:checked + label,
+    .RadForm_VegiJ.rfdCheckbox input[type="checkbox"]:checked + label,
+    .RadForm_VegiJ.rfdRadio input[type="radio"]:checked,
+    .RadForm_VegiJ.rfdCheckbox input[type="checkbox"]:checked {
+      color: #006633; } }
+  .RadForm_VegiJ .rfdSelect_VegiJ,
+  .RadForm_VegiJ .rfdSelect_VegiJ.rfdDropDownExpanded {
+    border-radius: 0.28571em; }
+  .RadForm_VegiJ .rfdSelect_VegiJ {
+    padding: 0.53571em 2.28571em 0.53571em 0.85714em;
+    border-color: #eeeeee;
+    color: #333333;
+    background-color: #ffffff;
+    background-image: linear-gradient();
+    min-height: 2.42857em; }
+  .RadForm_VegiJ .rfdSelect_VegiJ:hover {
+    border-color: #d0d0d0;
+    color: #333333;
+    background-color: #e6e6e6;
+    background-image: linear-gradient(); }
+  .RadForm_VegiJ .rfdSelect_VegiJ:focus {
+    outline-width: thin;
+    outline-offset: -2px;
+    outline-color: #d0d0d0; }
+  .RadForm_VegiJ .rfdSelect_VegiJ:active,
+  .RadForm_VegiJ .rfdSelect_VegiJ:focus {
+    border-color: #afafaf;
+    color: #333333;
+    background-color: #e6e6e6;
+    background-image: linear-gradient();
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
+    color: #333333; }
+  .RadForm_VegiJ .rfdDropDownArrow {
+    width: 2.28571em;
+    height: 2.28571em; }
+  .RadForm_VegiJ .rfdDropDownArrow:before {
+    margin: 0.42857em 0em 0em 0.21429em; }
+  .RadForm_VegiJ.rfdScrollBars .rfdSelectBox::-webkit-scrollbar,
+  .RadForm_VegiJ.rfdScrollBars .rfdSelectBox::-webkit-scrollbar-thumb:vertical,
+  .RadForm_VegiJ.rfdScrollBars .rfdSelectBox::-webkit-scrollbar-thumb:horizontal,
+  .RadForm_VegiJ.rfdScrollBars form::-webkit-scrollbar,
+  .RadForm_VegiJ.rfdScrollBars form::-webkit-scrollbar-thumb:vertical,
+  .RadForm_VegiJ.rfdScrollBars form::-webkit-scrollbar-thumb:horizontal {
+    background-color: #fcfcfc; }
+  .RadForm_VegiJ.rfdScrollBars textarea::-webkit-scrollbar-corner {
+    background-color: #ffffff; }
+  .RadForm_VegiJ.rfdScrollBars ::-webkit-scrollbar-button:vertical:decrement,
+  .RadForm_VegiJ.rfdScrollBars ::-webkit-scrollbar-button:vertical:increment,
+  .RadForm_VegiJ.rfdScrollBars ::-webkit-scrollbar-button:horizontal:decrement,
+  .RadForm_VegiJ.rfdScrollBars ::-webkit-scrollbar-button:horizontal:increment,
+  .RadForm_VegiJ.rfdScrollBars ::-webkit-scrollbar-thumb:vertical,
+  .RadForm_VegiJ.rfdScrollBars ::-webkit-scrollbar-thumb:horizontal {
+    border-color: #dddddd;
+    background-color: #fcfcfc; }
+  .RadForm_VegiJ.rfdScrollBars ::-webkit-scrollbar-button:vertical:decrement,
+  .RadForm_VegiJ.rfdScrollBars ::-webkit-scrollbar-button:vertical:increment,
+  .RadForm_VegiJ.rfdScrollBars ::-webkit-scrollbar-button:horizontal:decrement,
+  .RadForm_VegiJ.rfdScrollBars ::-webkit-scrollbar-button:horizontal:increment {
+    background-image: url('<%=WebResource("Telerik.Web.UI.Skins.Bootstrap.Common.radActionsSprite.png")%>');
+    background-color: #fcfcfc; }
+  .RadForm_VegiJ.rfdScrollBars ::-webkit-scrollbar-button:horizontal:decrement {
+    background-position: -17.5px -1118px; }
+  .RadForm_VegiJ.rfdScrollBars ::-webkit-scrollbar-button:horizontal:increment {
+    background-position: -17.5px -1168px; }
+  .RadForm_VegiJ.rfdScrollBars ::-webkit-scrollbar-button:vertical:decrement {
+    background-position: -18px -1018px; }
+  .RadForm_VegiJ.rfdScrollBars ::-webkit-scrollbar-button:vertical:increment {
+    background-position: -18px -1068px; }
+  .RadForm_VegiJ.rfdScrollBars {
+    scrollbar-3dlight-color: #eeeeee;
+    scrollbar-arrow-color: #616161;
+    scrollbar-base-color: #ffffff;
+    scrollbar-darkshadow-color: #eeeeee;
+    scrollbar-face-color: #e6e6e6;
+    scrollbar-highlight-color: #e6e6e6;
+    scrollbar-shadow-color: #e6e6e6;
+    scrollbar-track-color: #ffffff; }
+  .RadForm_VegiJ.rfdGrids .rfdTable {
+    border: 1px solid #dddddd;
+    background: #ffffff;
+    color: #333333;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px; }
+  .RadForm_VegiJ.rfdGrids .rfdTable th {
+    border-bottom: 1px solid #dddddd;
+    border-left: 1px solid #dddddd;
+    background-color: #f5f5f5;
+    color: #333333; }
+  .RadForm_VegiJ.rfdGrids .rfdTable a {
+    color: #333333; }
+  .RadForm_VegiJ .rfdValidationSummaryControl,
+  .RadForm_VegiJ .rfdLoginControl {
+    background-color: #fcfcfc;
+    border: 1px solid #dddddd; }
+  .RadForm_VegiJ a.rfdLoginControl,
+  .RadForm_VegiJ a.rfdLoginControl:active,
+  .RadForm_VegiJ a.rfdLoginControl:visited {
+    color: #333333; }
+  .RadForm_VegiJ a.rfdLoginControl:hover {
+    color: #003300; }
+
+.rfdSelectBox_VegiJ {
+  border-color: #eeeeee;
+  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  min-height: 2em; }
+
+.rfdRoundedCorners .rfdSelectBox_VegiJ.rfdSelectBoxDropDown {
+  margin-top: 0.14286em;
+  border-radius: 0.28571em; }
+
+.rfdSelectBox_VegiJ li {
+  padding: 0.32143em 0.85714em;
+  padding: 0.35714em 0.85714em \9;
+  background-color: #ffffff;
+  color: #333333; }
+
+_:-ms-fullscreen, :root .rfdSelectBox_VegiJ li {
+  padding: 0.35714em 0.85714em; }
+
+.rfdSelectBox_VegiJ li:hover,
+.rfdSelectBox_VegiJ .rfdSelect_hovered,
+.rfdSelectBox.rfdSelectBox_VegiJ li:hover {
+  color: #000000;
+  background-color: #fbfbfb; }
+
+.rfdSelectBox_VegiJ .rfdSelect_selected,
+.rfdSelectBox.rfdSelectBox_VegiJ .rfdSelect_selected:hover {
+  color: #ffffff;
+  background-color: #337ab7; }
+
+.rfdSelectBox_VegiJ .rfdSelectBox_optgroup_label:hover {
+  background: none;
+  color: #333333; }

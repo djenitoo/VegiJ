@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="True" CodeBehind="Settings.aspx.cs" Inherits="VegiJ.Web.Users.Settings" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="True" CodeBehind="Settings.aspx.cs" Inherits="VegiJ.Web.Users.Settings" %>
 
 <%@ Import Namespace="System.Globalization" %>
 

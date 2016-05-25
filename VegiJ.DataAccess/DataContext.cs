@@ -49,7 +49,6 @@
             foreach (var entry in objectStateEntries)
             {
                 var entityBase = entry.Entity as BaseEntity;
-                base.SaveChanges();
                 if (entry.State == EntityState.Added)
                 {
                     entityBase.ID = Guid.NewGuid();

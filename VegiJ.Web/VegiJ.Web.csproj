@@ -147,7 +147,51 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="App_Themes\VegiJTheme\AutoCompleteBox.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\Button.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\Calendar.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\ColorPicker.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\ComboBox.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\DataForm.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\DataPager.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\Dock.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\DropDownList.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\DropDownTree.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\Editor.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\FileExplorer.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\Filter.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\FormDecorator.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\Grid.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\ImageEditor.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\Input.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\ListBox.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\Menu.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\Navigation.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\Notification.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\OrgChart.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\PanelBar.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\ProgressArea.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\ProgressBar.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\Rating.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\RibbonBar.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\Rotator.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\Scheduler.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\SearchBox.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\Slider.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\SocialShare.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\Splitter.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\TabStrip.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\TagCloud.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\Tile.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\TileList.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\ToolBar.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\ToolTip.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\TreeList.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\TreeView.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\Upload.VegiJ.css" />
+    <Content Include="App_Themes\VegiJTheme\Window.VegiJ.css" />
     <Content Include="Contact.aspx" />
+    <Content Include="Content\add-recipe-styles.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -202,29 +246,6 @@
     <Content Include="Content\themes\Fresh-Squeezed\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="Content\themes\Fresh-Squeezed\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Content\themes\Fresh-Squeezed\jquery-ui-1.9.0.custom.css" />
-    <Content Include="DynamicData\EntityTemplates\Default.ascx" />
-    <Content Include="DynamicData\EntityTemplates\Default_Edit.ascx" />
-    <Content Include="DynamicData\EntityTemplates\Default_Insert.ascx" />
-    <Content Include="DynamicData\FieldTemplates\Boolean.ascx" />
-    <Content Include="DynamicData\FieldTemplates\Boolean_Edit.ascx" />
-    <Content Include="DynamicData\FieldTemplates\Children.ascx" />
-    <Content Include="DynamicData\FieldTemplates\Children_Insert.ascx" />
-    <Content Include="DynamicData\FieldTemplates\DateTime.ascx" />
-    <Content Include="DynamicData\FieldTemplates\DateTime_Edit.ascx" />
-    <Content Include="DynamicData\FieldTemplates\Decimal_Edit.ascx" />
-    <Content Include="DynamicData\FieldTemplates\EmailAddress.ascx" />
-    <Content Include="DynamicData\FieldTemplates\Enumeration.ascx" />
-    <Content Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx" />
-    <Content Include="DynamicData\FieldTemplates\ForeignKey.ascx" />
-    <Content Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx" />
-    <Content Include="DynamicData\FieldTemplates\Integer_Edit.ascx" />
-    <Content Include="DynamicData\FieldTemplates\ManyToMany.ascx" />
-    <Content Include="DynamicData\FieldTemplates\ManyToMany_Edit.ascx" />
-    <Content Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx" />
-    <Content Include="DynamicData\FieldTemplates\Text.ascx" />
-    <Content Include="DynamicData\FieldTemplates\Text_Edit.ascx" />
-    <Content Include="DynamicData\FieldTemplates\Url.ascx" />
-    <Content Include="DynamicData\FieldTemplates\Url_Edit.ascx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\fontawesome-webfont.eot" />
@@ -236,6 +257,7 @@
     <Content Include="images\VegiJ-logo-50x90.png" />
     <Content Include="images\VegiJ-logo-with-space-30x55.png" />
     <Content Include="images\VegiJ-logo-with-space-50x92.png" />
+    <Content Include="Recipes.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery.ui.datepicker-bg.js" />
@@ -247,6 +269,11 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="App_Themes\VegiJTheme\ScssPrimitives.json" />
+    <Content Include="App_Themes\VegiJTheme\UsedControls.json" />
+    <Content Include="App_Themes\VegiJTheme\VegiJ-telerik.skin" />
+    <Content Include="App_Themes\VegiJSkin\VegiJSkin.skin" />
+    <Content Include="App_Themes\VegiJTheme\VegiJTheme.skin" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-2.2.3.js" />
@@ -260,10 +287,13 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Tags.aspx" />
     <Content Include="Users\AddEvent.aspx" />
     <Content Include="Users\AddRecipe.aspx" />
     <Content Include="Users\AddTip.aspx" />
     <Content Include="Users\Administration\Default.aspx" />
+    <Content Include="Users\Administration\EditRecipes.aspx" />
+    <Content Include="Users\Administration\EditTips.aspx" />
     <Content Include="Users\Administration\EditUsers.aspx" />
     <Content Include="Users\Administration\Web.config">
       <SubType>Designer</SubType>
@@ -303,7 +333,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="ViewCategory.aspx" />
+    <Content Include="ViewRecipe.aspx" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="ViewTag.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -346,173 +379,26 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DynamicData\EntityTemplates\Default.ascx.cs">
-      <DependentUpon>Default.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\EntityTemplates\Default.ascx.designer.cs">
-      <DependentUpon>Default.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\EntityTemplates\Default_Edit.ascx.cs">
-      <DependentUpon>Default_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\EntityTemplates\Default_Edit.ascx.designer.cs">
-      <DependentUpon>Default_Edit.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\EntityTemplates\Default_Insert.ascx.cs">
-      <DependentUpon>Default_Insert.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\EntityTemplates\Default_Insert.ascx.designer.cs">
-      <DependentUpon>Default_Insert.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Boolean.ascx.cs">
-      <DependentUpon>Boolean.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Boolean.ascx.designer.cs">
-      <DependentUpon>Boolean.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Boolean_Edit.ascx.cs">
-      <DependentUpon>Boolean_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Boolean_Edit.ascx.designer.cs">
-      <DependentUpon>Boolean_Edit.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Children.ascx.cs">
-      <DependentUpon>Children.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Children.ascx.designer.cs">
-      <DependentUpon>Children.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Children_Insert.ascx.cs">
-      <DependentUpon>Children_Insert.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Children_Insert.ascx.designer.cs">
-      <DependentUpon>Children_Insert.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\DateTime.ascx.cs">
-      <DependentUpon>DateTime.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\DateTime.ascx.designer.cs">
-      <DependentUpon>DateTime.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\DateTime_Edit.ascx.cs">
-      <DependentUpon>DateTime_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\DateTime_Edit.ascx.designer.cs">
-      <DependentUpon>DateTime_Edit.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Decimal_Edit.ascx.cs">
-      <DependentUpon>Decimal_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Decimal_Edit.ascx.designer.cs">
-      <DependentUpon>Decimal_Edit.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\EmailAddress.ascx.cs">
-      <DependentUpon>EmailAddress.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\EmailAddress.ascx.designer.cs">
-      <DependentUpon>EmailAddress.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Enumeration.ascx.cs">
-      <DependentUpon>Enumeration.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Enumeration.ascx.designer.cs">
-      <DependentUpon>Enumeration.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx.cs">
-      <DependentUpon>Enumeration_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx.designer.cs">
-      <DependentUpon>Enumeration_Edit.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\ForeignKey.ascx.cs">
-      <DependentUpon>ForeignKey.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\ForeignKey.ascx.designer.cs">
-      <DependentUpon>ForeignKey.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx.cs">
-      <DependentUpon>ForeignKey_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx.designer.cs">
-      <DependentUpon>ForeignKey_Edit.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Integer_Edit.ascx.cs">
-      <DependentUpon>Integer_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Integer_Edit.ascx.designer.cs">
-      <DependentUpon>Integer_Edit.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\ManyToMany.ascx.cs">
-      <DependentUpon>ManyToMany.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\ManyToMany.ascx.designer.cs">
-      <DependentUpon>ManyToMany.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\ManyToMany_Edit.ascx.cs">
-      <DependentUpon>ManyToMany_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\ManyToMany_Edit.ascx.designer.cs">
-      <DependentUpon>ManyToMany_Edit.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx.cs">
-      <DependentUpon>MultilineText_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx.designer.cs">
-      <DependentUpon>MultilineText_Edit.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Text.ascx.cs">
-      <DependentUpon>Text.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Text.ascx.designer.cs">
-      <DependentUpon>Text.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Text_Edit.ascx.cs">
-      <DependentUpon>Text_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Text_Edit.ascx.designer.cs">
-      <DependentUpon>Text_Edit.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Url.ascx.cs">
-      <DependentUpon>Url.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Url.ascx.designer.cs">
-      <DependentUpon>Url.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Url_Edit.ascx.cs">
-      <DependentUpon>Url_Edit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DynamicData\FieldTemplates\Url_Edit.ascx.designer.cs">
-      <DependentUpon>Url_Edit.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\CustomRoleProvider.cs" />
     <Compile Include="Helpers\ValidationError.cs" />
     <Compile Include="Helpers\ImageHandler.cs" />
+    <Compile Include="Recipes.aspx.cs">
+      <DependentUpon>Recipes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recipes.aspx.designer.cs">
+      <DependentUpon>Recipes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tags.aspx.cs">
+      <DependentUpon>Tags.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tags.aspx.designer.cs">
+      <DependentUpon>Tags.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Users\AddEvent.aspx.cs">
       <DependentUpon>AddEvent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -540,6 +426,20 @@
     </Compile>
     <Compile Include="Users\Administration\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Administration\EditRecipes.aspx.cs">
+      <DependentUpon>EditRecipes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\Administration\EditRecipes.aspx.designer.cs">
+      <DependentUpon>EditRecipes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Administration\EditTips.aspx.cs">
+      <DependentUpon>EditTips.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\Administration\EditTips.aspx.designer.cs">
+      <DependentUpon>EditTips.aspx</DependentUpon>
     </Compile>
     <Compile Include="Users\Administration\EditUsers.aspx.cs">
       <DependentUpon>EditUsers.aspx</DependentUpon>
@@ -598,12 +498,33 @@
     <Compile Include="Users\Settings.aspx.designer.cs">
       <DependentUpon>Settings.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ViewCategory.aspx.cs">
+      <DependentUpon>ViewCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewCategory.aspx.designer.cs">
+      <DependentUpon>ViewCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewRecipe.aspx.cs">
+      <DependentUpon>ViewRecipe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewRecipe.aspx.designer.cs">
+      <DependentUpon>ViewRecipe.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTag.aspx.cs">
+      <DependentUpon>ViewTag.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTag.aspx.designer.cs">
+      <DependentUpon>ViewTag.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -618,6 +539,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Themes\VegiJTheme\images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

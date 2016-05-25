@@ -1,0 +1,45 @@
+.RadOrgChart_VegiJ {
+  /* Loading states */ }
+  .RadOrgChart_VegiJ {
+    color: #333333;
+    line-height: 1.42857; }
+  .RadOrgChart_VegiJ .rocGroup {
+    border-radius: 10px;
+    background: #f5f5f5; }
+  .RadOrgChart_VegiJ .rocItem,
+  .RadOrgChart_VegiJ .rocItemTemplate {
+    color: #333333;
+    border-radius: 5px;
+    border-color: #f2f2f2;
+    background-color: #ffffff; }
+  .RadOrgChart_VegiJ .rocExpandArrow,
+  .RadOrgChart_VegiJ .rocCollapseArrow,
+  .RadOrgChart_VegiJ .rocExpandGroupArrow,
+  .RadOrgChart_VegiJ .rocCollapseGroupArrow {
+    color: #333333;
+    border-color: #eeeeee;
+    background-color: #ffffff;
+    border-radius: 3px; }
+  .RadOrgChart_VegiJ .rocLoadingNodes .rocExpandArrow,
+  .RadOrgChart_VegiJ .rocLoadingNodes .rocCollapseArrow,
+  .RadOrgChart_VegiJ .rocLoadingGroups .rocExpandGroupArrow,
+  .RadOrgChart_VegiJ .rocLoadingGroups .rocCollapseGroupArrow {
+    background-image: url('<%=WebResource("Telerik.Web.UI.Skins.Bootstrap.Common.loading_small.gif")%>'); }
+
+.RadOrgChart_VegiJ.rocHorizontal .rocNode {
+  padding: 1.28571em 0em; }
+
+.RadOrgChart_VegiJ.rocDetachedItem,
+.RadOrgChart_VegiJ.rocDetachedNode {
+  color: #333333;
+  border-color: #dddddd;
+  background-color: #ffffff; }
+
+.rocToolbar_VegiJ {
+  background: #f5f5f5;
+  border-radius: 4px; }
+  .rocToolbar_VegiJ .rocToolbarButton {
+    color: #333333;
+    border-color: #eeeeee;
+    background-color: #ffffff;
+    border-radius: 2px; }

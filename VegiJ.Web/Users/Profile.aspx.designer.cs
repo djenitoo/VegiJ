@@ -13,6 +13,33 @@ namespace VegiJ.Web.Users {
     public partial class Profile {
         
         /// <summary>
+        /// PanelProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelProfile;
+        
+        /// <summary>
+        /// PanelHeading control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelHeading;
+        
+        /// <summary>
+        /// PanelProfileBody control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelProfileBody;
+        
+        /// <summary>
         /// userDetail control.
         /// </summary>
         /// <remarks>
@@ -20,6 +47,15 @@ namespace VegiJ.Web.Users {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FormView userDetail;
+        
+        /// <summary>
+        /// RadListView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadListView RadListView1;
         
         /// <summary>
         /// Master property.

@@ -10,5 +10,8 @@
         public static string DateFormat = "dd/MM/yyyy";
         public static string NoLoginDate = "No login date.";
         public static string UnknownString = "Unknown";
+        public static int CategoryNameLength = 5;
+        public static string CategoryLenErrorMessage = "Category name len should be at least {0} characters";
+        public static string CannotBeEmptyErrorMessage = "{0} cannot be empty or whitespaces!";
     }
 }

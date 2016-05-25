@@ -1,0 +1,62 @@
+.RadColorPicker_VegiJ {
+  font-size: 1em;
+  color: #333333; }
+  .RadColorPicker_VegiJ .rcpPalette {
+    background-color: #fcfcfc;
+    border-color: #dddddd; }
+  .RadColorPicker_VegiJ .rcpHeader {
+    background-color: #f5f5f5;
+    background-image: linear-gradient();
+    border-color: #dddddd; }
+  .RadColorPicker_VegiJ .rcpImageButton,
+  .RadColorPicker_VegiJ a.rslDraghandle:before {
+    color: #333333; }
+  .RadColorPicker_VegiJ .rcpImageButton:hover {
+    color: #006633; }
+  .RadColorPicker_VegiJ .rcpIcon em,
+  .RadColorPicker_VegiJ .rcpColorPreview,
+  .RadColorPicker_VegiJ .rcpInput,
+  .RadColorPicker_VegiJ .rcpHexInput,
+  .RadColorPicker_VegiJ .rcpMillionColorsPalette,
+  .RadColorPicker_VegiJ .rcpMillionColorsSlider div.rslTrack {
+    background-color: #ffffff;
+    color: #555555;
+    border-color: #dddddd; }
+  .RadColorPicker_VegiJ .rcpIcon a,
+  .RadColorPicker_VegiJ .rcpTabs li,
+  .RadColorPicker_VegiJ .rcpButton {
+    border-color: #eeeeee;
+    color: #333333;
+    background-color: #ffffff;
+    background-image: linear-gradient(); }
+  .RadColorPicker_VegiJ .rcpIcon a:before,
+  .RadColorPicker_VegiJ .rcpTabs a {
+    color: #333333; }
+  .RadColorPicker_VegiJ .rcpIcon a:hover,
+  .RadColorPicker_VegiJ .rcpTabs li:hover,
+  .RadColorPicker_VegiJ .rcpButton:hover {
+    border-color: #d0d0d0;
+    color: #333333;
+    background-color: #e6e6e6;
+    background-image: linear-gradient(); }
+  .RadColorPicker_VegiJ .rcpIcon a:hover:before,
+  .RadColorPicker_VegiJ .rcpTabs li:hover a {
+    color: #333333; }
+  .RadColorPicker_VegiJ .rcpIcon a:active,
+  .RadColorPicker_VegiJ .rcpTabs .rcpSelectedTab,
+  .RadColorPicker_VegiJ .rcpTabs .rcpSelectedTab:hover,
+  .RadColorPicker_VegiJ .rcpButton:active {
+    border-color: #afafaf;
+    color: #333333;
+    background-color: #e6e6e6;
+    background-image: linear-gradient(); }
+  .RadColorPicker_VegiJ .rcpIcon a:focus {
+    box-shadow: inset 0 0 5px rgba(175, 175, 175, 0.5); }
+  .RadColorPicker_VegiJ .rcpIcon a:active:before,
+  .RadColorPicker_VegiJ .rcpTabs .rcpSelectedTab a,
+  .RadColorPicker_VegiJ .rcpTabs .rcpSelectedTab:hover a {
+    color: #333333; }
+  .RadColorPicker_VegiJ .rcpRecentColors {
+    border-color: #dddddd; }
+  .RadColorPicker_VegiJ.rcpCustomColorWrapper .rcpPalette {
+    box-shadow: 2px 2px 3px rgba(221, 221, 221, 0.5); }

@@ -1,0 +1,127 @@
+.RadFilter_VegiJ {
+  font: 14px/1.42857 "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .RadFilter_VegiJ a,
+  .RadFilter_VegiJ .rfText,
+  .RadFilter_VegiJ .rfApply input {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333333; }
+  .RadFilter_VegiJ li li .rfDiv {
+    padding-top: .55em; }
+  .RadFilter_VegiJ .rfOper:hover,
+  .RadFilter_VegiJ .rfField:hover,
+  .RadFilter_VegiJ .rfExp:hover,
+  .RadFilter_VegiJ .rfAddGr:hover,
+  .RadFilter_VegiJ .rfAddExp:hover,
+  .RadFilter_VegiJ .rfDel:hover {
+    background-color: #e6e6e6;
+    color: #333333;
+    border-color: #d0d0d0; }
+  .RadFilter_VegiJ .rfMid,
+  .RadFilter_VegiJ .rfTools {
+    padding: .5em 0;
+    height: 2.3em;
+    border-style: solid;
+    border-color: #dddddd;
+    background: #f5f5f5; }
+  .RadFilter_VegiJ .rfMid {
+    padding-left: .57em;
+    border-width: 1px 0 1px 1px; }
+  .RadFilter_VegiJ .rfTools {
+    padding-right: .57em;
+    border-width: 1px 1px 1px 0; }
+  .RadFilter_VegiJ .rfCheckBox {
+    display: inline-block;
+    margin-right: 0;
+    text-align: center; }
+    .RadFilter_VegiJ .rfCheckBox input {
+      margin-top: .67em; }
+  .RadFilter_VegiJ .rfDel,
+  .RadFilter_VegiJ .rfAddGr,
+  .RadFilter_VegiJ .rfAddExp {
+    box-sizing: border-box;
+    margin: 0;
+    width: 2.14em;
+    height: 2.42857em;
+    line-height: 2.29;
+    border: 1px solid #eeeeee;
+    border-left-width: 0;
+    background-color: #ffffff;
+    color: #333333; }
+    .RadFilter_VegiJ .rfDel:before,
+    .RadFilter_VegiJ .rfAddGr:before,
+    .RadFilter_VegiJ .rfAddExp:before {
+      line-height: 1.9; }
+  .RadFilter_VegiJ .rfDel {
+    border-radius: 0 0.29em 0.29em 0; }
+  .RadFilter_VegiJ .rfField {
+    color: #333333; }
+  .RadFilter_VegiJ .rfOper:before,
+  .RadFilter_VegiJ .rfField:before,
+  .RadFilter_VegiJ .rfExp:before {
+    line-height: 1.6; }
+  .RadFilter_VegiJ .rfOper,
+  .RadFilter_VegiJ .rfField,
+  .RadFilter_VegiJ .rfExp,
+  .RadFilter_VegiJ .rfText {
+    box-sizing: border-box;
+    padding: 0 27px 0 8px;
+    height: 2.42857em;
+    display: inline-block;
+    line-height: 2.29;
+    vertical-align: top;
+    background-color: #ffffff;
+    border: 1px solid #eeeeee; }
+  .RadFilter_VegiJ .rfText {
+    border-color: #dddddd;
+    background-color: #ffffff;
+    color: #555555; }
+    .RadFilter_VegiJ .rfText:hover {
+      border-color: #c4c4c4;
+      color: #555555; }
+  .RadFilter_VegiJ .rfOper {
+    border-radius: 0.29em 0 0 0.29em; }
+  .RadFilter_VegiJ .rfField {
+    color: #333333;
+    border-radius: 0.29em 0 0 0.29em; }
+  .RadFilter_VegiJ a.rcTimePopup {
+    border-radius: 0; }
+  .RadFilter_VegiJ .RadDropDownList .rddlInner,
+  .RadFilter_VegiJ .rfExp,
+  .RadFilter_VegiJ .rfText,
+  .RadFilter_VegiJ input.riTextBox {
+    border-left-width: 0;
+    border-radius: 0; }
+  .RadFilter_VegiJ .rfCheckBox {
+    width: 2.14em;
+    height: 2.14em;
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
+    margin: 0 0 0 -1px; }
+  .RadFilter_VegiJ .rfPreview {
+    color: #333333; }
+    .RadFilter_VegiJ .rfPreview em,
+    .RadFilter_VegiJ .rfPreview .rfBr {
+      color: #428bca; }
+    .RadFilter_VegiJ .rfPreview .rfBr {
+      font-weight: bold; }
+  .RadFilter_VegiJ .rfApply a,
+  .RadFilter_VegiJ .rfApply span {
+    padding: 0.14em 1.14em;
+    height: 1.86em;
+    border: 1px solid #eeeeee;
+    border-radius: .29em;
+    background: #ffffff;
+    color: #555555; }
+    .RadFilter_VegiJ .rfApply a input,
+    .RadFilter_VegiJ .rfApply span input {
+      padding: 0;
+      line-height: 1.9; }
+    .RadFilter_VegiJ .rfApply a:hover,
+    .RadFilter_VegiJ .rfApply span:hover {
+      color: #333333;
+      background: #e6e6e6;
+      border: 1px solid #d0d0d0; }
+  .RadFilter_VegiJ .rfLast .rfDiv:after,
+  .RadFilter_VegiJ .rfLines li li:before,
+  .RadFilter_VegiJ .rfLines li li .rfDiv:before {
+    border-color: #dddddd; }

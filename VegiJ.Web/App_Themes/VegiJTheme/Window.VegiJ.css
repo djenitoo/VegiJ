@@ -1,0 +1,163 @@
+.RadWindow_VegiJ {
+  background-color: #ffffff;
+  color: #333333;
+  font-size: 1em;
+  border-color: #d9d9d9; }
+  .RadWindow_VegiJ.rwShadow {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+  .RadWindow_VegiJ.RadWindow.rwRoundedCorner,
+  .RadWindow_VegiJ.RadWindow.rwCollapsed.rwRoundedCorner .rwTitleBar,
+  .RadWindow_VegiJ.RadWindow.rwMinimizedWindow.rwRoundedCorner .rwTitleBar {
+    border-radius: 0.28571em; }
+  .RadWindow_VegiJ.RadWindow.rwRoundedCorner .rwTitleBar {
+    border-radius: 0.28571em 0.28571em 0em 0em; }
+  .RadWindow_VegiJ .rwTitleBar {
+    background-color: #f5f5f5; }
+  .RadWindow_VegiJ.rwCollapsed .rwTitleBar {
+    border-bottom-color: #d9d9d9; }
+  .RadWindow_VegiJ .rwTitleBar .rwTitleWrapper {
+    min-height: 2.14286em;
+    padding: 0.42857em 0.71429em;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #d9d9d9; }
+  .RadWindow_VegiJ.rwMinimizedWindow .rwTitleWrapper {
+    border-bottom: 0; }
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .RadWindow_VegiJ .rwTitleBar .rwTitleWrapper {
+      padding: 0.57143em 0.71429em 0.5em; } }
+  .RadWindow_VegiJ .rwTitleWrapper .rwTitle {
+    padding: 0.14286em 0em 0em 2.14286em;
+    padding: 0.28571em 0em 0em 2.14286em \9;
+    font-size: 1.14286em;
+    font-weight: normal;
+    margin: 0.28571em 0em 0em; }
+  .RadWindow_VegiJ _:-ms-fullscreen, :root .RadWindow_VegiJ .rwTitle {
+    padding: 0.28571em 0em 0em 2.14286em; }
+  .RadWindow_VegiJ.rwMinimizedWindow .rwTitleWrapper .rwTitle {
+    width: 40%; }
+  .RadWindow_VegiJ .rwCommands {
+    margin: -1.21429em 0em 0em; }
+  .RadWindow_VegiJ _:-ms-fullscreen, :root .RadWindow_VegiJ .rwCommands {
+    margin: -1.14286em 0em 0em; }
+  .RadWindow_VegiJ .rwCommands .rwCommandButton {
+    text-indent: 0;
+    background-image: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent; }
+  .RadWindow_VegiJ .rwCommands .rwCommandButton:hover {
+    background-color: #ebebeb;
+    border-color: #d0d0d0;
+    border-radius: 0.21429em; }
+  .RadWindow_VegiJ .rwCommands .rwCommandButton:before {
+    text-align: center;
+    color: #333333;
+    margin: 0.28571em 0em 0em 0.21429em; }
+  .RadWindow_VegiJ .rwContent {
+    background-color: #ffffff;
+    border: 0; }
+  .RadWindow_VegiJ .rwStatusBar {
+    background-color: #ffffff;
+    border-color: transparent;
+    border-top-color: #d9d9d9;
+    margin: 0.5em -0.5em 0em -0.5em;
+    height: 2.64286em;
+    height: 2.14286em \9;
+    border-radius: 0em 0em 0.28571em 0.28571em; }
+  .RadWindow_VegiJ .rwStatusBar input {
+    color: #333333;
+    font-size: 1em; }
+  .RadWindow_VegiJ .rwStatusBar .rwResize {
+    right: .1em;
+    right: 0.21429em;
+    bottom: 0.14286em; }
+  .RadWindow_VegiJ _:-ms-fullscreen, :root .RadWindow_VegiJ .rwResize {
+    right: 0.28571em;
+    bottom: 0.14286em; }
+  @media \0screen {
+    .RadWindow_VegiJ .rwStatusBar .rwResize {
+      right: 0.14286em;
+      bottom: 0.14286em; } }
+  .RadWindow_VegiJ .rwStatusBar .rwResize:before {
+    font-size: 2.28571em;
+    font-size: 1.2em\9;
+    color: #d9d9d9;
+    content: "\E006"; }
+  .RadWindow_VegiJ _:-ms-fullscreen, :root .RadWindow_VegiJ .rwResize:before {
+    font-size: .55em; }
+  @media \0screen {
+    .RadWindow_VegiJ .rwStatusBar .rwResize:before {
+      font-size: 2.28571em; } }
+  .RadWindow_VegiJ.rwLoading .rwExternalContent {
+    background-image: url('<%=WebResource("Telerik.Web.UI.Skins.Silk.Common.loading.gif")%>'); }
+  .RadWindow_VegiJ .rwLoading.rwStatusBar {
+    background-image: url('<%=WebResource("Telerik.Web.UI.Skins.Silk.Common.loading_small.gif")%>'); }
+  .RadWindow_VegiJ .rwListItem {
+    width: 2.28571em;
+    height: 2.28571em; }
+  .RadWindow_VegiJ .rwListItem .rwCommandButton {
+    width: 2.28571em;
+    height: 2.28571em;
+    margin: 0em 0.14286em; }
+  .RadWindow_VegiJ .rwDialog {
+    margin: 0.35714em 0em 0em;
+    background-image: none; }
+  .RadWindow_VegiJ .rwDialog:before {
+    font-size: 36px; }
+  .RadWindow_VegiJ .rwAlertDialog:before {
+    content: "\E0FA"; }
+  .RadWindow_VegiJ .rwConfirmDialog:before {
+    content: "\E0FB"; }
+  .RadWindow_VegiJ .rwDialogButtons input {
+    padding: 0.42857em 0.85714em;
+    padding: 0.46429em 0.85714em \9;
+    border-color: #eeeeee;
+    color: #333333;
+    background-color: #ffffff;
+    background-image: linear-gradient(); }
+  .RadWindow_VegiJ _:-ms-fullscreen, .RadWindow_VegiJ :root .rwDialogButtons input {
+    padding: 0.46429em 0.85714em; }
+  .RadWindow_VegiJ .rwDialogButtons input:hover,
+  .RadWindow_VegiJ .rwDialogButtons input:focus {
+    border-color: #d0d0d0;
+    color: #333333;
+    background-color: #e6e6e6;
+    background-image: linear-gradient(); }
+  .RadWindow_VegiJ .rwDialogButtons input:focus {
+    outline-width: thin;
+    outline-style: dotted;
+    outline-offset: -2px;
+    outline-color: #d0d0d0; }
+  .RadWindow_VegiJ .rwDialogButtons input:active {
+    border-color: #afafaf;
+    color: #333333;
+    background-color: #e6e6e6;
+    background-image: linear-gradient();
+    color: #333333;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset; }
+  .RadWindow_VegiJ .rwPromptInput,
+  .RadWindow_VegiJ .rwPromptInput:hover {
+    height: 1.5em;
+    padding: 0.42857em 0.85714em;
+    background-color: #ffffff;
+    color: #555555;
+    border-color: #dddddd; }
+  .RadWindow_VegiJ .rwPromptInput:focus {
+    background-color: #ffffff;
+    color: #555555;
+    border-color: #3c87c8;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+    outline: 0 none; }
+  .RadWindow_VegiJ .rwPromptInput:active {
+    background-color: #ffffff;
+    color: #555555;
+    border-color: #dddddd; }
+  .RadWindow_VegiJ .rwPromptInput:disabled {
+    background-color: #eeeeee;
+    color: #888888;
+    border-color: #dddddd; }
+  .RadWindow_VegiJ.rwRtl .rwCommands {
+    margin: -1.21429em 0em 0em; }
+  .RadWindow_VegiJ.rwRtl .rwCommands .rwCommandButton:before {
+    margin: 0.21429em 0.21429em 0em 0em; }

@@ -1,0 +1,17 @@
+.RadTagCloud_VegiJ {
+  background-color: #ffffff;
+  border: 1px dotted #dddddd;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  /* Loading image */ }
+  .RadTagCloud_VegiJ .rtcTagList .rtcTagItem {
+    color: #006633; }
+  .RadTagCloud_VegiJ .rtcTagList .rtcTagItem:hover {
+    color: #003300; }
+  .RadTagCloud_VegiJ .rtcTagList .rtcTagItem a {
+    color: #006633; }
+  .RadTagCloud_VegiJ .rtcTagList .rtcTagItem a:hover {
+    background-color: #eeeeee;
+    color: #003300; }
+  .RadTagCloud_VegiJ.rtcLoading {
+    background-image: url('<%=WebResource("Telerik.Web.UI.Skins.VegiJ.Common.loading_small.gif")%>'); }

@@ -13,15 +13,6 @@ namespace VegiJ.Web {
     public partial class _Default {
         
         /// <summary>
-        /// CreateRecipeBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CreateRecipeBtn;
-        
-        /// <summary>
         /// AuthenticatedMessagePanel control.
         /// </summary>
         /// <remarks>
@@ -40,12 +31,12 @@ namespace VegiJ.Web {
         protected global::System.Web.UI.WebControls.Label WelcomeBackMessage;
         
         /// <summary>
-        /// usersGridView control.
+        /// RadListView2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView usersGridView;
+        protected global::Telerik.Web.UI.RadListView RadListView2;
     }
 }

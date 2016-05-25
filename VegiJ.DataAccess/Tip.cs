@@ -5,8 +5,9 @@
 
     public class Tip : BaseEntity
     {
-        public string Title { get; set; }
-        public string Content { get; set; }
+        private string _title;
+        private string _content;
+        public bool IsApproved { get; set; }
         public Guid AuthorId { get; set; }
         [ForeignKey("AuthorId")]
         public virtual User Author { get; set; }
@@ -16,6 +17,32 @@
         {
         }
 
+        public string Title
+        {
+            get
+            { return _title; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Tip title cannot be empty!");
+                }
+                _title = value;
+            }
+        }
+        public string Content
+        {
+            get
+            { return _content; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Tip title cannot be empty!");
+                }
+                _content = value;
+            }
+        }
         public Tip(string title, string content)
         {
             this.Title = title;

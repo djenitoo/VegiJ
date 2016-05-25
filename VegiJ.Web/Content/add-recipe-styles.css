@@ -1,0 +1,99 @@
+﻿#demo input, #demo textarea {
+    max-width: 100% !important;
+}
+
+.RadInput, .RadInputMgr {
+    text-align: center;
+    width: 100% !important;
+    font-size: 16px;
+    border-top-right-radius: 4px !important;
+    border-bottom-right-radius: 4px;
+}
+
+#demo .RadDataForm {
+    overflow: visible;
+    width: 450px;
+    margin-top: 62px;
+    margin: 0 auto;
+}
+
+    #demo .RadDataForm .rdfFieldset {
+        padding: 10px 25px;
+    }
+
+    #demo .RadDataForm .panel-heading {
+        padding: 10px 15px;
+        text-align: center;
+    }
+
+#demo .RadInput .riTextBox {
+    padding: 6px 12px;
+}
+
+#demo .RadInput {
+    /*margin: 5px 10px !important;*/
+}
+
+#demo .RadDropDownTree {
+    min-width: 100% !important;
+    margin: 10px 0;
+}
+
+#demo .RadAutoCompleteBox {
+    min-width: 100% !important;
+    margin-top: 0;
+}
+#demo .RadAutoCompleteBox .racTokenList {
+    border-radius: 4px;
+}
+#demo .RadComboBox {
+    min-width: 100% !important;
+}
+#demo .admin-row {
+    background-color: mistyrose;
+    padding: 5px;
+}
+#demo .RadComboBox [type="button"] {
+    margin: 0 !important;
+}
+#demo .RadDataForm [type="button"] {
+    -webkit-appearance: button;
+    -webkit-border-radius: 4px !important;
+    padding: 3px 5px;
+    margin: 10px 0;
+}
+
+.form-control {
+    position: relative;
+    height: auto;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 6px 12px;
+    font-size: 16px;
+}
+
+.input-group {
+    margin: 0 auto;
+    display: block;
+}
+
+#demo .input-group .form-control {
+    border-radius: 4px;
+}
+
+.reg-btn {
+    float: right;
+}
+
+.rdfHr {
+    text-align: center;
+    margin: 0 auto;
+}
+.validator {
+    float: right;
+    position: absolute;
+    color: red;
+    display: none;
+}

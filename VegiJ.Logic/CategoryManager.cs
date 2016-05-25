@@ -16,11 +16,19 @@
 
         public void AddCategory(Category category)
         {
+            if (this.CategoryExist(category.Name))
+            {
+                throw new ArgumentException("Category already exist!");
+            }
             this._categoryRepository.Create(category);
         }
 
         public void DeleteCategory(Category category)
         {
+            if (!this.CategoryExist(category.Name))
+            {
+                throw new ArgumentException("Category do not exist!");
+            }
             this._categoryRepository.Delete(category.ID);
         }
 
@@ -36,7 +44,16 @@
 
         public void UpdateCategory(Category category)
         {
+            if (!this.CategoryExist(category.Name))
+            {
+                throw new ArgumentException("Category do not exist!");
+            }
             this._categoryRepository.Update(category);
+        }
+
+        private bool CategoryExist(string name)
+        {
+            return _categoryRepository.Table.Any(c => c.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase));
         }
     }
 }

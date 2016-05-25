@@ -1,0 +1,22 @@
+.RadTile_VegiJ {
+  color: #ffffff;
+  background-color: #006633;
+  /* Loading image */ }
+  .RadTile_VegiJ.rtileSelected {
+    border-color: #f0ad4e; }
+  .RadTile_VegiJ.rtileHovered {
+    border-color: #000f08; }
+  .RadTile_VegiJ.rtileSelected.rtileHovered {
+    border-color: rgba(240, 173, 78, 0.7); }
+  .RadTile_VegiJ.rtileSelected .rtileSelectedIcon {
+    background-color: #f0ad4e;
+    color: #ffffff; }
+  .RadTile_VegiJ .rtileBadgeIcon {
+    color: #ffffff; }
+  html .RadTile_VegiJ.RadTile h6.rtileTitle {
+    color: #ffffff; }
+  .RadTile_VegiJ .rtilePeekContent {
+    background-color: #fcfcfc; }
+  .RadTile_VegiJ.rtileLoading,
+  .RadTile_VegiJ .rtileLoading {
+    background-image: url('<%=WebResource("Telerik.Web.UI.Skins.VegiJ.Common.loading_small.gif")%>'); }

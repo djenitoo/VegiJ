@@ -1,0 +1,75 @@
+.RadInput_VegiJ,
+.RadInputMgr_VegiJ {
+  font: 14px/1.42857 "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.RadInput_VegiJ .riTextBox,
+.RadInputMgr_VegiJ {
+  margin-bottom: 1px;
+  padding-left: 0.35714em;
+  border-color: #dddddd;
+  border-radius: 4px;
+  color: #555555;
+  background: #ffffff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset; }
+
+.RadInput_VegiJ .riEmpty,
+.RadInput_Empty_VegiJ {
+  color: #888888; }
+
+.RadInput_VegiJ .riDisabled,
+.RadInput_Disabled_VegiJ {
+  opacity: .7;
+  cursor: default;
+  color: #888888; }
+
+.RadInput_VegiJ,
+.RadInputMgr_VegiJ,
+.RadForm_VegiJ.RadForm.rfdTextbox input.riTextBox.rfdDecorated {
+  height: 2.42857em;
+  line-height: 0.21429em; }
+
+.RadInputMultiline_VegiJ {
+  height: auto; }
+
+.RadInput_VegiJ .riHover,
+.RadInput_Hover_VegiJ {
+  border-color: #c4c4c4;
+  color: #555555;
+  background-color: #ffffff; }
+
+html body .RadInput_VegiJ .riFocused,
+html body .RadInput_Focused_VegiJ {
+  border-color: #008040;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+
+html body .RadInput_VegiJ .riRead,
+html body .RadInput_Read_VegiJ {
+  border-color: #888888;
+  color: #888888;
+  background: #eeeeee; }
+
+html body .RadInput_VegiJ .riError,
+html body .RadInput_Error_VegiJ {
+  border-color: #a94442; }
+
+html body .RadInput_VegiJ .riNegative,
+html body .RadInput_Negative_VegiJ {
+  color: #6f6f6f; }
+
+.RadInput_VegiJ .riSelect {
+  right: 7px; }
+
+.RadInput_VegiJ a {
+  color: #333333; }
+  .RadInput_VegiJ a:hover {
+    color: #333333; }
+
+.RadInput_VegiJ .riUp,
+.RadInput_VegiJ .riDown {
+  padding-left: 0.21429em;
+  border-left: 1px solid #eeeeee; }
+
+.RadInput_VegiJ .riLabel {
+  color: #555555;
+  line-height: 2.28571em; }

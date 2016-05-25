@@ -8,6 +8,7 @@
         public string Name { get; set; }
         public string Place { get; set; }
         public DateTime StartTime { get; set; }
+        public bool IsApproved { get; set; }
         public Guid AuthorId { get; set; }
         [ForeignKey("AuthorId")]
         public virtual User Author { get; set; }

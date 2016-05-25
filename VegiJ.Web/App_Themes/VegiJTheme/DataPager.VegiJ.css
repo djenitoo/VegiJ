@@ -1,0 +1,49 @@
+.RadDataPager_VegiJ {
+  color: #333333;
+  background: #f5f5f5;
+  border: 1px solid #dddddd;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .RadDataPager_VegiJ .rdpWrap {
+    padding: 0; }
+  .RadDataPager_VegiJ .rdpNumPart a,
+  .RadDataPager_VegiJ .rdpPagerButton,
+  .RadDataPager_VegiJ .rdpActionButton {
+    border-width: 1px;
+    border-style: solid;
+    box-sizing: content-box;
+    border-color: #eeeeee;
+    color: #333333;
+    background-color: #ffffff;
+    font-size: 1em; }
+    .RadDataPager_VegiJ .rdpNumPart a:hover,
+    .RadDataPager_VegiJ .rdpPagerButton:hover,
+    .RadDataPager_VegiJ .rdpActionButton:hover {
+      border-color: #d0d0d0;
+      color: #333333;
+      background-color: #e6e6e6; }
+  .RadDataPager_VegiJ .rdpNumPart a,
+  .RadDataPager_VegiJ .rdpActionButton {
+    margin: 0;
+    width: 1.42857em;
+    border-left-width: 0; }
+  .RadDataPager_VegiJ .rdpNumPart a {
+    border-radius: 0;
+    text-align: center; }
+    .RadDataPager_VegiJ .rdpNumPart a.rdpCurrentPage {
+      border-color: #004d26;
+      color: #ffffff;
+      background-color: #006633; }
+  .RadDataPager_VegiJ .rdpPageFirst {
+    border-left-width: 1px;
+    border-radius: 0.28571em 0 0 0.28571em; }
+  .RadDataPager_VegiJ .rdpPageLast {
+    border-radius: 0 0.28571em 0.28571em 0; }
+  .RadDataPager_VegiJ .NumericPages .rdpNumPart a:first-child {
+    border-left-width: 1px;
+    border-radius: 0.28571em 0 0 0.28571em; }
+  .RadDataPager_VegiJ .NumericPages .rdpNumPart a:last-child {
+    border-radius: 0 0.28571em 0.28571em 0; }
+  .RadDataPager_VegiJ .rdpActionButton {
+    box-sizing: content-box; }
+  .RadDataPager_VegiJ .rdpPagerButton {
+    border-radius: 0.28571em; }

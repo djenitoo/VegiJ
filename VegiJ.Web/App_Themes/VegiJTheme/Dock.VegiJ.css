@@ -1,0 +1,75 @@
+.RadDock_VegiJ {
+  background-color: #ffffff;
+  color: #333333;
+  font-size: 1em;
+  border-color: #dddddd; }
+  .RadDock_VegiJ.rdRoundedCorner {
+    border-radius: 0.28571em; }
+  .RadDock_VegiJ .rdTitleWrapper {
+    min-height: 2.14286em;
+    padding: 0.28571em 0.85714em;
+    background-color: #f5f5f5;
+    color: #333333;
+    border-bottom-color: #dddddd; }
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .RadDock_VegiJ .rdTitleWrapper {
+      padding: 0.28571em 0.85714em 0.35714em 0.85714em; } }
+  .RadDock_VegiJ .rdTitleWrapper .rdTitle {
+    font-size: 1.14286em;
+    padding: 0.25em 0em 0em; }
+  .RadDock_VegiJ .rdCommands {
+    margin: -1.21429em 0em 0em; }
+  .RadDock_VegiJ .rdListItem {
+    width: 2.28571em;
+    height: 2.28571em;
+    vertical-align: middle; }
+  .RadDock_VegiJ .rdCommandButton {
+    width: 2.28571em;
+    height: 2.28571em;
+    overflow: hidden;
+    margin: 0em 0.14286em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent; }
+  .RadDock_VegiJ .rdCommandButton:hover {
+    background-color: #ebebeb;
+    border-color: #d0d0d0;
+    border-radius: 0.21429em; }
+  .RadDock_VegiJ .rdCommands .rdCommandButton:before {
+    text-align: center;
+    color: #333333; }
+  .RadDock_VegiJ span.rdClose:before,
+  .RadDock_VegiJ span.rdExpand:before,
+  .RadDock_VegiJ span.rdCollapse:before,
+  .RadDock_VegiJ span.rdPin:before,
+  .RadDock_VegiJ span.rdUnpin:before {
+    margin: 0.21429em 0em 0em 0.14286em; }
+  .RadDock_VegiJ _:-ms-fullscreen, :root .RadDock_VegiJ span.rdClose:before,
+  .RadDock_VegiJ _:-ms-fullscreen, :root .RadDock_VegiJ span.rdExpand:before,
+  .RadDock_VegiJ _:-ms-fullscreen, :root .RadDock_VegiJ span.rdCollapse:before,
+  .RadDock_VegiJ _:-ms-fullscreen, :root .RadDock_VegiJ span.rdPin:before,
+  .RadDock_VegiJ _:-ms-fullscreen, :root .RadDock_VegiJ span.rdUnpin:before {
+    margin: 0.28571em 0em 0em 0.14286em; }
+  .RadDock_VegiJ span.rdCustom:before,
+  .RadDock_VegiJ .rdCommandButton:before {
+    margin: 0.42857em 0em 0em 0.35714em; }
+  .RadDock_VegiJ _:-ms-fullscreen, :root .RadDock_VegiJ span.rdCustom:before,
+  .RadDock_VegiJ _:-ms-fullscreen, :root .RadDock_VegiJ .rdCommandButton:before {
+    margin: 0.5em 0em 0em 0.42857em; }
+  .RadDock_VegiJ .rdContentWrapper {
+    color: #333333; }
+  .RadDock_VegiJ.RadDock.rdCollapsed .rdTitleWrapper {
+    border-bottom-color: #dddddd; }
+  .RadDock_VegiJ.rdRtl span.rdClose:before,
+  .RadDock_VegiJ.rdRtl span.rdExpand:before,
+  .RadDock_VegiJ.rdRtl span.rdCollapse:before,
+  .RadDock_VegiJ.rdRtl span.rdPin:before,
+  .RadDock_VegiJ.rdRtl span.rdUnpin:before {
+    margin: 0.21429em 0.17857em 0em 0em; }
+  .RadDock_VegiJ.rdRtl span.rdCustom:before,
+  .RadDock_VegiJ.rdRtl .rdCommandButton:before {
+    margin: 0.42857em 0.5em 0em 0em; }
+
+.RadDockZone_VegiJ {
+  background-color: #fcfcfc;
+  border-color: #dddddd; }

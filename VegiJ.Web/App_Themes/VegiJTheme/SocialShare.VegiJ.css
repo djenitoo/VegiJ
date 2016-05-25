@@ -1,0 +1,16 @@
+.RadSocialShare_VegiJ {
+  background-color: #f5f5f5;
+  color: #333333;
+  border-color: #dddddd;
+  padding: 0.42857em 0.85714em;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+  .RadSocialShare_VegiJ .sshLinkItem {
+    color: #333333; }
+  .RadSocialShare_VegiJ .sshLinkItem:hover {
+    color: #006633; }
+
+.RadComboBoxDropDown_VegiJ .rcbItem .sshLinkItem {
+  color: #333333; }
+
+.RadComboBoxDropDown_VegiJ .rcbHovered .sshLinkItem {
+  color: #006633; }

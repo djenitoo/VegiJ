@@ -1,0 +1,21 @@
+.RadRating_VegiJ {
+  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .RadRating_VegiJ a:before,
+  .RadRating_VegiJ a:hover:before {
+    color: #c4c4c4; }
+  .RadRating_VegiJ .rrtOver span:before,
+  .RadRating_VegiJ a:hover .rrtPartComplement:before,
+  .RadRating_VegiJ .rrtVertical .rrtSelected.rrtOver a:before,
+  .RadRating_VegiJ .rrtSelected a .rrtPartSelected:before,
+  .RadRating_VegiJ .rrtSelected.rrtOver a:before {
+    color: #adadad; }
+  .RadRating_VegiJ .rrtSelected span:before {
+    color: #009933; }
+  .RadRating_VegiJ .rrtSelected .rrtPart:before,
+  .RadRating_VegiJ .rrtSelected.rrtOver span:before {
+    color: #006600; }
+  .RadRating_VegiJ .rrtReversed .rrtPart:before {
+    color: #adadad; }
+  .RadRating_VegiJ .rrtReversed .rrtSelected .rrtPartComplement:before {
+    color: #006600; }

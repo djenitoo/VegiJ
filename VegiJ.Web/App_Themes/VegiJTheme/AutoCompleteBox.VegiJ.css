@@ -1,0 +1,64 @@
+.RadAutoCompleteBox_VegiJ {
+  line-height: 1.42857; }
+  .RadAutoCompleteBox_VegiJ .racTokenList {
+    padding-right: 27px;
+    border-radius: 4px;
+    color: #555555;
+    border-color: #dddddd;
+    background-color: #ffffff;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
+    .RadAutoCompleteBox_VegiJ .racTokenList:hover {
+      border-color: #c4c4c4; }
+    .RadAutoCompleteBox_VegiJ .racTokenList.racFocused {
+      border-color: #008040;
+      box-shadow: 0 0 8px rgba(0, 128, 64, 0.6); }
+    .RadAutoCompleteBox_VegiJ .racTokenList.racDisabled {
+      color: #888888;
+      border-color: #dddddd;
+      background-color: #eeeeee; }
+  .RadAutoCompleteBox_VegiJ .racToken {
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #ffffff;
+    border-color: #004d26;
+    background-color: #006633; }
+  .RadAutoCompleteBox_VegiJ .racToken:hover {
+    color: #ffffff;
+    border-color: #000f08;
+    background-color: #00331a; }
+  .RadAutoCompleteBox_VegiJ .racToken.racTokenSelected {
+    outline: 1px dotted #fff;
+    outline-offset: -2px; }
+  .RadAutoCompleteBox_VegiJ .racTextToken {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    line-height: 28px; }
+  .RadAutoCompleteBox_VegiJ .racInput {
+    height: 2.14286em;
+    line-height: 2.14286em; }
+  .RadAutoCompleteBox_VegiJ .racEmptyMessage {
+    color: #888888; }
+  .RadAutoCompleteBox_VegiJ .racLoadingIcon {
+    right: 5px;
+    bottom: 0.35714em;
+    background-image: url("images/Common/loading_small.gif"); }
+
+.RadAutoCompleteBoxPopup_VegiJ {
+  margin-top: 3px;
+  padding: 5px 0;
+  line-height: 1.42857;
+  border-color: #dddddd;
+  color: #333333;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175); }
+  .RadAutoCompleteBoxPopup_VegiJ .racShowAll {
+    color: #006633;
+    border-color: #dddddd; }
+    .RadAutoCompleteBoxPopup_VegiJ .racShowAll:hover {
+      color: #003300; }
+  .RadAutoCompleteBoxPopup_VegiJ .racItem {
+    padding: 3px 12px; }
+  .RadAutoCompleteBoxPopup_VegiJ .racItemHovered {
+    color: #000000;
+    background-color: #fbfbfb; }

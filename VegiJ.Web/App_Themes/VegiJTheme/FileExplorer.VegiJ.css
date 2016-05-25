@@ -1,0 +1,67 @@
+.RadFileExplorer_VegiJ,
+.RadFileExplorer_VegiJ .rfeFilterTxt {
+  border-color: #dddddd; }
+
+.RadFileExplorer_VegiJ .rfeAddressBox {
+  background-color: #ffffff;
+  color: #555555;
+  border-color: #dddddd; }
+
+.RadFileExplorer_VegiJ .rfeLink {
+  color: #333333; }
+
+.RadFileExplorer_VegiJ .rfeLink:hover {
+  border-color: #d0d0d0;
+  color: #333333;
+  background-color: #e6e6e6;
+  background-image: linear-gradient(); }
+
+.RadFileExplorer_VegiJ .rfeSelectedLink,
+.RadFileExplorer_VegiJ .rfeSelectedLink:hover {
+  border-color: #afafaf;
+  color: #333333;
+  background-color: #e6e6e6;
+  background-image: linear-gradient(); }
+
+.RadFileExplorer_VegiJ .rfeFilterContainer {
+  background-color: #f2f2f2; }
+
+.RadFileExplorer_VegiJ .rfeDropZone {
+  background-color: rgba(236, 236, 236, 0.8); }
+
+.RadFileExplorer_VegiJ .rfePageControlContainer {
+  border-color: #dddddd;
+  background-image: linear-gradient(); }
+
+.RadFileExplorer_VegiJ .rfeThumbnailView .rlvI .rfeFileCount span,
+.RadFileExplorer_VegiJ .rfePageControlContainer,
+.RadFileExplorer_VegiJ .rfeDropUploadInfoPanel {
+  background-color: #ffffff;
+  color: #333333; }
+
+.RadFileExplorer_VegiJ .rfePageControlContainer span {
+  color: #333333; }
+
+.RadFileExplorer_VegiJ .RadToolBar_VegiJ {
+  padding: 0.28571em 0em; }
+  .RadFileExplorer_VegiJ .RadToolBar_VegiJ .rtbUL {
+    margin: -0.14286em 0em 0em; }
+  .RadFileExplorer_VegiJ .RadToolBar_VegiJ .rtbItem + .rtbItem {
+    margin-left: -1px; }
+  .RadFileExplorer_VegiJ .RadToolBar_VegiJ .rtbButton {
+    border-radius: 0; }
+  .RadFileExplorer_VegiJ .RadToolBar_VegiJ .rtbGroupStart .rtbButton {
+    border-radius: 0.28571em 0 0 0.28571em; }
+  .RadFileExplorer_VegiJ .RadToolBar_VegiJ .rtbGroupEnd .rtbButton {
+    border-radius: 0 0.28571em 0.28571em 0; }
+
+.RadFileExplorer_VegiJ .RadSlider .rslHorizontal a.rslHandle {
+  margin-top: -1.2em; }
+
+.RadWindow_VegiJ .rfeUploadInfoPanel {
+  background-color: #f2f2f2;
+  color: #333333;
+  border-color: #dddddd; }
+
+.rfeUploadContainer .RadUpload_VegiJ .ruInputs {
+  height: 8.21429em; }

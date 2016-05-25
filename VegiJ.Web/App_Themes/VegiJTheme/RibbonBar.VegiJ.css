@@ -1,0 +1,280 @@
+.RadRibbonBar_VegiJ {
+  color: #333333; }
+  .RadRibbonBar_VegiJ .rrbWrap {
+    border-color: #dddddd;
+    background-color: #f5f5f5; }
+
+.RadRibbonBar_VegiJ .rrbTabs {
+  border-bottom-color: #c4c4c4; }
+  .RadRibbonBar_VegiJ .rrbTabs .rrbItem .rrbLink {
+    padding: 10px 15px;
+    border-radius: 0.28571em 0.28571em 0em 0em;
+    border-color: transparent;
+    color: #333333; }
+  .RadRibbonBar_VegiJ .rrbTabs .rrbItem.rrbHovered .rrbLink {
+    color: #333333;
+    border-color: #c4c4c4;
+    background-color: #e4e4e4; }
+  .RadRibbonBar_VegiJ .rrbTabs .rrbItem.rrbSelected .rrbLink {
+    color: #333333;
+    border-color: #c4c4c4;
+    background-color: #e4e4e4; }
+  .RadRibbonBar_VegiJ .rrbTabs .rrbItem,
+  .RadRibbonBar_VegiJ .rrbTabs .rrbApplicationItem {
+    margin-right: 7px; }
+
+.RadRibbonBar_VegiJ .rrbContextualItem {
+  padding-top: 2.85714em; }
+
+.RadRibbonBar_VegiJ .rrbQat + .rrbTabs .rrbContextualItem {
+  margin-top: -2.85714em; }
+
+.RadRibbonBar_VegiJ .rrbButton {
+  padding: 6px;
+  border-radius: 0.28571em; }
+
+.RadRibbonBar_VegiJ .rrbAbox > .rrbButtonGroup .rrbButton {
+  border-radius: 0; }
+  .RadRibbonBar_VegiJ .rrbAbox > .rrbButtonGroup .rrbButton + .rrbButton {
+    margin-left: -1px; }
+
+.RadRibbonBar_VegiJ .rrbAbox > .rrbButtonGroup .rrbButton:first-child {
+  border-radius: 0.28571em 0em 0em 0.28571em; }
+
+.RadRibbonBar_VegiJ .rrbAbox > .rrbButtonGroup .rrbButton:last-child {
+  border-radius: 0em 0.28571em 0.28571em 0em; }
+
+.RadRibbonBar_VegiJ .rrbApplicationItem {
+  margin-bottom: 7px; }
+  .RadRibbonBar_VegiJ .rrbApplicationItem .rrbLink {
+    width: 1.42857em;
+    padding: 6px;
+    border-radius: 0.28571em;
+    color: transparent;
+    border-color: #eeeeee;
+    background-color: #ffffff; }
+    .RadRibbonBar_VegiJ .rrbApplicationItem .rrbLink:before {
+      content: "\E002";
+      font: 1.14286em TelerikWebUI;
+      color: #333333;
+      vertical-align: middle; }
+  .RadRibbonBar_VegiJ .rrbApplicationItem.rrbSelected .rrbHeaderBar {
+    border-color: #dddddd;
+    background: #f5f5f5; }
+  .RadRibbonBar_VegiJ .rrbApplicationItem.rrbSelected .rrbLink {
+    border-color: #c4c4c4;
+    background-color: #e4e4e4; }
+    .RadRibbonBar_VegiJ .rrbApplicationItem.rrbSelected .rrbLink:before {
+      color: #333333; }
+
+.RadRibbonBar_VegiJ .rrbContextualItem .rrbLabel {
+  color: #ffffff; }
+
+.RadRibbonBar_VegiJ .rrbMenu .rrbHeader {
+  color: #333333;
+  background-color: #f5f5f5; }
+
+.RadRibbonBar_VegiJ .rrbToolTip {
+  color: #333333;
+  border-color: #dddddd;
+  background-color: #fcfcfc; }
+
+.RadRibbonBar_VegiJ .rrbCommandGroup {
+  border-radius: 0.28571em;
+  padding: 0.5em 0.5em 2.14286em;
+  border-color: #eeeeee;
+  background-color: #ffffff; }
+  .RadRibbonBar_VegiJ .rrbCommandGroup:before {
+    height: 4.64286em;
+    padding: 19px 0; }
+  .RadRibbonBar_VegiJ .rrbCommandGroup ~ .rrbCommandGroup {
+    margin-left: 0.5em; }
+
+.RadRibbonBar_VegiJ .rrbCommandArea {
+  padding: 0.5em;
+  background-color: #f5f5f5; }
+
+.RadRibbonBar_VegiJ .rrbResizeHandle {
+  background-position: -20px -2220px; }
+
+.RadRibbonBar_VegiJ .rrbTitle {
+  color: #333333;
+  background-color: #f5f5f5; }
+
+.RadRibbonBar_VegiJ .rrbCollapsedGroup {
+  border-color: #dddddd; }
+  .RadRibbonBar_VegiJ .rrbCollapsedGroup .rrbIcon {
+    border-color: #eeeeee; }
+
+.RadRibbonBar_VegiJ .rrbButton, .RadRibbonBar_VegiJ .rrbSplitButton.rrbHovered .rrbArrow, .RadRibbonBar_VegiJ .rrbButtonGroup .rrbButton, .RadRibbonBar_VegiJ .rrbComboBox .rrbButton,
+.RadRibbonBar_VegiJ .rrbDropDown .rrbButton,
+.RadRibbonBar_VegiJ .rrbNumericTextBox .rrbButton,
+.RadRibbonBar_VegiJ .rrbColorPicker .rrbButton, .RadRibbonBar_VegiJ .rrbDropDown .rrbDDInner, .RadRibbonBar_VegiJ .rrbColorPicker .rrbCPInner, .RadRibbonBar_VegiJ .rrbGalleryActions .rrbButton {
+  border-color: #eeeeee;
+  color: #333333;
+  background-color: #ffffff; }
+
+.RadRibbonBar_VegiJ .rrbComboBox .rrbCBInner, .RadRibbonBar_VegiJ .rrbDropDown .rrbDDInner, .RadRibbonBar_VegiJ .rrbNumericTextBox .rrbNTBInner, .RadRibbonBar_VegiJ .rrbColorPicker .rrbCPInner {
+  padding: 6px 34px 6px 6px; }
+  .RadRibbonBar_VegiJ .rrbComboBox .rrbCBInner .rrbButton, .RadRibbonBar_VegiJ .rrbDropDown .rrbDDInner .rrbButton, .RadRibbonBar_VegiJ .rrbNumericTextBox .rrbNTBInner .rrbButton, .RadRibbonBar_VegiJ .rrbColorPicker .rrbCPInner .rrbButton {
+    border-radius: 0; }
+
+.RadRibbonBar_VegiJ .rrbComboBox .rrbButton,
+.RadRibbonBar_VegiJ .rrbDropDown .rrbButton,
+.RadRibbonBar_VegiJ .rrbNumericTextBox .rrbButton,
+.RadRibbonBar_VegiJ .rrbColorPicker .rrbButton {
+  padding: 6px; }
+
+.RadRibbonBar_VegiJ .rrbQat .rrbButton, .RadRibbonBar_VegiJ .rrbButton, .RadRibbonBar_VegiJ .rrbButton .rrbArrow {
+  border-color: transparent;
+  background: transparent; }
+
+.RadRibbonBar_VegiJ .rrbQat .rrbButton:hover, .RadRibbonBar_VegiJ .rrbButton:hover,
+.RadRibbonBar_VegiJ .rrbButton.rrbHovered, .RadRibbonBar_VegiJ .rrbSplitButton .rrbArrow:hover, .RadRibbonBar_VegiJ .rrbButtonGroup .rrbButton:hover, .RadRibbonBar_VegiJ .rrbComboBox .rrbButton.rrbHovered,
+.RadRibbonBar_VegiJ .rrbDropDown .rrbButton.rrbHovered,
+.RadRibbonBar_VegiJ .rrbNumericTextBox .rrbButton.rrbHovered,
+.RadRibbonBar_VegiJ .rrbColorPicker .rrbButton.rrbHovered, .RadRibbonBar_VegiJ .rrbDropDown .rrbDDInner:hover, .RadRibbonBar_VegiJ .rrbColorPicker .rrbCPInner:hover, .RadRibbonBar_VegiJ .rrbGallery .rrbItem.rrbHovered, .RadRibbonBar_VegiJ .rrbGalleryActions .rrbButton.rrbHovered, .rrbSlide_VegiJ .rrbItem.rrbHovered {
+  border-color: #d0d0d0;
+  color: #333333;
+  background-color: #e6e6e6; }
+
+.RadRibbonBar_VegiJ .rrbQat .rrbButton:active, .RadRibbonBar_VegiJ .rrbButton.rrbClicked,
+.RadRibbonBar_VegiJ .rrbButton.rrbPressed,
+.RadRibbonBar_VegiJ .rrbButton.rrbExpanded, .RadRibbonBar_VegiJ .rrbButton.rrbToggled, .RadRibbonBar_VegiJ .rrbSplitButton.rrbExpanded .rrbArrow,
+.RadRibbonBar_VegiJ .rrbSplitButton.rrbClicked .rrbArrow, .RadRibbonBar_VegiJ .rrbButtonGroup .rrbButton:active,
+.RadRibbonBar_VegiJ .rrbButtonGroup .rrbButton.rrbClicked,
+.RadRibbonBar_VegiJ .rrbButtonGroup .rrbButton.rrbPressed, .RadRibbonBar_VegiJ .rrbComboBox .rrbButton.rrbClicked,
+.RadRibbonBar_VegiJ .rrbDropDown .rrbButton.rrbClicked,
+.RadRibbonBar_VegiJ .rrbNumericTextBox .rrbButton.rrbClicked,
+.RadRibbonBar_VegiJ .rrbColorPicker .rrbButton.rrbClicked, .RadRibbonBar_VegiJ .rrbDropDown .rrbDDInner:active, .RadRibbonBar_VegiJ .rrbColorPicker .rrbCPInner:active, .RadRibbonBar_VegiJ .rrbGallery .rrbItem.rrbSelected, .RadRibbonBar_VegiJ .rrbGalleryActions .rrbButton.rrbClicked, .rrbSlide_VegiJ .rrbItem.rrbSelected {
+  border-color: #afafaf;
+  color: #333333;
+  background-color: #e6e6e6; }
+
+.RadRibbonBar_VegiJ .rrbMenu, .rrbDropDownSlide_VegiJ .rrbPopup, .rrbSlide_VegiJ .rrbPopup, .rrbPopup_VegiJ, .rrbPopup_VegiJ .rrbPopup {
+  border-color: #dddddd;
+  color: #333333;
+  background-color: #ffffff; }
+
+/*%menu-item {
+	color: $list-item-color;
+	background-color: $list-item-bg;
+}*/
+.RadRibbonBar_VegiJ .rrbMenu .rrbItem.rrbHovered, .rrbPopup_VegiJ .rrbItem.rrbHovered > .rrbInner, .rrbPopup_VegiJ .rrbItem.rrbHovered > .rrbInner .rrbToggle, .rrbPopup_VegiJ .rrbItem.rrbExpanded > .rrbInner {
+  border-color: #e1e1e1;
+  color: #000000;
+  background-color: #eeeeee;
+  background-image: linear-gradient(); }
+
+.rrbPopup_VegiJ .rrbItem.rrbExpanded > .rrbInner .rrbToggle {
+  border-color: #00331a;
+  color: #ffffff;
+  background-color: #006633;
+  background-image: linear-gradient(); }
+
+.RadRibbonBar_VegiJ .rrbToggleHandle,
+.RadRibbonBar_VegiJ .rrbResizeHandle,
+.RadRibbonBar_VegiJ .rrbGroupLauncher,
+.RadRibbonBar_VegiJ .rrbGroupToggleIcon {
+  /*background-image: url( $actions-sprite );*/ }
+
+.RadRibbonBar_VegiJ .rrbSplitButton .rrbArrow {
+  border-radius: 0; }
+
+.RadRibbonBar_VegiJ .rrbSmallButton.rrbMenuButton,
+.RadRibbonBar_VegiJ .rrbSmallButton.rrbSplitButton {
+  padding-right: 22px; }
+  .RadRibbonBar_VegiJ .rrbSmallButton.rrbMenuButton .rrbImagePlaceholder,
+  .RadRibbonBar_VegiJ .rrbSmallButton.rrbSplitButton .rrbImagePlaceholder {
+    left: 6px; }
+  .RadRibbonBar_VegiJ .rrbSmallButton.rrbMenuButton .rrbArrow,
+  .RadRibbonBar_VegiJ .rrbSmallButton.rrbSplitButton .rrbArrow {
+    width: 22px; }
+
+.RadRibbonBar_VegiJ .rrbMediumButton {
+  padding-left: 24px; }
+  .RadRibbonBar_VegiJ .rrbMediumButton.rrbMenuButton,
+  .RadRibbonBar_VegiJ .rrbMediumButton.rrbSplitButton {
+    padding-right: 24px; }
+  .RadRibbonBar_VegiJ .rrbMediumButton .rrbImagePlaceholder {
+    left: 4px; }
+
+.RadRibbonBar_VegiJ .rrbLargeButton {
+  padding: 18px 0;
+  height: 4.57143em; }
+  .RadRibbonBar_VegiJ .rrbLargeButton .rrbImagePlaceholder {
+    top: 0.7em; }
+
+.RadRibbonBar_VegiJ .rrbComboBox .rrbCBInner {
+  border-radius: 0.28571em;
+  border-color: #dddddd;
+  background-color: #ffffff; }
+
+.RadRibbonBar_VegiJ .rrbComboBox .rrbCBInput {
+  color: #555555; }
+
+.RadRibbonBar_VegiJ .rrbDropDown .rrbButton,
+.RadRibbonBar_VegiJ .rrbDropDown .rrbButton.rrbHovered {
+  background: none; }
+
+.RadRibbonBar_VegiJ .rrbNumericTextBox {
+  width: 4.28571em; }
+  .RadRibbonBar_VegiJ .rrbNumericTextBox .rrbNTBInner {
+    border-radius: 0.28571em;
+    border-color: #dddddd;
+    background-color: #ffffff; }
+  .RadRibbonBar_VegiJ .rrbNumericTextBox .rrbNTBInput {
+    color: #555555; }
+
+.RadRibbonBar_VegiJ .rrbColorPicker .rrbButton,
+.RadRibbonBar_VegiJ .rrbColorPicker .rrbButton.rrbHovered {
+  background: none; }
+
+.RadRibbonBar_VegiJ .rrbGallery {
+  height: 6em;
+  padding-right: 32px;
+  border-radius: 0.28571em;
+  border-color: #dddddd;
+  background-color: #ffffff; }
+  .RadRibbonBar_VegiJ .rrbGallery .rrbItem .rrbLink {
+    color: #333333;
+    background-color: #ffffff; }
+
+.RadRibbonBar_VegiJ .rrbGalleryActions .rrbButton {
+  width: 32px;
+  border-radius: 0; }
+
+.RadRibbonBar_VegiJ .rrbCategoryTitle {
+  color: #333333;
+  background-color: #f5f5f5; }
+
+.rrbDropDownSlide_VegiJ .rrbListItem:hover {
+  color: #000000;
+  background-color: #fbfbfb; }
+
+.rrbSlide_VegiJ .rrbCategoryTitle {
+  color: #333333;
+  background-color: #f5f5f5; }
+
+.rrbSlide_VegiJ .rrbGallery {
+  background: #ffffff; }
+
+.rrbSlide_VegiJ .rrbLink {
+  color: #333333;
+  background-color: #ffffff; }
+
+.rrbPopup_VegiJ .rrbHeaderBar {
+  border-color: #eeeeee;
+  color: #333333;
+  background-color: #ffffff; }
+
+.rrbPopup_VegiJ .rrbAuxiliaryPane {
+  color: #333333;
+  border-color: #dddddd;
+  background: #f5f5f5; }
+
+.rrbPopup_VegiJ .rrbHeader,
+.rrbPopup_VegiJ .rrbFooter {
+  color: #333333;
+  border-color: #dddddd;
+  background: #f5f5f5; }

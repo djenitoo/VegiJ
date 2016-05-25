@@ -1,0 +1,46 @@
+.RadDataForm_VegiJ {
+  font: 14px/1.42857 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333333;
+  overflow: hidden; }
+  .RadDataForm_VegiJ .rdfLegend,
+  .RadDataForm_VegiJ .rdfBorders {
+    border-color: #dddddd; }
+  .RadDataForm_VegiJ .rdfHr {
+    color: #dddddd; }
+  .RadDataForm_VegiJ .rdfFieldHint {
+    color: #b3b3b3; }
+  .RadDataForm_VegiJ .rdfLegend {
+    font-size: 1.17em; }
+  .RadDataForm_VegiJ .rdfFieldHint {
+    font-size: 0.83em;
+    line-height: .8;
+    padding: 0 0 0 0.42em; }
+  .RadDataForm_VegiJ .rdfFieldHint.rdfBlock {
+    padding: .42em 0 0 0; }
+  .RadDataForm_VegiJ .rdfLabel.rdfBlock {
+    padding: 0 0 0.17em 0; }
+  .RadDataForm_VegiJ .rdfPager {
+    margin-top: 1.25em; }
+    .RadDataForm_VegiJ .rdfPager .rdfFirst,
+    .RadDataForm_VegiJ .rdfPager .rdfPrev,
+    .RadDataForm_VegiJ .rdfPager .rdfNext,
+    .RadDataForm_VegiJ .rdfPager .rdfLast {
+      margin-left: 2px;
+      width: 32px;
+      height: 32px;
+      border: 1px solid #eeeeee;
+      border-radius: 4px;
+      background: #ffffff no-repeat url(skin-image-url("DataForm", "sprite.png")); }
+      .RadDataForm_VegiJ .rdfPager .rdfFirst:hover,
+      .RadDataForm_VegiJ .rdfPager .rdfPrev:hover,
+      .RadDataForm_VegiJ .rdfPager .rdfNext:hover,
+      .RadDataForm_VegiJ .rdfPager .rdfLast:hover {
+        background-color: #e6e6e6; }
+    .RadDataForm_VegiJ .rdfPager .rdfFirst {
+      background-position: 3px 3px; }
+    .RadDataForm_VegiJ .rdfPager .rdfPrev {
+      background-position: 1px -47px; }
+    .RadDataForm_VegiJ .rdfPager .rdfNext {
+      background-position: 4px -97px; }
+    .RadDataForm_VegiJ .rdfPager .rdfLast {
+      background-position: 4px -147px; }

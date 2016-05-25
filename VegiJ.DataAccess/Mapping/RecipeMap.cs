@@ -14,7 +14,9 @@
             Property(t => t.Content).HasColumnType("nvarchar(MAX)");
             Property(t => t.CreatedDate);
             Property(t => t.LastModifiedDate);
+            Property(t => t.IsApproved);
             HasMany(t => t.Tags);
+            //    .WithMany(t => t.Recipes);
 
             HasRequired(t => t.Author) // no idea dali e tai :D
                 .WithMany(c => c.Recipes)
