@@ -10,7 +10,7 @@
 namespace VegiJ.Web.Users.Administration {
     
     
-    public partial class EditTips {
+    public partial class EditEvents {
         
         /// <summary>
         /// RadFormDecorator1 control.

@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditTips.aspx.cs" Inherits="VegiJ.Web.Users.Administration.EditTips" %>
+﻿<%@ Page Title="Edit Events" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditEvents.aspx.cs" Inherits="VegiJ.Web.Users.Administration.EditEvents" %>
+<%@ Import Namespace="System.Globalization" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         @media (max-height: 768px) {
@@ -34,7 +35,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="edit-tips-container">
+    <div class="edit-events-container">
         <telerik:RadFormDecorator RenderMode="Lightweight" ID="RadFormDecorator1" runat="server"
             DecorationZoneID="demo" DecoratedControls="All" EnableRoundedCorners="true" />
         <div id="demo" class="demo-container no-bg">
@@ -51,10 +52,14 @@
                         <telerik:GridBoundColumn UniqueName="ID" HeaderText="ID" DataField="ID" Visible="false">
                             <HeaderStyle Width="70px"></HeaderStyle>
                         </telerik:GridBoundColumn>
-                        <telerik:GridBoundColumn UniqueName="Title" HeaderText="Title" DataField="Title">
+                        <telerik:GridBoundColumn UniqueName="Name" HeaderText="Name" DataField="Name">
                         </telerik:GridBoundColumn>
-                        <telerik:GridBoundColumn UniqueName="Content" HeaderText="Content" DataField="Content">
+                        <telerik:GridBoundColumn UniqueName="Place" HeaderText="Place" DataField="Place">
                         </telerik:GridBoundColumn>
+                        <telerik:GridDateTimeColumn
+                            UniqueName="StartTime" HeaderText="Start Time" DataField="StartTime"
+                            DataFormatString="{0:H:mm dd-MM-yyyy}">
+                        </telerik:GridDateTimeColumn>
                         <telerik:GridBoundColumn UniqueName="Author" HeaderText="Author" DataField="Author.UserName">
                         </telerik:GridBoundColumn>
                         <telerik:GridCheckBoxColumn UniqueName="IsApproved" HeaderText="Is Approved" DataField="IsApproved">
@@ -71,20 +76,20 @@
                                 style="border-collapse: collapse;">
                                 <tr class="EditFormHeader">
                                     <td colspan="2">
-                                        <b>TIp Details</b>
+                                        <b>Event Details</b>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <table id="Table3" width="800px" border="0" class="module">
                                             <tr>
-                                                <td class="title" style="font-weight: bold;" colspan="2">Recipe Info:</td>
+                                                <td class="title" style="font-weight: bold;" colspan="2">Event Info:</td>
                                             </tr>
                                             <tr>
                                                 <td>Title:
                                                 </td>
                                                 <td>
-                                                    <asp:TextBox ID="TextBox7" runat="server" Text='<%# Bind("Title") %>'>
+                                                    <asp:TextBox ID="TextBox7" runat="server" Text='<%# Bind("Name") %>'>
                                                     </asp:TextBox>
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox7" ErrorMessage="Title is required!" CssClass="validator">*</asp:RequiredFieldValidator>
                                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox7" ErrorMessage="Minimum length of title is 8 characters!" CssClass="validator" ValidationExpression="^[\s\S]{8,}$">*</asp:RegularExpressionValidator>
@@ -94,10 +99,21 @@
                                                 <td>Content:
                                                 </td>
                                                 <td>
-                                                    <asp:TextBox ID="TextBox9" runat="server" Text='<%# Bind("Content") %>' TabIndex="2" TextMode="MultiLine">
+                                                    <asp:TextBox ID="TextBox9" runat="server" Text='<%# Bind("Place") %>' TabIndex="2">
                                                     </asp:TextBox>
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox9" ErrorMessage="Content of recipe is required!" CssClass="validator">*</asp:RequiredFieldValidator>
-                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBox9" ErrorMessage="Minimum length of content is 50 characters and maximum 500!" CssClass="validator" ValidationExpression="^[\s\S]{50,500}$">*</asp:RegularExpressionValidator>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBox9" ErrorMessage="Minimum length of content is 50 characters and maximum 500!" CssClass="validator" ValidationExpression="^[\s\S]{5,}$">*</asp:RegularExpressionValidator>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Starting:
+                                                </td>
+                                                <td>
+                                                    <telerik:RadDateTimePicker RenderMode="Lightweight" ID="StartTimePicker" runat="server" AutoPostBack="true"
+                                                        MaxDate="<%# DateTime.Today.AddYears(1) %>" Culture='<%# new CultureInfo("bg-BG") %>'
+                                                        MinDate="" DbSelectedDate='<%# Bind("StartTime") %>'
+                                                        TabIndex="8">
+                                                    </telerik:RadDateTimePicker>
                                                 </td>
                                             </tr>
                                             <tr>

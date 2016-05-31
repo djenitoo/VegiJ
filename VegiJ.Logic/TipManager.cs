@@ -16,7 +16,7 @@ namespace VegiJ.Logic
         {
             _tipRepository = repo;
         }
-        public void AddTag(Tip tip)
+        public void AddTip(Tip tip)
         {
             if (this.TipNameExist(tip.Title))
             {
@@ -26,26 +26,26 @@ namespace VegiJ.Logic
             _tipRepository.Create(tip);
         }
 
-        public void DeleteTag(Tip tip)
+        public void DeleteTip(Tip tip)
         {
             if (!this.TipNameExist(tip.Title))
             {
                 throw new ArgumentException("Tag do not exist!");
             }
-            _tipRepository.Delete(tip);
+            _tipRepository.Delete(tip.ID);
         }
 
-        public IQueryable<Tip> GetAllTags()
+        public IQueryable<Tip> GetAllTips()
         {
             return _tipRepository.Table;
         }
 
-        public Tip GetTag(Guid Id)
+        public Tip GetTip(Guid Id)
         {
             return _tipRepository.GetById(Id);
         }
 
-        public void UpdateTag(Tip tip)
+        public void UpdateTip(Tip tip)
         {
             if (!this.TipNameExist(tip.Title))
             {
@@ -54,6 +54,7 @@ namespace VegiJ.Logic
 
             _tipRepository.Update(tip);
         }
+
         private bool TipNameExist(string name)
         {
             return _tipRepository.Table.Any(c => c.Title.Equals(name, StringComparison.InvariantCultureIgnoreCase));

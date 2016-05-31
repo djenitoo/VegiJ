@@ -51,6 +51,23 @@
             <h2>There are no recent recipes.</h2>
         </EmptyItemTemplate>
     </telerik:RadListView>
+    <div class="col-sm-6 col-md-4">
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <h4 class="panel-title">Tip of the day</h4>
+            </div>
+            <div class="panel-body">
+                <h5><%= this.TipOfTheDay().Title %></h5>
+                <p><%= this.TipOfTheDay().Content %></p>
+            </div>
+            <div class="panel-footer">
+                by <a href="<%= GetRouteUrl("UserByNameRoute", new {username = this.TipOfTheDay().Author.UserName}) %>">
+                    <%= this.TipOfTheDay().Author.UserName %>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
     <div class="panel panel-info">
         <div class="panel-heading">
             <p>

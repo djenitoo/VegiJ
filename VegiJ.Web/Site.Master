@@ -75,6 +75,7 @@
                             <ul class="dropdown-menu navbar-inverse">
                                 <li><a runat="server" href="~/Users/Administration/EditRecipes.aspx">Edit Recipes</a></li>
                                 <li><a runat="server" href="~/Users/Administration/EditUsers.aspx">Edit Users</a></li>
+                                <li><a runat="server" href="~/Users/Administration/EditTips.aspx">Edit Tips</a></li>
                                 <li><a runat="server" href="~/Users/Administration/Default.aspx">Simple admin page</a></li>
                             </ul>
                         </li>

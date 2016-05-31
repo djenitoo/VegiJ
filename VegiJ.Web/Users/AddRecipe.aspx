@@ -2,6 +2,18 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="/Content/add-recipe-styles.css" type="text/css" rel="stylesheet" />
+	<style>
+	body {
+    /*padding-top: 40px;
+    padding-bottom: 40px;*/
+    background-color: #3cb371;
+    background: url("../images/vegetable-set-4.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+	</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <telerik:RadDataForm ID="RadDataForm1" runat="server" RenderMode="Lightweight" DataKeyNames="ID"

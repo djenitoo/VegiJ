@@ -71,6 +71,8 @@ namespace VegiJ.Web.App_Start
             kernel.Bind<IRecipeManager>().To<RecipeManager>();
             kernel.Bind<ICategoryManager>().To<CategoryManager>();
             kernel.Bind<ITagManager>().To<TagManager>();
+            kernel.Bind<ITipManager>().To<TipManager>();
+            kernel.Bind<IEventManager>().To<EventManager>();
             kernel.Bind<RoleProvider>().To<CustomRoleProvider>();
         }        
     }

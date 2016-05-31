@@ -13,6 +13,8 @@
         public IRecipeManager RecipeManager { get; set; }
         [Inject]
         public IUserManager UserManager { get; set; }
+        [Inject]
+        public ITipManager TipManager { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -35,7 +37,15 @@
 
             return items;
         }
+        public Tip TipOfTheDay()
+        {
+            int tipsCount = TipManager.GetAllTips().AsEnumerable().Where(t => t.IsApproved).Count();
+            int day = (int)((DateTime.Today - new DateTime(2000, 1, 1)).TotalDays);
+            Random rnd = new Random(day);
+            int id = rnd.Next(0, tipsCount - 1);
 
+            return TipManager.GetAllTips().ToList()[id];
+        }
         protected void RadListView1_NeedDataSource(object sender, Telerik.Web.UI.RadListViewNeedDataSourceEventArgs e)
         {
             RadListView2.DataSource = GetRecipes();
