@@ -39,10 +39,6 @@
                 if (SecurityManager.LogIn(TxtboxUsername.Text, TxtBoxPassword.Text, CheckBoxRememberMe.Checked))
                 {
                     var currentUser = SecurityManager.GetCurrentUser();
-                    //string[] roles = { currentUser.IsAdmin ? "admin" : ""};
-                    //var userIdentity = new GenericIdentity(currentUser.UserName, "Forms");
-                    //HttpContext.Current.User = currentUser;
-                    //FormsAuthentication.RedirectFromLoginPage(currentUser.UserName, CheckBoxRememberMe.Checked);
 
                     var url = Request.QueryString["ReturnUrl"] ?? "~/Default.aspx";
                     HttpContext.Current.Response.Redirect(url);

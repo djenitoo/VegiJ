@@ -1,0 +1,174 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@using Kendo.Mvc.UI
+@using VegiJ.DataAccess
+@model VegiJ.Web.MVC.Areas.Users.Models.IndexViewModel
+
+@{
+    ViewBag.Title = "Profile of " + @Model.user.UserName;
+}
+@section Styles {
+    <link href="@Url.Content("~/Content/profile-page.css")" rel="stylesheet" type="text/css" />
+}
+@{
+    bool isOwnProfilePage = User.Identity.Name == Model.user.UserName;
+    var bdate = Model.user.BirthDate.HasValue ? Model.user.BirthDate.Value.ToString(GlobalConstants.DateFormat) : "<em>No birthdate selected.</em>";
+    var genderName = Model.user.GenderID.HasValue ? Model.user.Gender.Name : "<em>No gender selected.</em>";
+    var loginDate = Model.user.LastLoginDate.HasValue ? Model.user.LastLoginDate.Value.ToString(GlobalConstants.DateTimeFormat) : $"<em>{GlobalConstants.NoLoginDate}</em>";
+}
+<script type="text/x-kendo-tmpl" id="template">
+    <div class="list-group-item">
+        @Html.ActionLink("#:Title#", "Index", "User", new {area = "Users"})
+    </div>
+</script>
+<div class="panel panel-default panel-profile">
+    <div class="panel panel-heading panel-profile-heading">
+        <h1>
+            Профилът на @Model.user.UserName @{
+                if (!string.IsNullOrEmpty(Model.user.FullName))
+                {
+                    <span> - @Model.user.FullName</span>
+                }
+            }
+        </h1>
+    </div>
+    <div class="panel panel-body">
+        <div class="menu row">
+            <div class="col-lg-4">
+                <div class="panel panel-default panel-profile-info">
+                    <div class="panel-heading">
+                        <h3>
+                            Основна информация
+                            @if (@isOwnProfilePage || User.IsInRole("admin"))
+                            {
+                                @Html.ActionLink(" ", "Settings", "User", new { area = "Users" }, new { @class = "fa fa-cog icon-hyperlink" })
+                            }
+                        </h3>
+                    </div>
+
+                    <div class="list-group-item">
+                        @Html.Label("Role:")
+                        &nbsp;
+                        @{
+                            if (Model.user.IsAdmin)
+                            {
+                                <span>Admin</span>
+                            }
+                            else
+                            {
+                                <span>User</span>
+                            }
+                        }
+                    </div>
+
+                    <div class="list-group-item" Visible='<%# Boolean.Parse(Item.BirthDate.HasValue.ToString()) %>'>
+                        @Html.Label("Birth date:")
+                        &nbsp;
+                        <span>@Html.Raw(bdate)</span>
+                    </div>
+                    <div class="list-group-item">
+                        @Html.Label("Gender:")
+                        &nbsp;
+                        <span>@Html.Raw(genderName)</span>
+                    </div>
+                    <div class="list-group-item">
+                        @Html.Label("Email:")
+                        &nbsp;
+                        <span>@Model.user.Email</span>
+                    </div>
+                    <div class="list-group-item">
+                        @Html.Label("Regirster date:")
+                        &nbsp;
+                        <span>@Model.user.CreatedDate.ToString(GlobalConstants.DateTimeFormat)</span>
+                    </div>
+                    <div class="list-group-item">
+                        @Html.Label("Last login date:")
+                        &nbsp;
+                        <span>@Html.Raw(loginDate)</span>
+                    </div>
+
+                    @if (isOwnProfilePage)
+                    {
+                        <div class="list-group-item">
+                            @Html.Label("Profile last edited date:")
+                            &nbsp;
+                            <span>@Model.user.LastModifiedDate.ToString(GlobalConstants.DateTimeFormat)</span>
+                        </div>
+                    }
+                </div>
+            </div>
+        
+        <div class="col-lg-4">
+            <div class="panel panel-default panel-profile-info">
+                <div class="panel-heading">
+                    <h3>Recipes</h3>
+                </div>
+                @if (Model.user.Recipes.Count != 0)
+                {
+                    var source = Model.user.Recipes.AsEnumerable().Select(r => new {Title = r.Title}).ToList();
+                    @(Html.Kendo().ListView<VegiJ.Web.MVC.Areas.Users.Models.IndexViewModel>()
+                          .Name("listView")
+                          .TagName("div")
+                          .ClientTemplateId("template")
+                          .BindTo(source)
+                          .Pageable()
+                          )
+                }
+                else
+                {
+                    <div class="list-group-item">
+                        <em>No recipes to show.</em>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-default panel-profile-info">
+                <div class="panel-heading">
+                    <h3>Events</h3>
+                </div>
+                @if (Model.user.Events.Count != 0)
+                {
+                    var source = Model.user.Events.AsEnumerable().Select(r => new {Title = r.Name}).ToList();
+                    @(Html.Kendo().ListView<VegiJ.Web.MVC.Areas.Users.Models.IndexViewModel>()
+                          .Name("listView2")
+                          .TagName("div")
+                          .ClientTemplateId("template")
+                          .BindTo(source)
+                          .Pageable()
+                          )
+                }
+                else
+                {
+                    <div class="list-group-item">
+                        <em>No events to show.</em>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-default panel-profile-info">
+                <div class="panel-heading">
+                    <h3>Tips</h3>
+                </div>
+                @if (Model.user.Tips.Count != 0)
+                {
+                    var sourceTips = Model.user.Tips.AsEnumerable().Select(r => new {Title = r.Title}).ToList();
+                    @(Html.Kendo().ListView<VegiJ.Web.MVC.Areas.Users.Models.IndexViewModel>()
+                          .Name("listView3")
+                          .TagName("div")
+                          .ClientTemplateId("template")
+                          .BindTo(sourceTips)
+                          .Pageable()
+                          )
+                }
+                else
+                {
+                    <div class="list-group-item">
+                        <em>No tips to show.</em>
+                    </div>
+                }
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

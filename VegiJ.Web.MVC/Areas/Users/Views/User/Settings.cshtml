@@ -1,0 +1,92 @@
+﻿@model VegiJ.Web.MVC.Areas.Users.Models.SettingsViewModel
+@using Kendo.Mvc.UI
+@using VegiJ.DataAccess
+@{
+    ViewBag.Title = "Settings";
+}
+@{
+    Culture = "en";
+}
+<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm("Settings", "User", new { area = "Users" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Edit profile.</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="col-md-6">
+        <div class="form-group row">
+            @Html.LabelFor(m => m.UserName, new { @class = "col-md-4 control-label" })
+            <div class="col-md-8">
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @disabled = "disabled" })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-4 control-label" })
+            <div class="col-md-8">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            </div>
+        </div>
+        <hr style="width: 30%;" />
+        <div class="form-group row">
+            @Html.LabelFor(m => m.FirstName, new { @class = "col-md-4 control-label" })
+            <div class="col-md-8">
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(m => m.LastName, new { @class = "col-md-4 control-label" })
+            <div class="col-md-8">
+                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group row">
+            @Html.LabelFor(m => m.Password, new { @class = "col-md-4 control-label" })
+            <div class="col-md-8">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-4 control-label" })
+            <div class="col-md-8">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+            </div>
+        </div>
+        <hr style="width: 30%;"/>
+        <div class="form-group row">
+            @Html.LabelFor(m => m.BirthDate, new { @class = "col-md-4 control-label" })
+            <div class="col-md-8">
+                @(Html.Kendo().DatePickerFor(m => m.BirthDate)
+                            .Min(@DateTime.Now.AddYears(-80))
+                            .Max(@DateTime.Now.AddYears(-10))
+                            .Value(@Model.BirthDate)
+                            .HtmlAttributes(new { @class = "form-control" }))
+            </div>
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(m => m.Gender, new { @class = "col-md-4 control-label" })
+            <div class="col-md-8">
+                @(Html.Kendo().DropDownListFor(m => m.GenderID)
+                            .DataValueField("Value").DataTextField("Text")
+                            .OptionLabel("Select your gender...")
+                            .BindTo(Model.ListItems)
+                            .HtmlAttributes(new { @class = "form-control" }))
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <hr />
+        <div class="col-md-10">
+            <input type="reset" class="btn btn-warning pull-left col-md-offset-2" value="Clear" />
+            <input type="submit" class="btn btn-success pull-right" value="Save" />
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

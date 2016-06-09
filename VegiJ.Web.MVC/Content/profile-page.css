@@ -1,0 +1,46 @@
+﻿body {
+}
+
+.panel-profile {
+    padding: 15px;
+    margin: 40px auto;
+    border: 0;
+}
+.panel-profile-heading {
+    text-align: center;
+}
+.panel-profile-heading h1 {
+    margin: 5px;
+}
+.panel-profile-info h3{
+    margin-top: 10px;
+    text-align: center;
+}
+.list-group-item:hover {
+    background-color: #dcdcdc;
+}
+.icon-hyperlink:hover {
+    text-decoration: none;
+}
+#listView.k-widget {
+    border: 0 solid !important;
+}
+.list-group-item:first-child, .list-group-item:last-child {
+    -ms-border-radius: 0;
+    border-radius: 0;
+}
+/*.row {
+ -moz-column-width: 200px;
+ -webkit-column-width: 200px;
+ -moz-column-gap: 1em;
+ -webkit-column-gap: 1em;
+    column-width: 300px;
+    /*column-count: 3;
+}
+
+.menu-category {
+ display: inline-block;
+ margin:  0.25rem;
+ padding:  1rem;
+ width:  100%; 
+}*/

@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegiJ.Logic", "VegiJ.Logic\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegiJ.Web", "VegiJ.Web\VegiJ.Web.csproj", "{97EEA7C8-33A3-4CD6-B10C-E7018342BF32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegiJ.MVC", "VegiJ.MVC\VegiJ.MVC.csproj", "{0ED9B7A3-6124-4B43-8766-7887C677784A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegiJ.MVC2", "VegiJ.MVC2\VegiJ.MVC2.csproj", "{0ED9B7A3-6124-4B43-8766-7887C677784A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegiJ.MVC.Tests", "VegiJ.MVC.Tests\VegiJ.MVC.Tests.csproj", "{EC33B20E-98B6-4E72-90DE-9C9F5B730765}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegiJ.Web.MVC", "VegiJ.Web.MVC\VegiJ.Web.MVC.csproj", "{24372355-F148-4E1B-9748-01662632BFDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{0ED9B7A3-6124-4B43-8766-7887C677784A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0ED9B7A3-6124-4B43-8766-7887C677784A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0ED9B7A3-6124-4B43-8766-7887C677784A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EC33B20E-98B6-4E72-90DE-9C9F5B730765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC33B20E-98B6-4E72-90DE-9C9F5B730765}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC33B20E-98B6-4E72-90DE-9C9F5B730765}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC33B20E-98B6-4E72-90DE-9C9F5B730765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24372355-F148-4E1B-9748-01662632BFDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24372355-F148-4E1B-9748-01662632BFDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24372355-F148-4E1B-9748-01662632BFDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24372355-F148-4E1B-9748-01662632BFDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

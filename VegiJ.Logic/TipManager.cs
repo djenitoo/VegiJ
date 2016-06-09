@@ -20,7 +20,7 @@ namespace VegiJ.Logic
         {
             if (this.TipNameExist(tip.Title))
             {
-                throw new ArgumentException("Tag already exist!");
+                throw new ArgumentException("Tip already exist!");
             }
 
             _tipRepository.Create(tip);
@@ -30,7 +30,7 @@ namespace VegiJ.Logic
         {
             if (!this.TipNameExist(tip.Title))
             {
-                throw new ArgumentException("Tag do not exist!");
+                throw new ArgumentException("Tip do not exist!");
             }
             _tipRepository.Delete(tip.ID);
         }
@@ -49,7 +49,7 @@ namespace VegiJ.Logic
         {
             if (!this.TipNameExist(tip.Title))
             {
-                throw new ArgumentException("Tag do not exist!");
+                throw new ArgumentException("Tip do not exist!");
             }
 
             _tipRepository.Update(tip);

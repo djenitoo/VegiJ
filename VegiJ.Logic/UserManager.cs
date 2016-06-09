@@ -71,7 +71,7 @@
 
         private bool UsernameExist(string username)
         {
-            return userRepository.Table.Any(u => u.UserName.Equals(username, StringComparison.InvariantCultureIgnoreCase));
+            return userRepository.Table.AsEnumerable().Any(u => u.UserName.Equals(username, StringComparison.InvariantCultureIgnoreCase));
         }
         private bool EmailExist(string email)
         {
