@@ -1,0 +1,93 @@
+﻿@using Kendo.Mvc.UI
+@using VegiJ.DataAccess
+@using VegiJ.Web.MVC.Areas.Administration.Models
+@model VegiJ.Web.MVC.Areas.Administration.Models.UserItemViewModel
+
+@{
+    ViewBag.Title = "Administrate users";
+}
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/edit-template.js")" type="text/javascript"></script>
+}
+
+<h2>Administrate the Users in VegiJ</h2>
+<div class="demo-section k-content wide">
+    @(Html.Kendo().Grid<UserItemViewModel>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.UserName).Width(120);
+        columns.Bound(p => p.Email).Width(150);
+        columns.Bound(p => p.Password).Width(120).Hidden(true);
+        columns.Bound(p => p.ConfirmPassword).Width(120).Hidden(true);
+        columns.Bound(p => p.FirstName).Width(120);
+        columns.Bound(p => p.LastName).Width(120);
+        columns.Bound(c => c.BirthDate).HtmlAttributes(new
+        {
+            @class = "templateCell"
+
+        })
+            .EditorTemplateName("EditorTemplate")
+            .Format("{0:dd/MM/yyyy}").Width(120);
+        columns.Bound(p => p.Gender).Width(120);
+        columns.Bound(p => p.GenderID).Width(120).Hidden(true).EditorTemplateName("GenderDropDownList");
+        columns.Bound(p => p.IsAdmin).Width(80);
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(200);
+    })
+    .Events(ev =>
+    {
+        ev.Edit("showFields");
+        ev.Save("hideColumns");
+        ev.Cancel("hideColumns");
+    })
+    .ToolBar(toolbar => toolbar.Create())
+    .Editable(editable => editable.Mode(GridEditMode.InLine))
+    .Pageable()
+    .Sortable()
+    .Scrollable()
+    .HtmlAttributes(new { style = "height:550px;" })
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(10)
+        .Events(events => events.Error("error_handler"))
+        .Model(model =>
+        {
+            model.Id(p => p.ID);
+            model.Field<Guid>(p => p.ID).DefaultValue(Guid.Empty);
+        })
+        .Create(create => create.Action("Editing_Create", "UsersEditing")).Read("Editing_Read", "UsersEditing")
+        .Read(read => read.Action("Editing_Read", "UsersEditing"))
+        .Update(update => update.Action("Editing_Update", "UsersEditing"))
+        .Destroy(destroy => destroy.Action("Editing_Destroy", "UsersEditing"))
+        )
+    )
+</div>
+<script type="text/javascript">
+    function showFields(e) {
+        $("#grid").data("kendoGrid").showColumn(2);
+        $("#grid").data("kendoGrid").showColumn(3);
+        $("#grid").data("kendoGrid").hideColumn(7);
+        $("#grid").data("kendoGrid").showColumn(8);
+
+    }
+    function hideColumns(e) {
+        $("#grid").data("kendoGrid").hideColumn(2);
+        $("#grid").data("kendoGrid").hideColumn(3);
+        $("#grid").data("kendoGrid").showColumn(7);
+        $("#grid").data("kendoGrid").hideColumn(8);
+    }
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+</script>

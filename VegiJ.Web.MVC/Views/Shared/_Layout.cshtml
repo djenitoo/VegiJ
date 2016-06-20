@@ -9,9 +9,9 @@
     @Styles.Render("~/Content/kendo/css")
     @Styles.Render("~/Content/fontawesome")
     @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
     @Scripts.Render("~/bundles/kendo")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
     @RenderSection("Styles", required: false)
 </head>
 <body>
@@ -30,6 +30,11 @@
                     <li><a href="@Url.Action("Index", "Home", new { area = "" })"><span class="fa fa-home"></span> Home</a></li>
                     <li><a href="@Url.Action("About", "Home", new { area = "" })"><span class="fa fa-info-circle"></span> About</a></li>
                     <li><a href="@Url.Action("Contact", "Home", new { area = "" })"><span class="fa fa-paper-plane"></span> Contact</a></li>
+                    <li><a href="@Url.Action("Index", "Recipes", new {area = ""})"><span class="fa fa-paper-plane"></span> Recipes</a></li>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                    {
+                        <li><a href="@Url.Action("Index", "UsersEditing", new {area = "Administration"})"><span class="fa fa-magic"></span> Administration</a></li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

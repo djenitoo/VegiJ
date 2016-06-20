@@ -1,0 +1,16 @@
+﻿@using Kendo.Mvc.UI
+@model VegiJ.Web.MVC.Areas.Administration.Models.UserItemViewModel
+
+@(Html.Kendo().DropDownList()
+                            .Name("GenderID")
+                            .DataValueField("Value").DataTextField("Text")
+                            .OptionLabel("Select your gender...")
+                            .DataSource(sorce =>
+                                sorce.Read(read => 
+                                    read.Action("Gender_Read", "UsersEditing")
+                                    )
+                                )
+                                .ValuePrimitive(true)
+)
+<!-- ProductName validation message placeholder -->
+<span data-for="GenderID" class="k-invalid-msg"></span>

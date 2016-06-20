@@ -6,12 +6,14 @@ namespace VegiJ.Web.MVC.App_Start
     using System;
     using System.Web;
     using System.Web.Security;
+    using Areas.Administration.Models;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
     using Ninject;
     using Ninject.Web.Common;
     using DataAccess.Contracts;
     using DataAccess;
+    using Helpers;
     using Logic;
     public static class NinjectWebCommon 
     {
@@ -72,6 +74,7 @@ namespace VegiJ.Web.MVC.App_Start
             kernel.Bind<ITipManager>().To<TipManager>();
             kernel.Bind<IEventManager>().To<EventManager>();
             //kernel.Bind<RoleProvider>().To<CustomRoleProvider>();
+            //kernel.Bind<UserServices>().ToSelf();
         }
     }
 }

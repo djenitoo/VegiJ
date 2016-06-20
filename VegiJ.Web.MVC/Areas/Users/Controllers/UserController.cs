@@ -15,7 +15,6 @@ namespace VegiJ.Web.MVC.Areas.Users.Controllers
     {
         public IUserManager UserManager { get; set; }
         public IRepository<VegiJ.DataAccess.Gender> GenderRepository { get; set; }
-        private static User pageUser { get; set; }
 
         public UserController(IUserManager uManager, IRepository<Gender> gRepository)
         {
@@ -51,7 +50,6 @@ namespace VegiJ.Web.MVC.Areas.Users.Controllers
 
             if (user != null)
             {
-                pageUser = user;
                 var genders = new SelectList((IEnumerable<Gender>)GenderRepository.Table, "ID", "Name");
                 if (user.GenderID.HasValue)
                 {
@@ -72,19 +70,6 @@ namespace VegiJ.Web.MVC.Areas.Users.Controllers
                     UserName = user.UserName,
                     ListItems = genders.ToList()
                 };
-
-                //var model = new SettingsViewModel();
-                //model.ID = user.ID;
-                //model.BirthDate = user.BirthDate;
-                //model.ConfirmPassword = "";
-                //model.Email = user.Email;
-                //model.FirstName = user.FirstName;
-                //model.LastName = user.LastName;
-                //model.Gender = user.Gender;
-                //model.GenderID = user.GenderID;
-                //model.Password = "";
-                //model.UserName = user.UserName;
-                //model.ListItems = genders.ToList();
 
                 return View(model);
             }

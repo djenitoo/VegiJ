@@ -9,7 +9,9 @@ using System.Web.Routing;
 namespace VegiJ.Web.MVC
 {
     using System.Security.Claims;
+    using System.Security.Principal;
     using System.Web.Helpers;
+    using System.Web.Security;
 
     public class MvcApplication : System.Web.HttpApplication
     {

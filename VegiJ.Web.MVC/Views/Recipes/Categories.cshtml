@@ -1,0 +1,68 @@
+﻿@model VegiJ.Web.MVC.Models.CategoryViewModel
+
+@{
+    ViewBag.Title = "Recipes in Category " + Model.CategoryName;
+    var crumbs = " / <span>" + Html.ActionLink(@Model.CategoryName, "Categories", "Recipes", new { category = @Model.CategoryName == "Main Category" ? "" : @Model.CategoryName }, null) + "</span>";
+}
+<div class="container">
+
+    @if (@Model.ParentCategory != null)
+    {
+        var parent = Model.ParentCategory;
+
+        while (parent != null)
+        {
+            crumbs = " / <span>" + Html.ActionLink(parent.Name, "Categories", "Recipes", new { category = parent.Name }, null) + "</span>" + crumbs;
+            parent = parent.ParentCategory;
+        }
+
+        crumbs = ":: <span>" + Html.ActionLink("Main Category", "Categories", "Recipes", new { category = "" }, null) + "</span>" + crumbs;
+    }
+    else
+    {
+        if (@Model.CategoryName != "Main Category")
+        {
+            crumbs = ":: <span>" + Html.ActionLink("Main Category", "Categories", "Recipes", new {category = ""}, null) + "</span>" + crumbs;
+        }
+    }
+
+    <h5>@Html.Raw(crumbs)</h5>
+    <h2>@Model.CategoryName</h2>
+    @if (Model.CategoryRecipes != null && Model.CategoryRecipes.Count > 0)
+    {
+        int i = 0;
+        foreach (var item in Model.CategoryRecipes)
+        {
+            i++;
+            string rowDivBegin = "";
+            string rowDivEnd = "";
+
+
+            if (i == 1 || i % 4 == 0)
+            {
+                rowDivBegin = "<div class=\"row\">";
+            }
+            else if (i == Model.CategoryRecipes.Count || i % 3 == 0)
+            {
+                rowDivEnd = "</div>";
+            }
+
+            @Html.Raw(rowDivBegin)
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3>@item.Title</h3>
+                        <span> @Html.ActionLink(@item.Category.Name, "Categories", "Recipes", new { category = @item.Category.Name }, null)</span>
+                        <p>@item.Content</p>
+                        @Html.ActionLink("View", "Details", "Recipes", new { area = "", RecipeTitle = item.Title }, new { @class = "btn btn-success" })
+                    </div>
+                </div>
+            </div>
+            @Html.Raw(rowDivEnd)
+        }
+    }
+    else
+    {
+        <div><em>No recipes in this category.</em></div>
+    }
+</div>

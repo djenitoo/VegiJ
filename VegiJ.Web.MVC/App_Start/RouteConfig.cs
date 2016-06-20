@@ -7,6 +7,8 @@ using System.Web.Routing;
 
 namespace VegiJ.Web.MVC
 {
+    using System.Security.Policy;
+
     public class RouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)

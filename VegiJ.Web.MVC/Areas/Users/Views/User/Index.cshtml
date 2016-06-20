@@ -15,10 +15,26 @@
     var genderName = Model.user.GenderID.HasValue ? Model.user.Gender.Name : "<em>No gender selected.</em>";
     var loginDate = Model.user.LastLoginDate.HasValue ? Model.user.LastLoginDate.Value.ToString(GlobalConstants.DateTimeFormat) : $"<em>{GlobalConstants.NoLoginDate}</em>";
 }
+<script>
+    function productDetails(title) {
+        var action = '@Url.Action("Details", "Recipes", new { area = "" })';
+
+        var html = kendo.format("<a href='{0}?recipeTitle={1}'>"+ title + "</a>",
+        action,
+        title
+        );
+
+        return html;
+    }
+</script>
 <script type="text/x-kendo-tmpl" id="template">
     <div class="list-group-item">
-        @Html.ActionLink("#:Title#", "Index", "User", new {area = "Users"})
+        
+        #= productDetails(Title) #
+        @*@Html.ActionLink("#:Title#", "Details", "Recipes", new {area = "", recipeTitle = "#= Title "}, null)*@
     </div>
+    
+    
 </script>
 <div class="panel panel-default panel-profile">
     <div class="panel panel-heading panel-profile-heading">

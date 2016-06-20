@@ -1,0 +1,71 @@
+﻿@model VegiJ.Web.MVC.Models.RecipesIndexViewModel
+@using Kendo.Mvc.UI
+@using VegiJ.Web.MVC.Models
+@{
+    ViewBag.Title = "Recipes";
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+@section Styles {
+    <link href="@Url.Content("~/Content/recipes-styles.css")" rel="stylesheet" type="text/css" />
+}
+<script>
+    function onSelectCategoryValue(e) {
+
+        var dataItem = this.dataItem(e.item);
+        var catID = dataItem.ID; // value of the dropdown
+        var catName = dataItem.Name; // text of the dropdown
+        //other user code
+        $.get('@Url.Action("RecipesByCategoryPartial")',
+            { ID: catID, Name: catName },
+            function (data) {
+                $("#target").html(data);
+            });
+    }
+</script>
+<div class="container">
+    <h2>Recipes</h2>
+    <div class="form-group row page-filter-row">
+        <div class="col-md-8 col-lg-8">
+            @Html.Label("Sort by Category", new {@class = "control-label"})
+            @(Html.Kendo().DropDownList()
+                  .Name("categoriesDDL")
+                  .DataValueField("ID").DataTextField("Name")
+                  .OptionLabel(new {Name = "All categories", ID = "root"})
+                  .MinLength(3)
+                  .Height(400)
+                  //.BindTo(Model.CategoryListItems)
+                  .HtmlAttributes(new {@class = "form-control"})
+                  .Events(x => x.Select("onSelectCategoryValue"))
+                  .DataSource(source => source
+                      .Custom()
+                      .Group(g => g.Add("ParentName", typeof(string)))
+                      .Transport(transport => transport
+                          .Read(read =>
+                          {
+                              read.Action("Category_Read", "Recipes");
+                          })))
+                  )
+        </div>
+        <div class="col-md-4 col-lg-4">
+            @Html.ActionLink("View all tags", "Tags", "Recipes", new { area = "", tag = "" }, new { @class = "btn btn-warning" })
+            ::
+            @Html.ActionLink("View all categories", "Categories", "Recipes", new { area = "", category = "" }, new { @class = "btn btn-warning" })
+        </div>
+    </div>
+    
+    <div id="target">
+
+        @{
+            var defaultView = new RecipesParialViewModel()
+            {
+                CategoryName = "",
+                CategoryRecipes = Model.RecipesList
+            };
+
+            Html.RenderPartial("RecipesByCategoryPartial", defaultView);
+        }
+
+    </div>
+</div>

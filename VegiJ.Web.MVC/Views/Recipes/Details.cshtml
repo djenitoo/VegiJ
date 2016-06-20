@@ -1,0 +1,29 @@
+﻿@using VegiJ.DataAccess
+@model VegiJ.Web.MVC.Models.RecipeDetailViewModel
+
+@{
+    ViewBag.Title = Model.Recipe.Title;
+}
+<div class="container">
+    <div class="page-header">
+        @if (!Model.Recipe.IsApproved)
+        {
+            <span class="label label-danger">Pending approval</span>
+        }
+        <h1>@Model.Recipe.Title<small> by @Html.ActionLink(Model.Recipe.Author.UserName, "Index", "User", new { area = "Users", username = Model.Recipe.Author.UserName }, null)</small></h1>
+        <h4>Category: @Model.Recipe.Category.Name</h4>
+        <p>Published: @Model.Recipe.CreatedDate.ToString(GlobalConstants.DateTimeFormat)</p>
+        <div class="container">
+            <h2>Instructions:</h2>
+            <p>@Model.Recipe.Content</p>
+        </div>
+        <hr/>
+        <p>
+            Tags:
+            @foreach (var tag in Model.Recipe.Tags)
+            {
+                <a href="#"><span class="label label-default">@tag.Name &nbsp;</span></a>
+            }
+        </p>
+    </div>
+</div>
