@@ -1,0 +1,100 @@
+﻿@using Kendo.Mvc.UI
+@using Microsoft.AspNet.Identity
+@using VegiJ.Web.MVC.Areas.Administration.Models
+@model VegiJ.Web.MVC.Areas.Administration.Models.TipEntityViewModel
+
+@{
+    ViewBag.Title = "Administrate Tips";
+}
+
+<h2>Administrate tips in VegiJ</h2>
+@{
+    var selectItemAuthor = (SelectListItem) ViewData["defaultAuthor"];
+    var initialAuthor = new AuthorViewModel
+    {
+        ID = Guid.Parse(selectItemAuthor.Value),
+        UserName = selectItemAuthor.Text
+    };
+
+}
+<div class="demo-section k-content wide">
+    @(Html.Kendo().Grid<TipEntityViewModel>()
+          .Name("grid")
+          .Columns(columns =>
+          {
+              columns.Bound(p => p.Title).Width(120);
+              columns.Bound(p => p.Content).Width(200);
+              columns.Bound(p => p.IsApproved).Width(120);
+              columns.Bound(p => p.Author.ID).Width(120).EditorTemplateName("AuthorDropDownListTemplate").ClientTemplate("#:Author.UserName#");
+
+              columns.Command(command =>
+              {
+                  command.Edit();
+                  command.Destroy();
+              }).Width(200);
+          })
+          //.Events(ev =>
+          //{
+          //    //ev.Edit("bindAuthor");
+          //    //ev.Edit("showFields");
+          //    //ev.Save("hideColumns");
+          //   // ev.Cancel("hideColumns");
+          //})
+          .ToolBar(toolbar => toolbar.Create())
+          .Editable(editable => editable.Mode(GridEditMode.InLine))
+          .Pageable()
+          .Sortable()
+          .Scrollable()
+          .HtmlAttributes(new { style = "height:550px;" })
+          .DataSource(dataSource => dataSource
+              .Ajax()
+              .PageSize(10)
+              .Events(events => events.Error("error_handler"))
+              .Model(model =>
+              {
+                  model.Id(p => p.ID);
+                  model.Field<Guid>(p => p.ID).DefaultValue(Guid.Empty);
+                  model.Field(p => p.Author).DefaultValue(initialAuthor);
+                  model.Field(p => p.Author.ID).DefaultValue(initialAuthor.ID);
+              })
+              .Read(read => read.Action("Editing_Read", "TipsEditing"))
+              .Create(create => create.Action("Editing_Create", "TipsEditing")).Read("Editing_Read", "TipsEditing")
+              .Update(update => update.Action("Editing_Update", "TipsEditing"))
+              .Destroy(destroy => destroy.Action("Editing_Destroy", "TipsEditing"))
+          )
+    )
+</div>
+<script type="text/javascript">
+    function bindAuthor(e) {
+        @*var products = $("#Author").data("kendoDropDownList");
+            if (@Html.Raw(Json.Encode(Model))!= null) {
+                products.value(@Html.Raw(Json.Encode(Model.Author.ID.ToString())));
+            }*@
+    }
+    function showFields(e) {
+        //$("#grid").data("kendoGrid").showColumn(2);
+        //$("#grid").data("kendoGrid").showColumn(3);
+        //$("#grid").data("kendoGrid").hideColumn(7);
+        //$("#grid").data("kendoGrid").showColumn(8);
+
+    }
+    function hideColumns(e) {
+        //$("#grid").data("kendoGrid").hideColumn(2);
+        //$("#grid").data("kendoGrid").hideColumn(3);
+        //$("#grid").data("kendoGrid").showColumn(7);
+        //$("#grid").data("kendoGrid").hideColumn(8);
+    }
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+</script>

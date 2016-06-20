@@ -1,0 +1,15 @@
+﻿@using Kendo.Mvc.UI
+
+@(Html.Kendo().DropDownList()
+      .Name("Author.ID")
+      .DataValueField("Value").DataTextField("Text")
+      .OptionLabel("Select new author...")
+      .DataSource(sorce =>
+          sorce.Read(read =>
+              read.Action("Authors_Read", "TipsEditing")
+              )
+      )
+      //.Value(Model.ID == Guid.Empty ? Model.ID.ToString() : User.Identity.GetUserId())
+      .ValuePrimitive(true))
+<!-- ProductName validation message placeholder -->
+<span data-for="Author.ID" class="k-invalid-msg"></span>

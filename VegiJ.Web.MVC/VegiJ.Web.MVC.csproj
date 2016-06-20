@@ -162,7 +162,10 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\TipsEditingController.cs" />
     <Compile Include="Areas\Administration\Controllers\UsersEditingController.cs" />
+    <Compile Include="Areas\Administration\Models\TipsEditingViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\TipServices.cs" />
     <Compile Include="Areas\Administration\Models\UserEditingViewModels.cs" />
     <Compile Include="Areas\Administration\Models\UserServices.cs" />
     <Compile Include="Areas\Users\Controllers\UserController.cs" />
@@ -555,6 +558,8 @@
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\EditorTemplate.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\GenderDropDownList.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\AuthorDropDownListTemplate.cshtml" />
+    <None Include="Areas\Administration\Views\TipsEditing\Index.cshtml" />
     <None Include="Areas\Users\Views\User\Index.cshtml" />
     <Content Include="Areas\Users\Views\_ViewStart.cshtml" />
     <None Include="Areas\Users\Views\User\Settings.cshtml" />

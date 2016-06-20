@@ -33,7 +33,8 @@
                     <li><a href="@Url.Action("Index", "Recipes", new {area = ""})"><span class="fa fa-paper-plane"></span> Recipes</a></li>
                     @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
                     {
-                        <li><a href="@Url.Action("Index", "UsersEditing", new {area = "Administration"})"><span class="fa fa-magic"></span> Administration</a></li>
+                        <li><a href="@Url.Action("Index", "UsersEditing", new {area = "Administration"})"><span class="fa fa-magic"></span> Users Admin</a></li>
+                        <li><a href="@Url.Action("Index", "TipsEditing", new {area = "Administration"})"><span class="fa fa-magic"></span> Tips Admin</a></li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
