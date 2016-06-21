@@ -15,7 +15,7 @@
 
         public void CreateUser(User user)
         {
-            if (this.UsernameExist(user.UserName))
+            if (this.UsernameExist(user.UserName) || UserIDExist(user.ID))
             {
                 throw new ArgumentException("Username already exist!");
             }
@@ -29,7 +29,7 @@
 
         public void DeleteUser(User user)
         {
-            if (!this.UsernameExist(user.UserName))
+            if (!this.UsernameExist(user.UserName) || !UserIDExist(user.ID))
             {
                 throw new ArgumentException("Username do not exist!");
             }
@@ -55,7 +55,7 @@
 
         public void UpdateUser(User user)
         {
-            if (!this.UsernameExist(user.UserName))
+            if (!this.UsernameExist(user.UserName) || !UserIDExist(user.ID))
             {
                 throw new ArgumentException("Username do not exist!");
             }
@@ -76,6 +76,10 @@
         private bool EmailExist(string email)
         {
             return userRepository.Table.Any(u => u.Email.Equals(email, StringComparison.InvariantCultureIgnoreCase));
+        }
+        private bool UserIDExist(Guid id)
+        {
+            return userRepository.GetById(id) != null;
         }
     }
 }

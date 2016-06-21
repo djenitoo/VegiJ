@@ -1,0 +1,28 @@
+﻿@using Kendo.Mvc.UI
+<div class="">
+    @(Html.Kendo().DropDownList()
+                            .Name("Category.ID")
+                            .DataValueField("ID").DataTextField("Name")
+                            .OptionLabel(new { Name = "Root", ID = "root" })
+                            .MinLength(3)
+                            //.Events(x => x.Select("onSelectCategoryValue"))
+                            .DataSource(sorce => sorce
+                                .Custom()
+                                .Group(g => g.Add("ParentName", typeof(string)))
+                                .Transport(transport => transport
+                                .Read(read =>
+                                        read.Action("Category_Read", "RecipesEditing")
+                                    )
+                                )
+                            )
+                            .ValuePrimitive(true)
+    )
+    <span data-for="Category.ID" class="k-invalid-msg"></span>
+    <hr />
+    @*@Html.TextBox("newCategory", null, htmlAttributes: new { @class = "", @style = "width:100%;", @placeholder = "New Category Name" });
+    <input type="button" value="Add category" onclick="addNewCategory()" class="btn btn-success"/>*@
+    <div class="input-group">
+        <input id="newCategoryField" type="text" class="form-control" placeholder="New Category Name">
+            <input type="button" value="Add category" onclick="addNewCategory()" class="btn btn-success" />
+    </div>
+</div>

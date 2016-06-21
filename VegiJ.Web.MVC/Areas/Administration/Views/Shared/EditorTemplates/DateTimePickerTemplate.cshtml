@@ -1,0 +1,8 @@
+﻿@using Kendo.Mvc.UI
+@(Html.Kendo().DateTimePicker()
+                    .Name("StartTime")
+                    .Min(@DateTime.Now.AddDays(-1))
+                    .HtmlAttributes(new { style = "width:100%;" })
+)
+<!-- ProductName validation message placeholder -->
+<span data-for="StartTime" class="k-invalid-msg"></span>

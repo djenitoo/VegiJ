@@ -18,7 +18,7 @@ namespace VegiJ.Logic
         }
         public void AddTip(Tip tip)
         {
-            if (this.TipNameExist(tip.Title))
+            if (this.TipNameExist(tip.Title) || this.TipIDExist(tip.ID))
             {
                 throw new ArgumentException("Tip already exist!");
             }
@@ -28,7 +28,7 @@ namespace VegiJ.Logic
 
         public void DeleteTip(Tip tip)
         {
-            if (!this.TipNameExist(tip.Title))
+            if (!this.TipIDExist(tip.ID))
             {
                 throw new ArgumentException("Tip do not exist!");
             }
@@ -47,12 +47,17 @@ namespace VegiJ.Logic
 
         public void UpdateTip(Tip tip)
         {
-            if (!this.TipNameExist(tip.Title))
+            if (!this.TipIDExist(tip.ID))
             {
                 throw new ArgumentException("Tip do not exist!");
             }
 
             _tipRepository.Update(tip);
+        }
+
+        private bool TipIDExist(Guid id)
+        {
+            return _tipRepository.GetById(id) != null;
         }
 
         private bool TipNameExist(string name)

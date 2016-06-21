@@ -1,0 +1,78 @@
+﻿@using Kendo.Mvc.UI
+@using VegiJ.Web.MVC.Areas.Administration.Models
+@model VegiJ.Web.MVC.Areas.Administration.Models.RecipeEntityViewModel
+
+@{
+    ViewBag.Title = "Administrate Recipes";
+}
+
+<h2>Administrate Recipes in VegiJ</h2>
+@{
+    var selectItemAuthor = (SelectListItem)ViewData["defaultAuthor"];
+    var initialAuthor = new AuthorViewModel
+    {
+        ID = Guid.Parse(selectItemAuthor.Value),
+        UserName = selectItemAuthor.Text
+    };
+
+}
+<div class="demo-section k-content wide">
+    @(Html.Kendo().Grid<RecipeEntityViewModel>()
+          .Name("grid")
+          .Columns(columns =>
+          {
+              columns.Bound(p => p.Title).Width(120);
+              columns.Bound(p => p.Content).Width(200);
+              columns.Bound(p => p.IsApproved).Title("Approved").Width(120);
+              columns.Bound(p => p.Category.ID).Title("Category").ClientTemplate("#:Category.Name#").Width(200).EditorTemplateName("CategoryDDLTemplate");
+              columns.Bound(p => p.Author.ID).Title("Author").Width(120).EditorTemplateName("AuthorDropDownListTemplate").ClientTemplate("#:Author.UserName#");
+
+              columns.Command(command =>
+              {
+                  command.Edit();
+                  command.Destroy();
+              }).Width(200);
+          })
+          .ToolBar(toolbar => toolbar.Create())
+          .Editable(editable => editable.Mode(GridEditMode.InLine))
+          .Pageable()
+          .Sortable()
+          .Scrollable()
+          .HtmlAttributes(new { style = "height:550px;" })
+          .DataSource(dataSource => dataSource
+              .Ajax()
+              .PageSize(10)
+              .Events(events => events.Error("error_handler"))
+              .Model(model =>
+              {
+                  model.Id(p => p.ID);
+                  model.Field<Guid>(p => p.ID).DefaultValue(Guid.Empty);
+                  model.Field(p => p.Author).DefaultValue(initialAuthor);
+                  model.Field(p => p.Author.ID).DefaultValue(initialAuthor.ID);
+                  
+              })
+              .Read(read => read.Action("Editing_Read", "RecipesEditing"))
+              .Create(create => create.Action("Editing_Create", "RecipesEditing")).Read("Editing_Read", "RecipesEditing")
+              .Update(update => update.Action("Editing_Update", "RecipesEditing"))
+              .Destroy(destroy => destroy.Action("Editing_Destroy", "RecipesEditing"))
+          )
+    )
+</div>
+<script type="text/javascript">
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+    function addNewCategory(e) {
+        
+    }
+</script>

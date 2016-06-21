@@ -19,7 +19,7 @@ namespace VegiJ.Logic
 
         public void AddTag(Tag tag)
         {
-            if (this.TagNameExist(tag.Name))
+            if (this.TagNameExist(tag.Name) || TagIDExist(tag.ID))
             {
                 throw new ArgumentException("Tag already exist!");
             }
@@ -28,7 +28,7 @@ namespace VegiJ.Logic
 
         public void DeleteTag(Tag tag)
         {
-            if (!this.TagNameExist(tag.Name))
+            if (!this.TagIDExist(tag.ID))
             {
                 throw new ArgumentException("Tag do not exist!");
             }
@@ -47,7 +47,7 @@ namespace VegiJ.Logic
 
         public void UpdateTag(Tag tag)
         {
-            if (!this.TagNameExist(tag.Name))
+            if (!this.TagIDExist(tag.ID))
             {
                 throw new ArgumentException("Tag do not exist!");
             }
@@ -57,6 +57,11 @@ namespace VegiJ.Logic
         private bool TagNameExist(string name)
         {
             return _tagRepository.Table.Any(c => c.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase));
+        }
+
+        private bool TagIDExist(Guid id)
+        {
+            return _tagRepository.GetById(id) != null;
         }
     }
 }

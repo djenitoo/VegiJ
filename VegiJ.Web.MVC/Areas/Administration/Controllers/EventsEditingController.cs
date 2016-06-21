@@ -11,20 +11,17 @@ namespace VegiJ.Web.MVC.Areas.Administration.Controllers
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
     using Models;
-    using Newtonsoft.Json;
 
-    public class TipsEditingController : Controller
+    public class EventsEditingController : Controller
     {
-        private TipServices TipService { get; set; }
+        private EventServices eventService { get; set; }
 
-        public TipsEditingController(IUserManager uManager, ITipManager tipManager)
+        public EventsEditingController(IUserManager uManager, IEventManager evManager)
         {
-            
-            this.TipService = new TipServices(uManager, tipManager);
-            ViewData["defaultAuthor"] = TipService.GetAuthors()[0];
+            this.eventService = new EventServices(uManager, evManager);
+            ViewData["defaultAuthor"] = eventService.GetAuthors()[0];
         }
-
-        // GET: Administration/TipsEditing
+        // GET: Administration/EventsEditing
         public ActionResult Index()
         {
             return View();
@@ -32,17 +29,17 @@ namespace VegiJ.Web.MVC.Areas.Administration.Controllers
 
         public JsonResult Editing_Read([DataSourceRequest] DataSourceRequest request)
         {
-            return Json(TipService.Read().ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
+            return Json(eventService.Read().ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Editing_Create([DataSourceRequest] DataSourceRequest request, TipEntityViewModel product)
+        public ActionResult Editing_Create([DataSourceRequest] DataSourceRequest request, EventEntityViewModel product)
         {
-            var results = new List<TipEntityViewModel>();
+            var results = new List<EventEntityViewModel>();
 
             if (product != null && ModelState.IsValid)
             {
-                TipService.Create(product);
+                eventService.Create(product);
                 results.Add(product);
             }
 
@@ -50,22 +47,22 @@ namespace VegiJ.Web.MVC.Areas.Administration.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Editing_Update([DataSourceRequest] DataSourceRequest request, TipEntityViewModel product)
+        public ActionResult Editing_Update([DataSourceRequest] DataSourceRequest request, EventEntityViewModel product)
         {
             if (product != null && ModelState.IsValid)
             {
-                TipService.Update(product);
+                eventService.Update(product);
             }
 
             return Json(new[] { product }.ToDataSourceResult(request, ModelState), JsonRequestBehavior.AllowGet);
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Editing_Destroy([DataSourceRequest] DataSourceRequest request, TipEntityViewModel product)
+        public ActionResult Editing_Destroy([DataSourceRequest] DataSourceRequest request, EventEntityViewModel product)
         {
             if (product != null)
             {
-                TipService.Destroy(product);
+                eventService.Destroy(product);
             }
 
             return Json(new[] { product }.ToDataSourceResult(request, ModelState));
@@ -73,7 +70,7 @@ namespace VegiJ.Web.MVC.Areas.Administration.Controllers
 
         public JsonResult Authors_Read()
         {
-            var jsonVal = Json(TipService.GetAuthors(), JsonRequestBehavior.AllowGet);
+            var jsonVal = Json(eventService.GetAuthors(), JsonRequestBehavior.AllowGet);
             return jsonVal;
         }
     }

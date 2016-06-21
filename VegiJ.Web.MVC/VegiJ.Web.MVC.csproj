@@ -162,8 +162,14 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\EventsEditingController.cs" />
+    <Compile Include="Areas\Administration\Controllers\RecipesEditingController.cs" />
     <Compile Include="Areas\Administration\Controllers\TipsEditingController.cs" />
     <Compile Include="Areas\Administration\Controllers\UsersEditingController.cs" />
+    <Compile Include="Areas\Administration\Models\EventEditingViewModels.cs" />
+    <Compile Include="Areas\Administration\Models\EventServices.cs" />
+    <Compile Include="Areas\Administration\Models\RecipesEditingViewModels.cs" />
+    <Compile Include="Areas\Administration\Models\RecipeServices.cs" />
     <Compile Include="Areas\Administration\Models\TipsEditingViewModel.cs" />
     <Compile Include="Areas\Administration\Models\TipServices.cs" />
     <Compile Include="Areas\Administration\Models\UserEditingViewModels.cs" />
@@ -559,6 +565,10 @@
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\EditorTemplate.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\GenderDropDownList.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\AuthorDropDownListTemplate.cshtml" />
+    <Content Include="Areas\Administration\Views\EventsEditing\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\DateTimePickerTemplate.cshtml" />
+    <Content Include="Areas\Administration\Views\RecipesEditing\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\CategoryDDLTemplate.cshtml" />
     <None Include="Areas\Administration\Views\TipsEditing\Index.cshtml" />
     <None Include="Areas\Users\Views\User\Index.cshtml" />
     <Content Include="Areas\Users\Views\_ViewStart.cshtml" />

@@ -6,10 +6,8 @@ using System.Web;
 namespace VegiJ.Web.MVC.Areas.Administration.Models
 {
     using System.ComponentModel.DataAnnotations;
-    using System.Web.Mvc;
-    using DataAccess;
 
-    public class TipEntityViewModel
+    public class RecipeEntityViewModel
     {
         public Guid ID { get; set; }
         [Required]
@@ -20,14 +18,20 @@ namespace VegiJ.Web.MVC.Areas.Administration.Models
         public string Content { get; set; }
         public bool IsApproved { get; set; }
         public AuthorViewModel Author { get; set; }
-
-        //[Display(Name = "User List")]
-        //public List<SelectListItem> UsersListItems { get; set; }
+        public CategoryEntityViewModel Category { get; set; }
+        public List<TagEntityViewModel> Tags { get; set; }
     }
 
-    public class AuthorViewModel
+    public class CategoryEntityViewModel
     {
-        public string UserName { get; set; }
         public Guid ID { get; set; }
+        public string Name { get; set; }
+        public string ParentName { get; set; }
+    }
+
+    public class TagEntityViewModel
+    {
+        public Guid ID { get; set; }
+        public string Name { get; set; }
     }
 }
