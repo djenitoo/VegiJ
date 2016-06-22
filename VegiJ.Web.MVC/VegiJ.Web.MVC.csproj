@@ -569,6 +569,7 @@
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\DateTimePickerTemplate.cshtml" />
     <Content Include="Areas\Administration\Views\RecipesEditing\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\CategoryDDLTemplate.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\TagsMultiSelectTemplate.cshtml" />
     <None Include="Areas\Administration\Views\TipsEditing\Index.cshtml" />
     <None Include="Areas\Users\Views\User\Index.cshtml" />
     <Content Include="Areas\Users\Views\_ViewStart.cshtml" />

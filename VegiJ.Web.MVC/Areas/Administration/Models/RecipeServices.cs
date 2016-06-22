@@ -68,26 +68,46 @@ namespace VegiJ.Web.MVC.Areas.Administration.Models
 
         public void Update(RecipeEntityViewModel model)
         {
-            //var entity = TipManager.GetTip(model.ID);
-            //if (entity != null)
-            //{
-            //    entity.Title = model.Title;
-            //    entity.Content = model.Content;
-            //    entity.IsApproved = model.IsApproved;
-            //    entity.Author = UserManager.GetUser(model.Author.ID);
-            //    entity.AuthorId = model.Author.ID;
+            var entity = RecipeManager.GetRecipe(model.ID);
+            if (entity != null)
+            {
+                entity.Title = model.Title;
+                entity.Content = model.Content;
+                entity.IsApproved = model.IsApproved;
+                entity.Author = UserManager.GetUser(model.Author.ID);
+                entity.AuthorId = model.Author.ID;
+                
+                // categories
+                var choosenCat =
+                    CategoryManager.GetAllCategories().AsEnumerable().Where(c => c.Name.Equals(model.Category.Name)).FirstOrDefault();
+                if (choosenCat == null)
+                {
+                    var newCategory = new Category(model.Category.Name)
+                    {
+                        ParentCategory = model.Category.ParentName == "Root" ? null : 
+                        CategoryManager.GetAllCategories().AsEnumerable()
+                                       .Where(c => c.Name.Equals(model.Category.ParentName)).FirstOrDefault()
+                    };
+                    CategoryManager.AddCategory(newCategory);
+                    
+                }
+                entity.Category = choosenCat;
+                entity.CategoryID = choosenCat.ID;
 
-            //    try
-            //    {
-            //        TipManager.UpdateTip(entity);
-            //        model.Author =
-            //        new AuthorViewModel { ID = entity.AuthorId, UserName = entity.Author.UserName };
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        throw new ArgumentException("There was problem updating the tip.");
-            //    }
-            //}
+                //tags
+                try
+                {
+                    RecipeManager.UpdateRecipe(entity);
+                    model.Author =
+                    new AuthorViewModel { ID = entity.AuthorId, UserName = entity.Author.UserName };
+                    //cat;tags;
+                    model.Category.ID = entity.CategoryID;
+                }
+                catch (Exception ex)
+                {
+                    throw new ArgumentException("There was problem updating the recipe. " + ex.Message);
+                }
+            }
         }
 
         public void Destroy(RecipeEntityViewModel model)
@@ -114,6 +134,17 @@ namespace VegiJ.Web.MVC.Areas.Administration.Models
                 ID = cat.ID,
                 Name = cat.Name,
                 ParentName = cat.ParentCategory == null ? "" : cat.ParentCategory.Name
+            }).ToList();
+
+            return result;
+        }
+
+        public List<TagEntityViewModel> GetTags()
+        {
+            var result = TagManager.GetAllTags().Select(cat => new TagEntityViewModel()
+            {
+                ID = cat.ID,
+                Name = cat.Name
             }).ToList();
 
             return result;

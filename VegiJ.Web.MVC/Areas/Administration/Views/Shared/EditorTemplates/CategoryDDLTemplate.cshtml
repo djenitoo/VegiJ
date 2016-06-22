@@ -19,10 +19,29 @@
     )
     <span data-for="Category.ID" class="k-invalid-msg"></span>
     <hr />
-    @*@Html.TextBox("newCategory", null, htmlAttributes: new { @class = "", @style = "width:100%;", @placeholder = "New Category Name" });
-    <input type="button" value="Add category" onclick="addNewCategory()" class="btn btn-success"/>*@
-    <div class="input-group">
-        <input id="newCategoryField" type="text" class="form-control" placeholder="New Category Name">
-            <input type="button" value="Add category" onclick="addNewCategory()" class="btn btn-success" />
+    <div class="input-group cat-input">
+        <input id="newCategoryName" name="newCategoryName" type="text" class="form-control" placeholder="New Category Name"/>
+        <input type="button" value="Add category" onclick="addNewCategory()" class="btn btn-success"/>
     </div>
 </div>
+<script>
+    function addNewCategory(e) {
+        var newCatTextBoxValue = document.getElementById("newCategoryName").value;
+        if (newCatTextBoxValue.length >= 5) {
+            var dropdownlist = $('#Category_ID').data("kendoDropDownList");
+            var parentCatID = dropdownlist.value();
+            var newCatParentName = parentCatID === "root" ? "Root" : dropdownlist.text();
+            var newCatItem = {
+                ID: "",
+                Name: newCatTextBoxValue,
+                ParentName: newCatParentName
+            };
+
+            $('#Category_ID').data("kendoDropDownList").dataSource.add(newCatItem);
+            $('#Category_ID').data("kendoDropDownList")
+                .select(function (dataItem) {
+                    return dataItem.Name === newCatItem.Name;
+                });
+        }
+    };
+</script>

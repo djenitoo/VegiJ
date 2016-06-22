@@ -26,7 +26,7 @@
               columns.Bound(p => p.IsApproved).Title("Approved").Width(120);
               columns.Bound(p => p.Category.ID).Title("Category").ClientTemplate("#:Category.Name#").Width(200).EditorTemplateName("CategoryDDLTemplate");
               columns.Bound(p => p.Author.ID).Title("Author").Width(120).EditorTemplateName("AuthorDropDownListTemplate").ClientTemplate("#:Author.UserName#");
-
+              columns.Bound(p => p.Tags).Width(200).ClientTemplate("#=generateTagsList(Tags)#").EditorTemplateName("TagsMultiSelectTemplate");
               columns.Command(command =>
               {
                   command.Edit();
@@ -49,7 +49,7 @@
                   model.Field<Guid>(p => p.ID).DefaultValue(Guid.Empty);
                   model.Field(p => p.Author).DefaultValue(initialAuthor);
                   model.Field(p => p.Author.ID).DefaultValue(initialAuthor.ID);
-                  
+
               })
               .Read(read => read.Action("Editing_Read", "RecipesEditing"))
               .Create(create => create.Action("Editing_Create", "RecipesEditing")).Read("Editing_Read", "RecipesEditing")
@@ -62,17 +62,37 @@
     function error_handler(e) {
         if (e.errors) {
             var message = "Errors:\n";
-            $.each(e.errors, function (key, value) {
-                if ('errors' in value) {
-                    $.each(value.errors, function () {
-                        message += this + "\n";
-                    });
-                }
-            });
+            $.each(e.errors,
+                function(key, value) {
+                    if ('errors' in value) {
+                        $.each(value.errors,
+                            function() {
+                                message += this + "\n";
+                            });
+                    }
+                });
             alert(message);
         }
     }
-    function addNewCategory(e) {
-        
+
+    function generateTagsList(tags) {
+        //<span class="label label-default">tag.Name &nbsp;</span>
+        var template = "<div>";
+        for (var i = 0; i < tags.length; i++) {
+            template = template + "<span class=\"label label-default\">" + tags[i].Name + "</span> ";
+        }
+
+        return template + "</div>";
+    }
+
+    function dump(obj) {
+        var out = '';
+        for (var i in obj) {
+            out += i + ": " + obj[i] + "";
+        }
+
+        var pre = document.createElement('pre');
+        pre.innerHTML = out;
+        document.body.appendChild(pre)
     }
 </script>

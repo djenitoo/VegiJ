@@ -82,5 +82,11 @@ namespace VegiJ.Web.MVC.Areas.Administration.Controllers
             var jsonVal = Json(recipeServices.GetCategories(), JsonRequestBehavior.AllowGet);
             return jsonVal;
         }
+
+        public JsonResult Tags_Read()
+        {
+            var jsonVal = Json(recipeServices.GetTags(), JsonRequestBehavior.AllowGet);
+            return jsonVal;
+        }
     }
 }

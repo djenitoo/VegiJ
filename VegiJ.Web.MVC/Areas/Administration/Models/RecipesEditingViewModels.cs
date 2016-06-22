@@ -19,6 +19,8 @@ namespace VegiJ.Web.MVC.Areas.Administration.Models
         public bool IsApproved { get; set; }
         public AuthorViewModel Author { get; set; }
         public CategoryEntityViewModel Category { get; set; }
+        [StringLength(20, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 5)]
+        public string newCategoryName { get; set; }
         public List<TagEntityViewModel> Tags { get; set; }
     }
 

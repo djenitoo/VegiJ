@@ -76,3 +76,10 @@ textarea {
             color: #fff;
             background-color: #008239;
         }
+.cat-input {
+    padding: 5px;
+}
+#newCategoryField {
+    border-radius: 4px;
+    margin-bottom: 5px;
+}

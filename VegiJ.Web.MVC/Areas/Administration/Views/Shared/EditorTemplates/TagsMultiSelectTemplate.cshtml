@@ -1,0 +1,84 @@
+﻿@using Kendo.Mvc.UI
+
+<script>
+    var newitemtext;
+    function onSelectTags(e) {
+            //$('#Tags_taglist li span:first-child').each(function() {
+            //    $(this).text($(this).text().replace(" (Add New)", ""));
+            //});
+            var value = this.value().slice(0);
+            var dataitems = this.dataSource.data();
+
+            var newtag = "";
+
+            for (var i = 0; i < dataitems.length; i++) {
+                var dataItem = dataitems[i];
+                console.log(dataItem);
+                if (dataItem.Name.substr(0, "Add new tag: ".length) === "Add new tag: ") {
+                    newtag = dataItem.Name.replace("Add new tag: ", "");
+                    console.log(this.dataSource.data());
+                    this.dataSource.data().remove(dataItem);
+                }
+            }
+
+            this.dataSource.add({ Name: newtag, ID: newtag });
+
+            if (newtag) {
+                this.dataSource.filter({});
+                if (this.value().length == 1) {
+                    this.value(newtag);
+                }
+                else {
+                    value.push(newtag);
+                    console.log(value);
+                    this.value(value);
+                }
+            }
+    }
+    function onTagsDataBound(e) {
+        if ((newitemtext || this._prev) && newitemtext != this._prev) {
+            newitemtext = this._prev;
+
+            var dataitems = this.dataSource.data();
+
+            var isfound = false;
+            for (var i = 0; i < dataitems.length; i++) {
+                var dataItem = dataitems[i];
+
+                if (dataItem.value != dataItem.text) {
+                    dataItem.text = "Add new tag: " + newitemtext;
+                    this.refresh();
+                    isfound = true;
+                }
+            }
+            if (!isfound) {
+                this.dataSource.add({ Name: newitemtext, ID: newitemtext });
+                this.refresh();
+            }
+            this.search();
+            this.open();
+        }
+    }
+</script>
+
+@(Html.Kendo().MultiSelect()
+          .Name("Tags")
+          .Placeholder("Add tags...")
+          .DataValueField("ID")
+          .DataTextField("Name")
+          .Animation(false)
+          .Events(e =>
+          {
+              e.DataBound("onTagsDataBound");
+              e.Select("onSelectTags");
+          }
+          )
+          .DataSource(sorce =>
+                    sorce.Read(read =>
+                        read.Action("Tags_Read", "RecipesEditing")
+                        )
+                    )
+                    //.Events(ev => ev.DataBound("onTagsDataBound"))
+                    .ValuePrimitive(true)
+)
+<span data-for="Tags" class="k-invalid-msg"></span>
