@@ -1,9 +1,9 @@
 ﻿@using Kendo.Mvc.UI
 <div class="">
     @(Html.Kendo().DropDownList()
-                            .Name("Category.ID")
+                            .Name("Category")
                             .DataValueField("ID").DataTextField("Name")
-                            .OptionLabel(new { Name = "Root", ID = "root" })
+                            .OptionLabel(new { Name = "Root", ID = "00000000-0000-0000-0000-000000000000" })
                             .MinLength(3)
                             //.Events(x => x.Select("onSelectCategoryValue"))
                             .DataSource(sorce => sorce
@@ -15,9 +15,9 @@
                                     )
                                 )
                             )
-                            .ValuePrimitive(true)
+                            //.ValuePrimitive(true)
     )
-    <span data-for="Category.ID" class="k-invalid-msg"></span>
+    <span data-for="Category" class="k-invalid-msg"></span>
     <hr />
     <div class="input-group cat-input">
         <input id="newCategoryName" name="newCategoryName" type="text" class="form-control" placeholder="New Category Name"/>
@@ -28,20 +28,22 @@
     function addNewCategory(e) {
         var newCatTextBoxValue = document.getElementById("newCategoryName").value;
         if (newCatTextBoxValue.length >= 5) {
-            var dropdownlist = $('#Category_ID').data("kendoDropDownList");
+            var dropdownlist = $('#Category').data("kendoDropDownList");
             var parentCatID = dropdownlist.value();
             var newCatParentName = parentCatID === "root" ? "Root" : dropdownlist.text();
             var newCatItem = {
-                ID: "",
+                ID: "00000000-0000-0000-0000-000000000000",
                 Name: newCatTextBoxValue,
                 ParentName: newCatParentName
             };
 
-            $('#Category_ID').data("kendoDropDownList").dataSource.add(newCatItem);
-            $('#Category_ID').data("kendoDropDownList")
-                .select(function (dataItem) {
-                    return dataItem.Name === newCatItem.Name;
-                });
+            $('#Category').data("kendoDropDownList").dataSource.add(newCatItem);
+            $('#Category').data("kendoDropDownList")
+                .select($('#Category').data("kendoDropDownList").dataSource.data().map(function (e) { return e.Name; }).indexOf(newCatItem.Name));
+            console.log($('#Category')
+                .data("kendoDropDownList")
+                .dataSource.data().map(function(e) { return e.Name; })
+                .indexOf(newCatItem.Name));
         }
     };
 </script>

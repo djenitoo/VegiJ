@@ -11,7 +11,7 @@ namespace VegiJ.Web.MVC.Areas.Administration.Controllers
     using Kendo.Mvc.UI;
     using Models;
 
-    
+    [Authorize(Roles = "admin")]
     public class UsersEditingController : Controller
     {
         private IUserManager UserManager { get; set; }

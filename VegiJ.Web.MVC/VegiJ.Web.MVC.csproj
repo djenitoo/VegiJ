@@ -187,6 +187,7 @@
     <Compile Include="Helpers\ValidationError.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Areas\Users\Models\UserViewModels.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\RecipesViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

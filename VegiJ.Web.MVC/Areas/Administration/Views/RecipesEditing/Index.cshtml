@@ -1,4 +1,5 @@
 ﻿@using Kendo.Mvc.UI
+@using VegiJ.DataAccess
 @using VegiJ.Web.MVC.Areas.Administration.Models
 @model VegiJ.Web.MVC.Areas.Administration.Models.RecipeEntityViewModel
 
@@ -9,12 +10,12 @@
 <h2>Administrate Recipes in VegiJ</h2>
 @{
     var selectItemAuthor = (SelectListItem)ViewData["defaultAuthor"];
+    var selectItemCategory = (CategoryEntityViewModel)ViewData["defaultCategory"];
     var initialAuthor = new AuthorViewModel
     {
         ID = Guid.Parse(selectItemAuthor.Value),
         UserName = selectItemAuthor.Text
     };
-
 }
 <div class="demo-section k-content wide">
     @(Html.Kendo().Grid<RecipeEntityViewModel>()
@@ -24,7 +25,7 @@
               columns.Bound(p => p.Title).Width(120);
               columns.Bound(p => p.Content).Width(200);
               columns.Bound(p => p.IsApproved).Title("Approved").Width(120);
-              columns.Bound(p => p.Category.ID).Title("Category").ClientTemplate("#:Category.Name#").Width(200).EditorTemplateName("CategoryDDLTemplate");
+              columns.Bound(p => p.Category).Title("Category").ClientTemplate("#:Category.Name#").Width(200).EditorTemplateName("CategoryDDLTemplate");
               columns.Bound(p => p.Author.ID).Title("Author").Width(120).EditorTemplateName("AuthorDropDownListTemplate").ClientTemplate("#:Author.UserName#");
               columns.Bound(p => p.Tags).Width(200).ClientTemplate("#=generateTagsList(Tags)#").EditorTemplateName("TagsMultiSelectTemplate");
               columns.Command(command =>
@@ -48,11 +49,13 @@
                   model.Id(p => p.ID);
                   model.Field<Guid>(p => p.ID).DefaultValue(Guid.Empty);
                   model.Field(p => p.Author).DefaultValue(initialAuthor);
+                  model.Field(p => p.Category).DefaultValue(selectItemCategory);
                   model.Field(p => p.Author.ID).DefaultValue(initialAuthor.ID);
+                  model.Field(p => p.Tags).DefaultValue(new List<TagEntityViewModel>());
 
               })
               .Read(read => read.Action("Editing_Read", "RecipesEditing"))
-              .Create(create => create.Action("Editing_Create", "RecipesEditing")).Read("Editing_Read", "RecipesEditing")
+              .Create(create => create.Action("Editing_Create", "RecipesEditing"))
               .Update(update => update.Action("Editing_Update", "RecipesEditing"))
               .Destroy(destroy => destroy.Action("Editing_Destroy", "RecipesEditing"))
           )

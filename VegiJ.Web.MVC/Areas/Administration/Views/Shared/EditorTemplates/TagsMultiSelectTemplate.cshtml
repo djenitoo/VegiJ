@@ -3,37 +3,9 @@
 <script>
     var newitemtext;
     function onSelectTags(e) {
-            //$('#Tags_taglist li span:first-child').each(function() {
-            //    $(this).text($(this).text().replace(" (Add New)", ""));
-            //});
-            var value = this.value().slice(0);
-            var dataitems = this.dataSource.data();
-
-            var newtag = "";
-
-            for (var i = 0; i < dataitems.length; i++) {
-                var dataItem = dataitems[i];
-                console.log(dataItem);
-                if (dataItem.Name.substr(0, "Add new tag: ".length) === "Add new tag: ") {
-                    newtag = dataItem.Name.replace("Add new tag: ", "");
-                    console.log(this.dataSource.data());
-                    this.dataSource.data().remove(dataItem);
-                }
-            }
-
-            this.dataSource.add({ Name: newtag, ID: newtag });
-
-            if (newtag) {
-                this.dataSource.filter({});
-                if (this.value().length == 1) {
-                    this.value(newtag);
-                }
-                else {
-                    value.push(newtag);
-                    console.log(value);
-                    this.value(value);
-                }
-            }
+        $(this).each(function () {
+            $(this).text($(this).text().replace(" (Add New)", ""));
+        });
     }
     function onTagsDataBound(e) {
         if ((newitemtext || this._prev) && newitemtext != this._prev) {
@@ -41,22 +13,33 @@
 
             var dataitems = this.dataSource.data();
 
-            var isfound = false;
             for (var i = 0; i < dataitems.length; i++) {
                 var dataItem = dataitems[i];
-
-                if (dataItem.value != dataItem.text) {
-                    dataItem.text = "Add new tag: " + newitemtext;
-                    this.refresh();
-                    isfound = true;
+                console.log($("#Tags").data("kendoMultiSelect").value());
+                //if ((dataItem.Name.replace(" (Add New)", "") === dataItem.ID ||
+                //    dataItem.Name === " (Add New)") &&
+                //    $("#Tags").data("kendoMultiSelect").value().indexOf(dataItem.ID) < 0) {
+                //    this.dataSource.remove(dataItem);
+                //} else
+                    if (dataItem.ID === "00000000-0000-0000-0000-000000000000" &&
+                    $("#Tags").data("kendoMultiSelect").value().indexOf(dataItem.ID) < 0) {
+                    this.dataSource.remove(dataItem);
                 }
             }
-            if (!isfound) {
-                this.dataSource.add({ Name: newitemtext, ID: newitemtext });
-                this.refresh();
+
+            dataitems = this.dataSource.data();
+            var found = false;
+            for (var i = 0; i < dataitems.length; i++) {
+                dataItem = dataitems[i];
+                if (dataItem.ID == newitemtext) {
+                    found = true;
+                }
             }
-            this.search();
-            this.open();
+
+            if (!found && newitemtext !== "") {
+                this.dataSource.add({ Name: newitemtext, ID: "00000000-0000-0000-0000-000000000000" });
+                this.open();
+            }
         }
     }
 </script>
@@ -78,7 +61,5 @@
                         read.Action("Tags_Read", "RecipesEditing")
                         )
                     )
-                    //.Events(ev => ev.DataBound("onTagsDataBound"))
-                    .ValuePrimitive(true)
 )
 <span data-for="Tags" class="k-invalid-msg"></span>

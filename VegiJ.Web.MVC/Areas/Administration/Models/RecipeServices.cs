@@ -59,11 +59,74 @@ namespace VegiJ.Web.MVC.Areas.Administration.Models
 
         public void Create(RecipeEntityViewModel model)
         {
-            //var entry = new Tip(model.Title, model.Content);
-            //entry.AuthorId = model.Author.ID;
-            //entry.IsApproved = model.IsApproved;
-            //TipManager.AddTip(entry);
-            //model.ID = entry.ID;
+            var choosenCat =
+                    CategoryManager.GetAllCategories().AsEnumerable().Where(c => c.Name.Equals(model.Category.Name)).FirstOrDefault();
+            if (choosenCat == null)
+            {
+                var newCategory = new Category(model.Category.Name)
+                {
+                    ParentCategory = model.Category.ParentName == "Root" ? null :
+                    CategoryManager.GetAllCategories().AsEnumerable()
+                                   .Where(c => c.Name.Equals(model.Category.ParentName)).FirstOrDefault()
+                };
+                CategoryManager.AddCategory(newCategory);
+
+            }
+
+            var newTagList = new List<Tag>();
+            foreach (var item in model.Tags)
+            {
+                Tag newTag;
+                if (item.ID == Guid.Empty)
+                {
+                    newTag = new Tag(item.Name);
+                    try
+                    {
+                        TagManager.AddTag(newTag);
+                        newTagList.Add(newTag);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+                else
+                {
+                    newTag = TagManager.GetTag(item.ID);
+                    newTagList.Add(newTag);
+                }
+            }
+
+            var entry = new Recipe(model.Title, model.Content)
+            {
+                Author = UserManager.GetUser(model.Author.ID),
+                AuthorId = model.Author.ID,
+                IsApproved = model.IsApproved,
+                Category = choosenCat,
+                CategoryID = choosenCat.ID,
+                Tags = newTagList
+            };
+
+            try
+            {
+                RecipeManager.AddRecipe(entry);
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("There was problem creating the new recipe. " + ex.Message);
+            }
+
+            model.ID = entry.ID;
+            model.Author = new AuthorViewModel
+            {
+                ID = entry.AuthorId,
+                UserName = entry.Author.UserName
+            };
+            model.Category.ID = entry.CategoryID;
+            model.Tags = entry.Tags.Select(t => new TagEntityViewModel
+            {
+                ID = t.ID,
+                Name = t.Name
+            }).ToList();
         }
 
         public void Update(RecipeEntityViewModel model)
@@ -76,7 +139,7 @@ namespace VegiJ.Web.MVC.Areas.Administration.Models
                 entity.IsApproved = model.IsApproved;
                 entity.Author = UserManager.GetUser(model.Author.ID);
                 entity.AuthorId = model.Author.ID;
-                
+
                 // categories
                 var choosenCat =
                     CategoryManager.GetAllCategories().AsEnumerable().Where(c => c.Name.Equals(model.Category.Name)).FirstOrDefault();
@@ -84,24 +147,53 @@ namespace VegiJ.Web.MVC.Areas.Administration.Models
                 {
                     var newCategory = new Category(model.Category.Name)
                     {
-                        ParentCategory = model.Category.ParentName == "Root" ? null : 
+                        ParentCategory = model.Category.ParentName == "Root" ? null :
                         CategoryManager.GetAllCategories().AsEnumerable()
                                        .Where(c => c.Name.Equals(model.Category.ParentName)).FirstOrDefault()
                     };
                     CategoryManager.AddCategory(newCategory);
-                    
+
                 }
                 entity.Category = choosenCat;
                 entity.CategoryID = choosenCat.ID;
 
                 //tags
+                var newTagList = new List<Tag>();
+                foreach (var item in model.Tags)
+                {
+                    Tag newTag;
+                    if (item.ID == Guid.Empty)
+                    {
+                        newTag = new Tag(item.Name);
+                        try
+                        {
+                            TagManager.AddTag(newTag);
+                            newTagList.Add(newTag);
+                        }
+                        catch (Exception)
+                        {
+                        }
+                    }
+                    else
+                    {
+                        newTag = TagManager.GetTag(item.ID);
+                        newTagList.Add(newTag);
+                    }
+                }
+                entity.Tags.Clear();
+                entity.Tags = newTagList;
+
                 try
                 {
                     RecipeManager.UpdateRecipe(entity);
                     model.Author =
                     new AuthorViewModel { ID = entity.AuthorId, UserName = entity.Author.UserName };
-                    //cat;tags;
                     model.Category.ID = entity.CategoryID;
+                    model.Tags = entity.Tags.Select(t => new TagEntityViewModel
+                    {
+                        ID = t.ID,
+                        Name = t.Name
+                    }).ToList();
                 }
                 catch (Exception ex)
                 {

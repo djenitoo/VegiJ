@@ -13,6 +13,7 @@ namespace VegiJ.Web.MVC.Areas.Administration.Controllers
     using Models;
     using Newtonsoft.Json;
 
+    [Authorize(Roles = "admin")]
     public class TipsEditingController : Controller
     {
         private TipServices TipService { get; set; }

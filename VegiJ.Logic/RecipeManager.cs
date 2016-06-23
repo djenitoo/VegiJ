@@ -26,7 +26,7 @@
 
         public void DeleteRecipe(Recipe recipe)
         {
-            if (!CheckIfRecipeExist(recipe))
+            if (this._recipeRepository.GetById(recipe.ID) == null)
             {
                 return;
             }
@@ -46,7 +46,7 @@
 
         public void UpdateRecipe(Recipe recipe)
         {
-            if (CheckIfRecipeExist(recipe))
+            if (this._recipeRepository.GetById(recipe.ID) == null)
             {
                 return;
             }

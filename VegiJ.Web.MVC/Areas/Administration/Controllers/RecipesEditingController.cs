@@ -12,6 +12,7 @@ namespace VegiJ.Web.MVC.Areas.Administration.Controllers
     using Kendo.Mvc.UI;
     using Models;
 
+    [Authorize(Roles = "admin")]
     public class RecipesEditingController : Controller
     {
         private RecipeServices recipeServices { get; set; }
@@ -23,6 +24,7 @@ namespace VegiJ.Web.MVC.Areas.Administration.Controllers
         {
             this.recipeServices = new RecipeServices(uManager,tagManager,catManager,recipeManager);
             ViewData["defaultAuthor"] = recipeServices.GetAuthors()[0];
+            ViewData["defaultCategory"] = recipeServices.GetCategories()[0];
         }
         // GET: Administration/RecipesEditing
         public ActionResult Index()
@@ -46,7 +48,7 @@ namespace VegiJ.Web.MVC.Areas.Administration.Controllers
                 results.Add(product);
             }
 
-            return Json(results.ToDataSourceResult(request, ModelState));
+            return Json(results.ToDataSourceResult(request, ModelState), JsonRequestBehavior.AllowGet);
         }
 
         [AcceptVerbs(HttpVerbs.Post)]

@@ -12,6 +12,7 @@ namespace VegiJ.Web.MVC.Areas.Administration.Controllers
     using Kendo.Mvc.UI;
     using Models;
 
+    [Authorize(Roles = "admin")]
     public class EventsEditingController : Controller
     {
         private EventServices eventService { get; set; }
